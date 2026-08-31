@@ -1,0 +1,2001 @@
+route_id,origin,destination,distance_nm,transit_days,transshipments,route_type,base_freight_usd
+R001,Chennai,Rotterdam,8650,24,1,Recommended,1500
+R002,Chennai,Rotterdam,9100,27,2,Alternative,1300
+R003,Tokyo,Sydney,4860,12,0,Direct,1500
+R004,Tokyo,Sydney,5200,15,1,Alternative,1300
+R005,Tokyo,Los Angeles,4800,11,0,Direct,1800
+R006,Sydney,Los Angeles,6500,18,0,Direct,2200
+R007,Sydney,Rotterdam,11500,35,2,Alternative,2800
+R008,Chennai,Los Angeles,8200,22,1,Standard,2100
+R009,Chennai,Hamburg,8400,23,1,Standard,1600
+R010,Rotterdam,Singapore,8200,22,1,Standard,2150
+R011,Hamburg,New York,3500,9,0,Direct,1300
+R012,Dubai,Shanghai,5100,14,1,Recommended,1700
+R013,Singapore,Los Angeles,7600,19,0,Direct,2400
+R014,New York,Rotterdam,3400,8,0,Direct,1250
+R015,Shanghai,Sydney,4300,12,1,Recommended,1500
+R016,Dubai,Rotterdam,6400,18,1,Standard,1900
+R017,Chennai,Singapore,1600,4,0,Direct,800
+R018,Hamburg,Tokyo,11200,31,2,Alternative,3100
+R019,Los Angeles,Tokyo,4800,11,0,Direct,1750
+R020,Sydney,Singapore,3400,9,0,Direct,1400
+R021,Rotterdam,New York,3400,9,1,Recommended,1350
+R022,Shanghai,Rotterdam,10500,29,2,Alternative,2900
+R023,Dubai,Chennai,1500,4,0,Direct,850
+R024,Singapore,Hamburg,8400,23,1,Standard,2100
+R025,Tokyo,Rotterdam,11300,32,2,Alternative,3000
+R026,Los Angeles,Sydney,6500,17,0,Direct,2100
+R027,New York,Hamburg,3500,10,1,Recommended,1400
+R028,Shanghai,Los Angeles,5700,14,0,Direct,1900
+R029,Rotterdam,Chennai,8650,25,2,Standard,2200
+R030,Singapore,Tokyo,2900,7,0,Direct,1100
+R031,Dubai,Sydney,6500,17,0,Direct,2300
+R032,Chennai,Dubai,1500,5,1,Recommended,950
+R033,Hamburg,Singapore,8400,24,2,Standard,2200
+R034,Los Angeles,Shanghai,5700,15,1,Recommended,2050
+R035,Tokyo,Singapore,2900,8,1,Recommended,1150
+R036,Sydney,Dubai,6500,18,1,Standard,2450
+R037,New York,Dubai,6100,16,0,Direct,2200
+R038,Shanghai,Hamburg,10800,30,2,Alternative,3050
+R039,Rotterdam,Dubai,6400,19,2,Standard,2000
+R040,Singapore,Chennai,1600,5,1,Recommended,900
+R041,Dubai,New York,6100,17,1,Standard,2350
+R042,Chennai,Tokyo,3500,9,0,Direct,1200
+R043,Hamburg,Rotterdam,300,1,0,Direct,800
+R044,Los Angeles,New York,4300,12,0,Direct,1500
+R045,Tokyo,Dubai,4300,13,1,Recommended,1600
+R046,Sydney,Chennai,4900,14,1,Recommended,1650
+R047,New York,Los Angeles,4300,13,1,Standard,1550
+R048,Shanghai,Singapore,2100,6,0,Direct,950
+R049,Rotterdam,Hamburg,300,2,1,Alternative,850
+R050,Singapore,Dubai,3200,9,0,Direct,1300
+R051,Dubai,Tokyo,4300,12,0,Direct,1500
+R052,Chennai,Sydney,4900,15,2,Alternative,1600
+R053,Hamburg,Los Angeles,8200,22,1,Standard,2200
+R054,Los Angeles,Hamburg,8200,23,2,Alternative,2150
+R055,Tokyo,Chennai,3500,10,1,Recommended,1250
+R056,Sydney,Shanghai,4300,13,1,Standard,1550
+R057,New York,Singapore,8300,23,1,Standard,2300
+R058,Shanghai,Dubai,3500,9,0,Direct,1400
+R059,Rotterdam,Los Angeles,7800,21,1,Standard,2100
+R060,Singapore,New York,8300,24,2,Alternative,2200
+R061,Dubai,Singapore,3200,10,1,Recommended,1350
+R062,Chennai,New York,7500,20,1,Standard,1950
+R063,Hamburg,Shanghai,10800,28,1,Standard,3100
+R064,Los Angeles,Rotterdam,7800,22,2,Alternative,2100
+R065,Tokyo,New York,8500,23,1,Standard,2300
+R066,Sydney,New York,8700,24,1,Standard,2400
+R067,New York,Chennai,7500,21,2,Alternative,1900
+R068,Shanghai,Tokyo,1100,3,0,Direct,700
+R069,Rotterdam,Shanghai,10500,28,1,Standard,2950
+R070,Singapore,Shanghai,2100,7,1,Recommended,1000
+R071,Dubai,Los Angeles,8100,22,1,Standard,2200
+R072,Chennai,Shanghai,2800,7,0,Direct,1050
+R073,Hamburg,Dubai,4100,11,0,Direct,1450
+R074,Los Angeles,Dubai,8100,23,2,Alternative,2150
+R075,Tokyo,Shanghai,1100,4,1,Recommended,750
+R076,Sydney,Hamburg,11400,34,2,Alternative,2900
+R077,New York,Tokyo,8500,24,2,Alternative,2250
+R078,Shanghai,Chennai,2800,8,1,Recommended,1100
+R079,Rotterdam,Sydney,11500,33,1,Standard,2900
+R080,Singapore,Rotterdam,8200,21,0,Direct,2200
+R081,Dubai,Hamburg,4100,12,1,Recommended,1500
+R082,Chennai,Rotterdam,8650,26,2,Alternative,1400
+R083,Hamburg,Chennai,8400,22,0,Direct,1700
+R084,Los Angeles,Singapore,7600,21,1,Standard,2300
+R085,Tokyo,Hamburg,11200,30,1,Standard,2800
+R086,Sydney,Tokyo,4860,14,1,Recommended,1450
+R087,New York,Sydney,8700,25,2,Alternative,2350
+R088,Shanghai,New York,8600,23,1,Standard,2400
+R089,Rotterdam,Tokyo,11300,30,1,Standard,3100
+R090,Singapore,Sydney,3400,10,1,Recommended,1450
+R091,Dubai,Rotterdam,6400,17,0,Direct,1950
+R092,Chennai,Singapore,1600,6,2,Alternative,850
+R093,Hamburg,Rotterdam,300,2,1,Alternative,850
+R094,Los Angeles,Chennai,8200,24,2,Alternative,2000
+R095,Tokyo,Dubai,4300,14,2,Alternative,1550
+R096,Sydney,Los Angeles,6500,19,1,Recommended,2150
+R097,New York,Shanghai,8600,24,2,Alternative,2300
+R098,Shanghai,Dubai,3500,10,1,Recommended,1450
+R099,Rotterdam,Hamburg,300,1,0,Direct,800
+R100,Singapore,Tokyo,2900,9,2,Alternative,1050
+R101,Dubai,Sydney,6500,19,2,Alternative,2250
+R102,Chennai,Los Angeles,8200,21,0,Direct,2200
+R103,Hamburg,New York,3500,11,2,Alternative,1350
+R104,Los Angeles,Shanghai,5700,16,2,Alternative,2000
+R105,Tokyo,Sydney,4860,15,2,Alternative,1400
+R106,Sydney,Rotterdam,11500,32,0,Direct,2950
+R107,New York,Rotterdam,3400,10,2,Alternative,1200
+R108,Shanghai,Singapore,2100,8,2,Alternative,900
+R109,Rotterdam,Singapore,8200,24,2,Alternative,2050
+R110,Singapore,Dubai,3200,11,2,Alternative,1250
+R111,Dubai,Shanghai,5100,15,2,Alternative,1650
+R112,Chennai,Hamburg,8400,25,2,Alternative,1550
+R113,Hamburg,Tokyo,11200,32,3,Alternative,3000
+R114,Los Angeles,Sydney,6500,18,1,Recommended,2050
+R115,Tokyo,Los Angeles,4800,12,1,Recommended,1750
+R116,Sydney,Shanghai,4300,14,2,Alternative,1500
+R117,New York,Los Angeles,4300,14,2,Alternative,1500
+R118,Shanghai,Sydney,4300,11,0,Direct,1600
+R119,Rotterdam,Chennai,8650,23,0,Direct,2300
+R120,Singapore,New York,8300,22,0,Direct,2400
+R121,Dubai,Chennai,1500,6,2,Alternative,800
+R122,Chennai,Sydney,4900,13,0,Direct,1750
+R123,Hamburg,Singapore,8400,22,0,Direct,2300
+R124,Los Angeles,Hamburg,8200,21,0,Direct,2350
+R125,Tokyo,Rotterdam,11300,29,0,Direct,3200
+R126,Chennai,New York,7500,19,0,Direct,2000
+R127,Rotterdam,Dubai,6400,18,1,Recommended,1900
+R128,Tokyo,Singapore,2900,7,0,Direct,1150
+R129,Sydney,Shanghai,4300,12,1,Recommended,1500
+R130,Los Angeles,Hamburg,8200,22,1,Standard,2200
+R131,Hamburg,New York,3500,9,0,Direct,1300
+R132,Singapore,Los Angeles,7600,19,0,Direct,2400
+R133,New York,Rotterdam,3400,8,0,Direct,1250
+R134,Dubai,Shanghai,5100,14,1,Recommended,1700
+R135,Shanghai,Sydney,4300,12,1,Recommended,1500
+R136,Chennai,Singapore,1600,4,0,Direct,800
+R137,Rotterdam,Sydney,11500,31,0,Direct,3100
+R138,Tokyo,Hamburg,11200,30,1,Standard,2800
+R139,Sydney,Los Angeles,6500,18,0,Direct,2200
+R140,Los Angeles,Tokyo,4800,11,0,Direct,1750
+R141,Hamburg,Singapore,8400,23,1,Standard,2100
+R142,Singapore,Hamburg,8400,23,1,Standard,2100
+R143,New York,Hamburg,3500,10,1,Recommended,1400
+R144,Dubai,Rotterdam,6400,18,1,Standard,1900
+R145,Shanghai,Rotterdam,10500,29,2,Alternative,2900
+R146,Chennai,Tokyo,3500,9,0,Direct,1200
+R147,Rotterdam,New York,3400,9,1,Recommended,1350
+R148,Tokyo,Sydney,4860,12,0,Direct,1500
+R149,Sydney,Singapore,3400,9,0,Direct,1400
+R150,Los Angeles,New York,4300,12,0,Direct,1500
+R151,Hamburg,Rotterdam,300,1,0,Direct,800
+R152,Singapore,Tokyo,2900,7,0,Direct,1100
+R153,New York,Dubai,6100,16,0,Direct,2200
+R154,Dubai,Chennai,1500,4,0,Direct,850
+R155,Shanghai,Los Angeles,5700,14,0,Direct,1900
+R156,Chennai,Dubai,1500,5,1,Recommended,950
+R157,Rotterdam,Chennai,8650,25,2,Standard,2200
+R158,Tokyo,Dubai,4300,13,1,Recommended,1600
+R159,Sydney,Dubai,6500,17,0,Direct,2300
+R160,Los Angeles,Shanghai,5700,15,1,Recommended,2050
+R161,Hamburg,Dubai,4100,11,0,Direct,1450
+R162,Singapore,Chennai,1600,5,1,Recommended,900
+R163,New York,Los Angeles,4300,13,1,Standard,1550
+R164,Dubai,New York,6100,17,1,Standard,2350
+R165,Shanghai,Hamburg,10800,30,2,Alternative,3050
+R166,Chennai,Sydney,4900,14,1,Recommended,1650
+R167,Rotterdam,Hamburg,300,2,1,Alternative,850
+R168,Tokyo,Chennai,3500,10,1,Recommended,1250
+R169,Sydney,Chennai,4900,14,1,Recommended,1650
+R170,Los Angeles,Hamburg,8200,23,2,Alternative,2150
+R171,Hamburg,Los Angeles,8200,22,1,Standard,2200
+R172,Singapore,Dubai,3200,9,0,Direct,1300
+R173,New York,Singapore,8300,23,1,Standard,2300
+R174,Dubai,Tokyo,4300,12,0,Direct,1500
+R175,Shanghai,Dubai,3500,9,0,Direct,1400
+R176,Chennai,New York,7500,20,1,Standard,1950
+R177,Rotterdam,Los Angeles,7800,21,1,Standard,2100
+R178,Tokyo,New York,8500,23,1,Standard,2300
+R179,Sydney,New York,8700,24,1,Standard,2400
+R180,Los Angeles,Rotterdam,7800,22,2,Alternative,2100
+R181,Hamburg,Shanghai,10800,28,1,Standard,3100
+R182,Singapore,New York,8300,24,2,Alternative,2200
+R183,New York,Chennai,7500,21,2,Alternative,1900
+R184,Dubai,Singapore,3200,10,1,Recommended,1350
+R185,Shanghai,Tokyo,1100,3,0,Direct,700
+R186,Chennai,Shanghai,2800,7,0,Direct,1050
+R187,Rotterdam,Shanghai,10500,28,1,Standard,2950
+R188,Tokyo,Shanghai,1100,4,1,Recommended,750
+R189,Sydney,Hamburg,11400,34,2,Alternative,2900
+R190,Los Angeles,Dubai,8100,23,2,Alternative,2150
+R191,Hamburg,Dubai,4100,11,0,Direct,1450
+R192,Singapore,Shanghai,2100,7,1,Recommended,1000
+R193,New York,Tokyo,8500,24,2,Alternative,2250
+R194,Dubai,Los Angeles,8100,22,1,Standard,2200
+R195,Shanghai,Chennai,2800,8,1,Recommended,1100
+R196,Chennai,Rotterdam,8650,26,2,Alternative,1400
+R197,Rotterdam,Sydney,11500,33,1,Standard,2900
+R198,Tokyo,Hamburg,11200,30,1,Standard,2800
+R199,Sydney,Tokyo,4860,14,1,Recommended,1450
+R200,Los Angeles,Singapore,7600,21,1,Standard,2300
+R201,Hamburg,Chennai,8400,22,0,Direct,1700
+R202,Singapore,Rotterdam,8200,21,0,Direct,2200
+R203,New York,Sydney,8700,25,2,Alternative,2350
+R204,Dubai,Hamburg,4100,12,1,Recommended,1500
+R205,Shanghai,New York,8600,23,1,Standard,2400
+R206,Chennai,Singapore,1600,6,2,Alternative,850
+R207,Rotterdam,Tokyo,11300,30,1,Standard,3100
+R208,Tokyo,Dubai,4300,14,2,Alternative,1550
+R209,Sydney,Los Angeles,6500,19,1,Recommended,2150
+R210,Los Angeles,Chennai,8200,24,2,Alternative,2000
+R211,Hamburg,Rotterdam,300,2,1,Alternative,850
+R212,Singapore,Sydney,3400,10,1,Recommended,1450
+R213,New York,Shanghai,8600,24,2,Alternative,2300
+R214,Dubai,Rotterdam,6400,17,0,Direct,1950
+R215,Shanghai,Dubai,3500,10,1,Recommended,1450
+R216,Chennai,Los Angeles,8200,21,0,Direct,2200
+R217,Rotterdam,Hamburg,300,1,0,Direct,800
+R218,Tokyo,Sydney,4860,15,2,Alternative,1400
+R219,Sydney,Rotterdam,11500,32,0,Direct,2950
+R220,Los Angeles,Shanghai,5700,16,2,Alternative,2000
+R221,Hamburg,New York,3500,11,2,Alternative,1350
+R222,Singapore,Tokyo,2900,9,2,Alternative,1050
+R223,New York,Rotterdam,3400,10,2,Alternative,1200
+R224,Dubai,Sydney,6500,19,2,Alternative,2250
+R225,Shanghai,Singapore,2100,8,2,Alternative,900
+R226,Chennai,Hamburg,8400,25,2,Alternative,1550
+R227,Rotterdam,Singapore,8200,24,2,Alternative,2050
+R228,Tokyo,Los Angeles,4800,12,1,Recommended,1750
+R229,Sydney,Shanghai,4300,14,2,Alternative,1500
+R230,Los Angeles,Sydney,6500,18,1,Recommended,2050
+R231,Hamburg,Tokyo,11200,32,3,Alternative,3000
+R232,Singapore,Dubai,3200,11,2,Alternative,1250
+R233,New York,Los Angeles,4300,14,2,Alternative,1500
+R234,Dubai,Shanghai,5100,15,2,Alternative,1650
+R235,Shanghai,Sydney,4300,11,0,Direct,1600
+R236,Chennai,Sydney,4900,13,0,Direct,1750
+R237,Rotterdam,Chennai,8650,23,0,Direct,2300
+R238,Tokyo,Rotterdam,11300,29,0,Direct,3200
+R239,Sydney,New York,8700,22,0,Direct,2500
+R240,Los Angeles,Hamburg,8200,21,0,Direct,2350
+R241,Hamburg,Singapore,8400,22,0,Direct,2300
+R242,Singapore,New York,8300,22,0,Direct,2400
+R243,New York,Chennai,7500,19,0,Direct,2100
+R244,Dubai,Chennai,1500,6,2,Alternative,800
+R245,Shanghai,Rotterdam,10500,27,0,Direct,3000
+R246,Chennai,Rotterdam,8650,22,0,Direct,2300
+R247,Rotterdam,Tokyo,11300,33,3,Alternative,3300
+R248,Tokyo,Singapore,2900,8,1,Recommended,1150
+R249,Sydney,Dubai,6500,18,1,Standard,2450
+R250,Los Angeles,New York,4300,14,2,Alternative,1600
+R251,Hamburg,Dubai,4100,12,1,Recommended,1500
+R252,Singapore,Hamburg,8400,24,2,Standard,2200
+R253,New York,Los Angeles,4300,12,0,Direct,1500
+R254,Dubai,New York,6100,16,0,Direct,2200
+R255,Shanghai,Los Angeles,5700,15,1,Recommended,2050
+R256,Chennai,Tokyo,3500,10,1,Recommended,1250
+R257,Rotterdam,Sydney,11500,34,2,Alternative,3000
+R258,Tokyo,Dubai,4300,12,0,Direct,1500
+R259,Sydney,Shanghai,4300,13,1,Standard,1550
+R260,Los Angeles,Tokyo,4800,13,2,Alternative,1850
+R261,Hamburg,Shanghai,10800,30,2,Alternative,3200
+R262,Singapore,Chennai,1600,6,2,Alternative,950
+R263,New York,Dubai,6100,18,2,Alternative,2450
+R264,Dubai,Rotterdam,6400,19,2,Standard,2000
+R265,Shanghai,Hamburg,10800,28,1,Standard,3100
+R266,Chennai,New York,7500,21,2,Alternative,2050
+R267,Rotterdam,Los Angeles,7800,22,2,Alternative,2200
+R268,Tokyo,New York,8500,24,2,Alternative,2400
+R269,Sydney,Chennai,4900,15,2,Alternative,1750
+R270,Los Angeles,Rotterdam,7800,21,1,Standard,2100
+R271,Hamburg,Los Angeles,8200,23,2,Alternative,2300
+R272,Singapore,New York,8300,23,1,Standard,2300
+R273,New York,Singapore,8300,24,2,Alternative,2400
+R274,Dubai,Singapore,3200,9,0,Direct,1300
+R275,Shanghai,Dubai,3500,10,1,Recommended,1450
+R276,Chennai,Dubai,1500,4,0,Direct,850
+R277,Rotterdam,Hamburg,300,2,1,Alternative,850
+R278,Tokyo,Shanghai,1100,3,0,Direct,700
+R279,Sydney,New York,8700,25,2,Alternative,2600
+R280,Los Angeles,Dubai,8100,22,1,Standard,2200
+R281,Hamburg,Rotterdam,300,1,0,Direct,800
+R282,Singapore,Shanghai,2100,6,0,Direct,950
+R283,New York,Tokyo,8500,23,1,Standard,2300
+R284,Dubai,Los Angeles,8100,23,2,Alternative,2300
+R285,Shanghai,Tokyo,1100,4,1,Recommended,750
+R286,Chennai,Shanghai,2800,8,1,Recommended,1100
+R287,Rotterdam,New York,3400,8,0,Direct,1250
+R288,Tokyo,Sydney,4860,14,1,Recommended,1450
+R289,Sydney,Hamburg,11400,32,1,Standard,2800
+R290,Los Angeles,Singapore,7600,19,0,Direct,2400
+R291,Hamburg,Dubai,4100,13,2,Alternative,1600
+R292,Singapore,Rotterdam,8200,23,2,Standard,2300
+R293,New York,Sydney,8700,24,1,Standard,2400
+R294,Dubai,Tokyo,4300,13,1,Recommended,1600
+R295,Shanghai,Chennai,2800,7,0,Direct,1050
+R296,Chennai,Rotterdam,8650,24,1,Recommended,1500
+R297,Rotterdam,Tokyo,11300,31,2,Alternative,3200
+R298,Tokyo,Hamburg,11200,32,3,Alternative,3000
+R299,Sydney,Los Angeles,6500,17,0,Direct,2100
+R300,Los Angeles,Chennai,8200,23,1,Standard,2100
+R301,Hamburg,New York,3500,10,1,Recommended,1400
+R302,Singapore,Sydney,3400,9,0,Direct,1400
+R303,New York,Rotterdam,3400,9,1,Recommended,1350
+R304,Dubai,Sydney,6500,17,0,Direct,2300
+R305,Shanghai,New York,8600,24,2,Alternative,2500
+R306,Chennai,Los Angeles,8200,22,1,Standard,2100
+R307,Rotterdam,Singapore,8200,22,1,Standard,2150
+R308,Tokyo,Los Angeles,4800,11,0,Direct,1800
+R309,Sydney,Rotterdam,11500,35,2,Alternative,2800
+R310,Los Angeles,Shanghai,5700,14,0,Direct,1900
+R311,Hamburg,Tokyo,11200,30,1,Standard,2800
+R312,Singapore,Tokyo,2900,7,0,Direct,1100
+R313,New York,Shanghai,8600,23,1,Standard,2400
+R314,Dubai,Rotterdam,6400,18,1,Standard,1900
+R315,Shanghai,Singapore,2100,7,1,Recommended,1000
+R316,Chennai,Hamburg,8400,23,1,Standard,1600
+R317,Rotterdam,Dubai,6400,17,0,Direct,1950
+R318,Tokyo,Chennai,3500,9,0,Direct,1200
+R319,Sydney,Tokyo,4860,12,0,Direct,1500
+R320,Los Angeles,Sydney,6500,18,1,Recommended,2050
+R321,Hamburg,Chennai,8400,22,0,Direct,1700
+R322,Singapore,Dubai,3200,10,1,Recommended,1350
+R323,New York,Chennai,7500,20,1,Standard,1950
+R324,Dubai,Shanghai,5100,14,1,Recommended,1700
+R325,Shanghai,Sydney,4300,12,1,Recommended,1500
+R326,Chennai,Singapore,1600,5,1,Recommended,900
+R327,Rotterdam,Shanghai,10500,29,2,Alternative,2900
+R328,Tokyo,Rotterdam,11300,30,1,Standard,3100
+R329,Sydney,Singapore,3400,10,1,Recommended,1450
+R330,Los Angeles,Hamburg,8200,22,1,Standard,2200
+R331,Hamburg,Singapore,8400,23,1,Standard,2100
+R332,Singapore,Los Angeles,7600,21,1,Standard,2300
+R333,New York,Hamburg,3500,9,0,Direct,1300
+R334,Dubai,Hamburg,4100,11,0,Direct,1450
+R335,Shanghai,Rotterdam,10500,28,1,Standard,2950
+R336,Chennai,Sydney,4900,14,1,Recommended,1650
+R337,Rotterdam,Chennai,8650,25,2,Standard,2200
+R338,Tokyo,Singapore,2900,8,1,Recommended,1150
+R339,Sydney,Los Angeles,6500,18,0,Direct,2200
+R340,Los Angeles,Tokyo,4800,11,0,Direct,1750
+R341,Hamburg,Los Angeles,8200,22,1,Standard,2200
+R342,Singapore,Hamburg,8400,23,1,Standard,2100
+R343,New York,Los Angeles,4300,13,1,Standard,1550
+R344,Dubai,New York,6100,17,1,Standard,2350
+R345,Shanghai,Los Angeles,5700,14,0,Direct,1900
+R346,Chennai,Dubai,1500,5,1,Recommended,950
+R347,Rotterdam,Sydney,11500,31,0,Direct,3100
+R348,Tokyo,Dubai,4300,13,1,Recommended,1600
+R349,Sydney,Dubai,6500,17,0,Direct,2300
+R350,Los Angeles,Shanghai,5700,15,1,Recommended,2050
+R351,Hamburg,Dubai,4100,11,0,Direct,1450
+R352,Singapore,Chennai,1600,4,0,Direct,800
+R353,New York,Dubai,6100,16,0,Direct,2200
+R354,Dubai,Chennai,1500,4,0,Direct,850
+R355,Shanghai,Hamburg,10800,30,2,Alternative,3050
+R356,Chennai,Tokyo,3500,9,0,Direct,1200
+R357,Rotterdam,New York,3400,9,1,Recommended,1350
+R358,Tokyo,Sydney,4860,12,0,Direct,1500
+R359,Sydney,Chennai,4900,14,1,Recommended,1650
+R360,Los Angeles,Hamburg,8200,23,2,Alternative,2150
+R361,Hamburg,Rotterdam,300,1,0,Direct,800
+R362,Singapore,Tokyo,2900,7,0,Direct,1100
+R363,New York,Singapore,8300,23,1,Standard,2300
+R364,Dubai,Tokyo,4300,12,0,Direct,1500
+R365,Shanghai,Dubai,3500,9,0,Direct,1400
+R366,Chennai,New York,7500,20,1,Standard,1950
+R367,Rotterdam,Los Angeles,7800,21,1,Standard,2100
+R368,Tokyo,New York,8500,23,1,Standard,2300
+R369,Sydney,New York,8700,24,1,Standard,2400
+R370,Los Angeles,Rotterdam,7800,22,2,Alternative,2100
+R371,Hamburg,Shanghai,10800,28,1,Standard,3100
+R372,Singapore,New York,8300,24,2,Alternative,2200
+R373,New York,Chennai,7500,21,2,Alternative,1900
+R374,Dubai,Singapore,3200,10,1,Recommended,1350
+R375,Shanghai,Tokyo,1100,3,0,Direct,700
+R376,Chennai,Shanghai,2800,7,0,Direct,1050
+R377,Rotterdam,Shanghai,10500,28,1,Standard,2950
+R378,Tokyo,Shanghai,1100,4,1,Recommended,750
+R379,Sydney,Hamburg,11400,34,2,Alternative,2900
+R380,Los Angeles,Dubai,8100,23,2,Alternative,2150
+R381,Hamburg,Dubai,4100,11,0,Direct,1450
+R382,Singapore,Shanghai,2100,7,1,Recommended,1000
+R383,New York,Tokyo,8500,24,2,Alternative,2250
+R384,Dubai,Los Angeles,8100,22,1,Standard,2200
+R385,Shanghai,Chennai,2800,8,1,Recommended,1100
+R386,Chennai,Rotterdam,8650,26,2,Alternative,1400
+R387,Rotterdam,Sydney,11500,33,1,Standard,2900
+R388,Tokyo,Hamburg,11200,30,1,Standard,2800
+R389,Sydney,Tokyo,4860,14,1,Recommended,1450
+R390,Los Angeles,Singapore,7600,21,1,Standard,2300
+R391,Hamburg,Chennai,8400,22,0,Direct,1700
+R392,Singapore,Rotterdam,8200,21,0,Direct,2200
+R393,New York,Sydney,8700,25,2,Alternative,2350
+R394,Dubai,Hamburg,4100,12,1,Recommended,1500
+R395,Shanghai,New York,8600,23,1,Standard,2400
+R396,Chennai,Singapore,1600,6,2,Alternative,850
+R397,Rotterdam,Tokyo,11300,30,1,Standard,3100
+R398,Tokyo,Dubai,4300,14,2,Alternative,1550
+R399,Sydney,Los Angeles,6500,19,1,Recommended,2150
+R400,Los Angeles,Chennai,8200,24,2,Alternative,2000
+R401,Hamburg,Rotterdam,300,2,1,Alternative,850
+R402,Singapore,Sydney,3400,10,1,Recommended,1450
+R403,New York,Shanghai,8600,24,2,Alternative,2300
+R404,Dubai,Rotterdam,6400,17,0,Direct,1950
+R405,Shanghai,Dubai,3500,10,1,Recommended,1450
+R406,Chennai,Los Angeles,8200,21,0,Direct,2200
+R407,Rotterdam,Hamburg,300,1,0,Direct,800
+R408,Tokyo,Sydney,4860,15,2,Alternative,1400
+R409,Sydney,Rotterdam,11500,32,0,Direct,2950
+R410,Los Angeles,Shanghai,5700,16,2,Alternative,2000
+R411,Hamburg,New York,3500,11,2,Alternative,1350
+R412,Singapore,Tokyo,2900,9,2,Alternative,1050
+R413,New York,Rotterdam,3400,10,2,Alternative,1200
+R414,Dubai,Sydney,6500,19,2,Alternative,2250
+R415,Shanghai,Singapore,2100,8,2,Alternative,900
+R416,Chennai,Hamburg,8400,25,2,Alternative,1550
+R417,Rotterdam,Singapore,8200,24,2,Alternative,2050
+R418,Tokyo,Los Angeles,4800,12,1,Recommended,1750
+R419,Sydney,Shanghai,4300,14,2,Alternative,1500
+R420,Los Angeles,Sydney,6500,18,1,Recommended,2050
+R421,Hamburg,Tokyo,11200,32,3,Alternative,3000
+R422,Singapore,Dubai,3200,11,2,Alternative,1250
+R423,New York,Los Angeles,4300,14,2,Alternative,1500
+R424,Dubai,Shanghai,5100,15,2,Alternative,1650
+R425,Shanghai,Sydney,4300,11,0,Direct,1600
+R426,Chennai,Sydney,4900,13,0,Direct,1750
+R427,Rotterdam,Chennai,8650,23,0,Direct,2300
+R428,Tokyo,Rotterdam,11300,29,0,Direct,3200
+R429,Sydney,New York,8700,22,0,Direct,2500
+R430,Los Angeles,Hamburg,8200,21,0,Direct,2350
+R431,Hamburg,Singapore,8400,22,0,Direct,2300
+R432,Singapore,New York,8300,22,0,Direct,2400
+R433,New York,Chennai,7500,19,0,Direct,2100
+R434,Dubai,Chennai,1500,6,2,Alternative,800
+R435,Shanghai,Rotterdam,10500,27,0,Direct,3000
+R436,Chennai,Rotterdam,8650,22,0,Direct,2300
+R437,Rotterdam,Tokyo,11300,33,3,Alternative,3300
+R438,Tokyo,Singapore,2900,8,1,Recommended,1150
+R439,Sydney,Dubai,6500,18,1,Standard,2450
+R440,Los Angeles,New York,4300,14,2,Alternative,1600
+R441,Hamburg,Dubai,4100,12,1,Recommended,1500
+R442,Singapore,Hamburg,8400,24,2,Standard,2200
+R443,New York,Los Angeles,4300,12,0,Direct,1500
+R444,Dubai,New York,6100,16,0,Direct,2200
+R445,Shanghai,Los Angeles,5700,15,1,Recommended,2050
+R446,Chennai,Tokyo,3500,10,1,Recommended,1250
+R447,Rotterdam,Sydney,11500,34,2,Alternative,3000
+R448,Tokyo,Dubai,4300,12,0,Direct,1500
+R449,Sydney,Shanghai,4300,13,1,Standard,1550
+R450,Los Angeles,Tokyo,4800,13,2,Alternative,1850
+R451,Hamburg,Shanghai,10800,30,2,Alternative,3200
+R452,Singapore,Chennai,1600,6,2,Alternative,950
+R453,New York,Dubai,6100,18,2,Alternative,2450
+R454,Dubai,Rotterdam,6400,19,2,Standard,2000
+R455,Shanghai,Hamburg,10800,28,1,Standard,3100
+R456,Chennai,New York,7500,21,2,Alternative,2050
+R457,Rotterdam,Los Angeles,7800,22,2,Alternative,2200
+R458,Tokyo,New York,8500,24,2,Alternative,2400
+R459,Sydney,Chennai,4900,15,2,Alternative,1750
+R460,Los Angeles,Rotterdam,7800,21,1,Standard,2100
+R461,Hamburg,Los Angeles,8200,23,2,Alternative,2300
+R462,Singapore,New York,8300,23,1,Standard,2300
+R463,New York,Singapore,8300,24,2,Alternative,2400
+R464,Dubai,Singapore,3200,9,0,Direct,1300
+R465,Shanghai,Dubai,3500,10,1,Recommended,1450
+R466,Chennai,Dubai,1500,4,0,Direct,850
+R467,Rotterdam,Hamburg,300,2,1,Alternative,850
+R468,Tokyo,Shanghai,1100,3,0,Direct,700
+R469,Sydney,New York,8700,25,2,Alternative,2600
+R470,Los Angeles,Dubai,8100,22,1,Standard,2200
+R471,Hamburg,Rotterdam,300,1,0,Direct,800
+R472,Singapore,Shanghai,2100,6,0,Direct,950
+R473,New York,Tokyo,8500,23,1,Standard,2300
+R474,Dubai,Los Angeles,8100,23,2,Alternative,2300
+R475,Shanghai,Tokyo,1100,4,1,Recommended,750
+R476,Chennai,Shanghai,2800,8,1,Recommended,1100
+R477,Rotterdam,New York,3400,8,0,Direct,1250
+R478,Tokyo,Sydney,4860,14,1,Recommended,1450
+R479,Sydney,Hamburg,11400,32,1,Standard,2800
+R480,Los Angeles,Singapore,7600,19,0,Direct,2400
+R481,Hamburg,Dubai,4100,13,2,Alternative,1600
+R482,Singapore,Rotterdam,8200,23,2,Standard,2300
+R483,New York,Sydney,8700,24,1,Standard,2400
+R484,Dubai,Tokyo,4300,13,1,Recommended,1600
+R485,Shanghai,Chennai,2800,7,0,Direct,1050
+R486,Chennai,Rotterdam,8650,24,1,Recommended,1500
+R487,Rotterdam,Tokyo,11300,31,2,Alternative,3200
+R488,Tokyo,Hamburg,11200,32,3,Alternative,3000
+R489,Sydney,Los Angeles,6500,17,0,Direct,2100
+R490,Los Angeles,Chennai,8200,23,1,Standard,2100
+R491,Hamburg,New York,3500,10,1,Recommended,1400
+R492,Singapore,Sydney,3400,9,0,Direct,1400
+R493,New York,Rotterdam,3400,9,1,Recommended,1350
+R494,Dubai,Sydney,6500,17,0,Direct,2300
+R495,Shanghai,New York,8600,24,2,Alternative,2500
+R496,Chennai,Los Angeles,8200,22,1,Standard,2100
+R497,Rotterdam,Singapore,8200,22,1,Standard,2150
+R498,Tokyo,Los Angeles,4800,11,0,Direct,1800
+R499,Sydney,Rotterdam,11500,35,2,Alternative,2800
+R500,Los Angeles,Shanghai,5700,14,0,Direct,1900
+R501,Chennai,Rotterdam,8650,25,1,Recommended,1515
+R502,Chennai,Rotterdam,9100,28,2,Alternative,1320
+R503,Tokyo,Sydney,4860,13,0,Direct,1525
+R504,Tokyo,Sydney,5200,16,1,Alternative,1315
+R505,Tokyo,Los Angeles,4800,10,0,Direct,1810
+R506,Sydney,Los Angeles,6500,19,0,Direct,2215
+R507,Sydney,Rotterdam,11500,34,2,Alternative,2850
+R508,Chennai,Los Angeles,8200,23,1,Standard,2125
+R509,Chennai,Hamburg,8400,24,1,Standard,1640
+R510,Rotterdam,Singapore,8200,23,1,Standard,2180
+R511,Hamburg,New York,3500,10,0,Direct,1315
+R512,Dubai,Shanghai,5100,15,1,Recommended,1740
+R513,Singapore,Los Angeles,7600,18,0,Direct,2410
+R514,New York,Rotterdam,3400,9,0,Direct,1275
+R515,Shanghai,Sydney,4300,13,1,Recommended,1535
+R516,Dubai,Rotterdam,6400,19,1,Standard,1915
+R517,Chennai,Singapore,1600,5,0,Direct,815
+R518,Hamburg,Tokyo,11200,30,2,Alternative,3150
+R519,Los Angeles,Tokyo,4800,12,0,Direct,1775
+R520,Sydney,Singapore,3400,10,0,Direct,1410
+R521,Rotterdam,New York,3400,10,1,Recommended,1380
+R522,Shanghai,Rotterdam,10500,28,2,Alternative,2920
+R523,Dubai,Chennai,1500,5,0,Direct,875
+R524,Singapore,Hamburg,8400,24,1,Standard,2130
+R525,Tokyo,Rotterdam,11300,31,2,Alternative,3040
+R526,Los Angeles,Sydney,6500,16,0,Direct,2125
+R527,New York,Hamburg,3500,11,1,Recommended,1440
+R528,Shanghai,Los Angeles,5700,13,0,Direct,1920
+R529,Rotterdam,Chennai,8650,24,2,Standard,2230
+R530,Singapore,Tokyo,2900,8,0,Direct,1120
+R531,Dubai,Sydney,6500,16,0,Direct,2340
+R532,Chennai,Dubai,1500,6,1,Recommended,975
+R533,Hamburg,Singapore,8400,23,2,Standard,2220
+R534,Los Angeles,Shanghai,5700,16,1,Recommended,2080
+R535,Tokyo,Singapore,2900,9,1,Recommended,1180
+R536,Sydney,Dubai,6500,19,1,Standard,2480
+R537,New York,Dubai,6100,15,0,Direct,2215
+R538,Shanghai,Hamburg,10800,31,2,Alternative,3080
+R539,Rotterdam,Dubai,6400,20,2,Standard,2030
+R540,Singapore,Chennai,1600,6,1,Recommended,925
+R541,Dubai,New York,6100,18,1,Standard,2380
+R542,Chennai,Tokyo,3500,8,0,Direct,1230
+R543,Hamburg,Rotterdam,300,2,0,Direct,815
+R544,Los Angeles,New York,4300,13,0,Direct,1525
+R545,Tokyo,Dubai,4300,12,1,Recommended,1630
+R546,Sydney,Chennai,4900,15,1,Recommended,1680
+R547,New York,Los Angeles,4300,14,1,Standard,1580
+R548,Shanghai,Singapore,2100,7,0,Direct,975
+R549,Rotterdam,Hamburg,300,3,1,Alternative,880
+R550,Singapore,Dubai,3200,8,0,Direct,1330
+R551,Dubai,Tokyo,4300,11,0,Direct,1520
+R552,Chennai,Sydney,4900,16,2,Alternative,1630
+R553,Hamburg,Los Angeles,8200,21,1,Standard,2240
+R554,Los Angeles,Hamburg,8200,24,2,Alternative,2180
+R555,Tokyo,Chennai,3500,11,1,Recommended,1280
+R556,Sydney,Shanghai,4300,12,1,Standard,1580
+R557,New York,Singapore,8300,24,1,Standard,2340
+R558,Shanghai,Dubai,3500,10,0,Direct,1425
+R559,Rotterdam,Los Angeles,7800,20,1,Standard,2140
+R560,Singapore,New York,8300,25,2,Alternative,2230
+R561,Dubai,Singapore,3200,11,1,Recommended,1380
+R562,Chennai,New York,7500,21,1,Standard,1980
+R563,Hamburg,Shanghai,10800,29,1,Standard,3140
+R564,Los Angeles,Rotterdam,7800,23,2,Alternative,2130
+R565,Tokyo,New York,8500,22,1,Standard,2330
+R566,Sydney,New York,8700,25,1,Standard,2440
+R567,New York,Chennai,7500,22,2,Alternative,1930
+R568,Shanghai,Tokyo,1100,4,0,Direct,720
+R569,Rotterdam,Shanghai,10500,27,1,Standard,2980
+R570,Singapore,Shanghai,2100,8,1,Recommended,1030
+R571,Dubai,Los Angeles,8100,23,1,Standard,2230
+R572,Chennai,Shanghai,2800,8,0,Direct,1080
+R573,Hamburg,Dubai,4100,12,0,Direct,1480
+R574,Los Angeles,Dubai,8100,24,2,Alternative,2180
+R575,Tokyo,Shanghai,1100,5,1,Recommended,780
+R576,Sydney,Hamburg,11400,33,2,Alternative,2930
+R577,New York,Tokyo,8500,25,2,Alternative,2280
+R578,Shanghai,Chennai,2800,9,1,Recommended,1130
+R579,Rotterdam,Sydney,11500,32,1,Standard,2940
+R580,Singapore,Rotterdam,8200,22,0,Direct,2230
+R581,Dubai,Hamburg,4100,13,1,Recommended,1530
+R582,Chennai,Rotterdam,8650,27,2,Alternative,1430
+R583,Hamburg,Chennai,8400,23,0,Direct,1730
+R584,Los Angeles,Singapore,7600,20,1,Standard,2340
+R585,Tokyo,Hamburg,11200,31,1,Standard,2840
+R586,Sydney,Tokyo,4860,15,1,Recommended,1480
+R587,New York,Sydney,8700,26,2,Alternative,2380
+R588,Shanghai,New York,8600,24,1,Standard,2440
+R589,Rotterdam,Tokyo,11300,31,1,Standard,3140
+R590,Singapore,Sydney,3400,11,1,Recommended,1480
+R591,Dubai,Rotterdam,6400,18,0,Direct,1980
+R592,Chennai,Singapore,1600,7,2,Alternative,880
+R593,Hamburg,Rotterdam,300,3,1,Alternative,880
+R594,Los Angeles,Chennai,8200,25,2,Alternative,2030
+R595,Tokyo,Dubai,4300,15,2,Alternative,1580
+R596,Sydney,Los Angeles,6500,20,1,Recommended,2180
+R597,New York,Shanghai,8600,25,2,Alternative,2330
+R598,Shanghai,Dubai,3500,11,1,Recommended,1480
+R599,Rotterdam,Hamburg,300,2,0,Direct,830
+R600,Singapore,Tokyo,2900,10,2,Alternative,1080
+R601,Dubai,Sydney,6500,18,2,Alternative,2280
+R602,Chennai,Los Angeles,8200,22,0,Direct,2240
+R603,Hamburg,New York,3500,12,2,Alternative,1380
+R604,Los Angeles,Shanghai,5700,17,2,Alternative,2030
+R605,Tokyo,Sydney,4860,16,2,Alternative,1430
+R606,Sydney,Rotterdam,11500,33,0,Direct,2980
+R607,New York,Rotterdam,3400,11,2,Alternative,1230
+R608,Shanghai,Singapore,2100,9,2,Alternative,930
+R609,Rotterdam,Singapore,8200,25,2,Alternative,2080
+R610,Singapore,Dubai,3200,12,2,Alternative,1280
+R611,Dubai,Shanghai,5100,16,2,Alternative,1680
+R612,Chennai,Hamburg,8400,26,2,Alternative,1580
+R613,Hamburg,Tokyo,11200,33,3,Alternative,3030
+R614,Los Angeles,Sydney,6500,19,1,Recommended,2080
+R615,Tokyo,Los Angeles,4800,13,1,Recommended,1780
+R616,Sydney,Shanghai,4300,15,2,Alternative,1530
+R617,New York,Los Angeles,4300,15,2,Alternative,1530
+R618,Shanghai,Sydney,4300,12,0,Direct,1630
+R619,Rotterdam,Chennai,8650,24,0,Direct,2330
+R620,Singapore,New York,8300,23,0,Direct,2430
+R621,Dubai,Chennai,1500,7,2,Alternative,830
+R622,Chennai,Sydney,4900,14,0,Direct,1780
+R623,Hamburg,Singapore,8400,23,0,Direct,2330
+R624,Los Angeles,Hamburg,8200,22,0,Direct,2380
+R625,Tokyo,Rotterdam,11300,30,0,Direct,3230
+R626,Chennai,New York,7500,19,0,Direct,2040
+R627,Rotterdam,Dubai,6400,18,1,Recommended,1940
+R628,Tokyo,Singapore,2900,7,0,Direct,1180
+R629,Sydney,Shanghai,4300,13,1,Recommended,1530
+R630,Los Angeles,Hamburg,8200,23,1,Standard,2230
+R631,Hamburg,New York,3500,9,0,Direct,1340
+R632,Singapore,Los Angeles,7600,20,0,Direct,2440
+R633,New York,Rotterdam,3400,8,0,Direct,1280
+R634,Dubai,Shanghai,5100,15,1,Recommended,1730
+R635,Shanghai,Sydney,4300,13,1,Recommended,1530
+R636,Chennai,Singapore,1600,5,0,Direct,830
+R637,Rotterdam,Sydney,11500,32,0,Direct,3130
+R638,Tokyo,Hamburg,11200,31,1,Standard,2830
+R639,Sydney,Los Angeles,6500,19,0,Direct,2230
+R640,Los Angeles,Tokyo,4800,12,0,Direct,1780
+R641,Hamburg,Singapore,8400,24,1,Standard,2130
+R642,Singapore,Hamburg,8400,24,1,Standard,2130
+R643,New York,Hamburg,3500,11,1,Recommended,1430
+R644,Dubai,Rotterdam,6400,19,1,Standard,1930
+R645,Shanghai,Rotterdam,10500,30,2,Alternative,2930
+R646,Chennai,Tokyo,3500,9,0,Direct,1230
+R647,Rotterdam,New York,3400,10,1,Recommended,1380
+R648,Tokyo,Sydney,4860,13,0,Direct,1530
+R649,Sydney,Singapore,3400,10,0,Direct,1430
+R650,Los Angeles,New York,4300,13,0,Direct,1530
+R651,Hamburg,Rotterdam,300,2,0,Direct,830
+R652,Singapore,Tokyo,2900,8,0,Direct,1130
+R653,New York,Dubai,6100,17,0,Direct,2230
+R654,Dubai,Chennai,1500,5,0,Direct,880
+R655,Shanghai,Los Angeles,5700,15,0,Direct,1930
+R656,Chennai,Dubai,1500,6,1,Recommended,980
+R657,Rotterdam,Chennai,8650,26,2,Standard,2230
+R658,Tokyo,Dubai,4300,14,1,Recommended,1630
+R659,Sydney,Dubai,6500,18,0,Direct,2330
+R660,Los Angeles,Shanghai,5700,16,1,Recommended,2080
+R661,Hamburg,Dubai,4100,12,0,Direct,1480
+R662,Singapore,Chennai,1600,6,1,Recommended,930
+R663,New York,Los Angeles,4300,14,1,Standard,1580
+R664,Dubai,New York,6100,18,1,Standard,2380
+R665,Shanghai,Hamburg,10800,31,2,Alternative,3080
+R666,Chennai,Sydney,4900,15,1,Recommended,1680
+R667,Rotterdam,Hamburg,300,3,1,Alternative,880
+R668,Tokyo,Chennai,3500,11,1,Recommended,1280
+R669,Sydney,Chennai,4900,15,1,Recommended,1680
+R670,Los Angeles,Hamburg,8200,24,2,Alternative,2180
+R671,Hamburg,Los Angeles,8200,23,1,Standard,2230
+R672,Singapore,Dubai,3200,10,0,Direct,1330
+R673,New York,Singapore,8300,24,1,Standard,2330
+R674,Dubai,Tokyo,4300,13,0,Direct,1530
+R675,Shanghai,Dubai,3500,10,0,Direct,1430
+R676,Chennai,New York,7500,21,1,Standard,1980
+R677,Rotterdam,Los Angeles,7800,22,1,Standard,2130
+R678,Tokyo,New York,8500,24,1,Standard,2330
+R679,Sydney,New York,8700,25,1,Standard,2430
+R680,Los Angeles,Rotterdam,7800,23,2,Alternative,2130
+R681,Hamburg,Shanghai,10800,29,1,Standard,3130
+R682,Singapore,New York,8300,25,2,Alternative,2230
+R683,New York,Chennai,7500,22,2,Alternative,1930
+R684,Dubai,Singapore,3200,11,1,Recommended,1380
+R685,Shanghai,Tokyo,1100,4,0,Direct,730
+R686,Chennai,Shanghai,2800,8,0,Direct,1080
+R687,Rotterdam,Shanghai,10500,29,1,Standard,2980
+R688,Tokyo,Shanghai,1100,5,1,Recommended,780
+R689,Sydney,Hamburg,11400,35,2,Alternative,2930
+R690,Los Angeles,Dubai,8100,24,2,Alternative,2180
+R691,Hamburg,Dubai,4100,12,0,Direct,1480
+R692,Singapore,Shanghai,2100,8,1,Recommended,1030
+R693,New York,Tokyo,8500,25,2,Alternative,2280
+R694,Dubai,Los Angeles,8100,23,1,Standard,2230
+R695,Shanghai,Chennai,2800,9,1,Recommended,1130
+R696,Chennai,Rotterdam,8650,27,2,Alternative,1430
+R697,Rotterdam,Sydney,11500,34,1,Standard,2930
+R698,Tokyo,Hamburg,11200,31,1,Standard,2830
+R699,Sydney,Tokyo,4860,15,1,Recommended,1480
+R700,Los Angeles,Singapore,7600,22,1,Standard,2330
+R701,Hamburg,Chennai,8400,23,0,Direct,1730
+R702,Singapore,Rotterdam,8200,22,0,Direct,2230
+R703,New York,Sydney,8700,26,2,Alternative,2380
+R704,Dubai,Hamburg,4100,13,1,Recommended,1530
+R705,Shanghai,New York,8600,24,1,Standard,2430
+R706,Chennai,Singapore,1600,7,2,Alternative,880
+R707,Rotterdam,Tokyo,11300,31,1,Standard,3130
+R708,Tokyo,Dubai,4300,15,2,Alternative,1580
+R709,Sydney,Los Angeles,6500,20,1,Recommended,2180
+R710,Los Angeles,Chennai,8200,25,2,Alternative,2030
+R711,Hamburg,Rotterdam,300,3,1,Alternative,880
+R712,Singapore,Sydney,3400,11,1,Recommended,1480
+R713,New York,Shanghai,8600,25,2,Alternative,2330
+R714,Dubai,Rotterdam,6400,18,0,Direct,1980
+R715,Shanghai,Dubai,3500,11,1,Recommended,1480
+R716,Chennai,Los Angeles,8200,22,0,Direct,2230
+R717,Rotterdam,Hamburg,300,2,0,Direct,830
+R718,Tokyo,Sydney,4860,16,2,Alternative,1430
+R719,Sydney,Rotterdam,11500,33,0,Direct,2980
+R720,Los Angeles,Shanghai,5700,17,2,Alternative,2030
+R721,Hamburg,New York,3500,12,2,Alternative,1380
+R722,Singapore,Tokyo,2900,10,2,Alternative,1080
+R723,New York,Rotterdam,3400,11,2,Alternative,1230
+R724,Dubai,Sydney,6500,20,2,Alternative,2280
+R725,Shanghai,Singapore,2100,9,2,Alternative,930
+R726,Chennai,Hamburg,8400,26,2,Alternative,1580
+R727,Rotterdam,Singapore,8200,25,2,Alternative,2080
+R728,Tokyo,Los Angeles,4800,13,1,Recommended,1780
+R729,Sydney,Shanghai,4300,15,2,Alternative,1530
+R730,Los Angeles,Sydney,6500,19,1,Recommended,2080
+R731,Hamburg,Tokyo,11200,33,3,Alternative,3030
+R732,Singapore,Dubai,3200,12,2,Alternative,1280
+R733,New York,Los Angeles,4300,15,2,Alternative,1530
+R734,Dubai,Shanghai,5100,16,2,Alternative,1680
+R735,Shanghai,Sydney,4300,12,0,Direct,1630
+R736,Chennai,Sydney,4900,14,0,Direct,1780
+R737,Rotterdam,Chennai,8650,24,0,Direct,2330
+R738,Tokyo,Rotterdam,11300,30,0,Direct,3230
+R739,Sydney,New York,8700,23,0,Direct,2530
+R740,Los Angeles,Hamburg,8200,22,0,Direct,2380
+R741,Hamburg,Singapore,8400,23,0,Direct,2330
+R742,Singapore,New York,8300,23,0,Direct,2430
+R743,New York,Chennai,7500,20,0,Direct,2130
+R744,Dubai,Chennai,1500,7,2,Alternative,830
+R745,Shanghai,Rotterdam,10500,28,0,Direct,3030
+R746,Chennai,Rotterdam,8650,23,0,Direct,2330
+R747,Rotterdam,Tokyo,11300,34,3,Alternative,3330
+R748,Tokyo,Singapore,2900,9,1,Recommended,1180
+R749,Sydney,Dubai,6500,19,1,Standard,2480
+R750,Los Angeles,New York,4300,15,2,Alternative,1630
+R751,Hamburg,Dubai,4100,13,1,Recommended,1545
+R752,Singapore,Hamburg,8400,25,2,Standard,2245
+R753,New York,Los Angeles,4300,13,0,Direct,1545
+R754,Dubai,New York,6100,17,0,Direct,2245
+R755,Shanghai,Los Angeles,5700,16,1,Recommended,2095
+R756,Chennai,Tokyo,3500,11,1,Recommended,1295
+R757,Rotterdam,Sydney,11500,35,2,Alternative,3045
+R758,Tokyo,Dubai,4300,13,0,Direct,1545
+R759,Sydney,Shanghai,4300,14,1,Standard,1595
+R760,Los Angeles,Tokyo,4800,14,2,Alternative,1895
+R761,Hamburg,Shanghai,10800,31,2,Alternative,3245
+R762,Singapore,Chennai,1600,7,2,Alternative,995
+R763,New York,Dubai,6100,19,2,Alternative,2495
+R764,Dubai,Rotterdam,6400,20,2,Standard,2045
+R765,Shanghai,Hamburg,10800,29,1,Standard,3145
+R766,Chennai,New York,7500,22,2,Alternative,2095
+R767,Rotterdam,Los Angeles,7800,23,2,Alternative,2245
+R768,Tokyo,New York,8500,25,2,Alternative,2445
+R769,Sydney,Chennai,4900,16,2,Alternative,1795
+R770,Los Angeles,Rotterdam,7800,22,1,Standard,2145
+R771,Hamburg,Los Angeles,8200,24,2,Alternative,2345
+R772,Singapore,New York,8300,24,1,Standard,2345
+R773,New York,Singapore,8300,25,2,Alternative,2445
+R774,Dubai,Singapore,3200,10,0,Direct,1345
+R775,Shanghai,Dubai,3500,11,1,Recommended,1495
+R776,Chennai,Dubai,1500,5,0,Direct,895
+R777,Rotterdam,Hamburg,300,3,1,Alternative,895
+R778,Tokyo,Shanghai,1100,4,0,Direct,745
+R779,Sydney,New York,8700,26,2,Alternative,2645
+R780,Los Angeles,Dubai,8100,23,1,Standard,2245
+R781,Hamburg,Rotterdam,300,2,0,Direct,845
+R782,Singapore,Shanghai,2100,7,0,Direct,995
+R783,New York,Tokyo,8500,24,1,Standard,2345
+R784,Dubai,Los Angeles,8100,24,2,Alternative,2345
+R785,Shanghai,Tokyo,1100,5,1,Recommended,795
+R786,Chennai,Shanghai,2800,9,1,Recommended,1145
+R787,Rotterdam,New York,3400,9,0,Direct,1295
+R788,Tokyo,Sydney,4860,15,1,Recommended,1495
+R789,Sydney,Hamburg,11400,33,1,Standard,2845
+R790,Los Angeles,Singapore,7600,20,0,Direct,2445
+R791,Hamburg,Dubai,4100,14,2,Alternative,1645
+R792,Singapore,Rotterdam,8200,24,2,Standard,2345
+R793,New York,Sydney,8700,25,1,Standard,2445
+R794,Dubai,Tokyo,4300,14,1,Recommended,1645
+R795,Shanghai,Chennai,2800,8,0,Direct,1095
+R796,Chennai,Rotterdam,8650,25,1,Recommended,1545
+R797,Rotterdam,Tokyo,11300,32,2,Alternative,3245
+R798,Tokyo,Hamburg,11200,33,3,Alternative,3045
+R799,Sydney,Los Angeles,6500,18,0,Direct,2145
+R800,Los Angeles,Chennai,8200,24,1,Standard,2145
+R801,Hamburg,New York,3500,11,1,Recommended,1445
+R802,Singapore,Sydney,3400,10,0,Direct,1445
+R803,New York,Rotterdam,3400,10,1,Recommended,1395
+R804,Dubai,Sydney,6500,18,0,Direct,2345
+R805,Shanghai,New York,8600,25,2,Alternative,2545
+R806,Chennai,Los Angeles,8200,23,1,Standard,2145
+R807,Rotterdam,Singapore,8200,23,1,Standard,2195
+R808,Tokyo,Los Angeles,4800,12,0,Direct,1845
+R809,Sydney,Rotterdam,11500,36,2,Alternative,2845
+R810,Los Angeles,Shanghai,5700,15,0,Direct,1945
+R811,Hamburg,Tokyo,11200,31,1,Standard,2845
+R812,Singapore,Tokyo,2900,8,0,Direct,1145
+R813,New York,Shanghai,8600,24,1,Standard,2445
+R814,Dubai,Rotterdam,6400,19,1,Standard,1945
+R815,Shanghai,Singapore,2100,8,1,Recommended,1045
+R816,Chennai,Hamburg,8400,24,1,Standard,1645
+R817,Rotterdam,Dubai,6400,18,0,Direct,1995
+R818,Tokyo,Chennai,3500,10,0,Direct,1245
+R819,Sydney,Tokyo,4860,13,0,Direct,1545
+R820,Los Angeles,Sydney,6500,19,1,Recommended,2095
+R821,Hamburg,Chennai,8400,23,0,Direct,1745
+R822,Singapore,Dubai,3200,11,1,Recommended,1395
+R823,New York,Chennai,7500,21,1,Standard,1995
+R824,Dubai,Shanghai,5100,15,1,Recommended,1745
+R825,Shanghai,Sydney,4300,13,1,Recommended,1545
+R826,Chennai,Singapore,1600,6,1,Recommended,945
+R827,Rotterdam,Shanghai,10500,30,2,Alternative,2945
+R828,Tokyo,Rotterdam,11300,31,1,Standard,3145
+R829,Sydney,Singapore,3400,11,1,Recommended,1495
+R830,Los Angeles,Hamburg,8200,23,1,Standard,2245
+R831,Hamburg,Singapore,8400,24,1,Standard,2145
+R832,Singapore,Los Angeles,7600,22,1,Standard,2345
+R833,New York,Hamburg,3500,10,0,Direct,1345
+R834,Dubai,Hamburg,4100,12,0,Direct,1495
+R835,Shanghai,Rotterdam,10500,29,1,Standard,2995
+R836,Chennai,Sydney,4900,15,1,Recommended,1695
+R837,Rotterdam,Chennai,8650,26,2,Standard,2245
+R838,Tokyo,Singapore,2900,9,1,Recommended,1195
+R839,Sydney,Los Angeles,6500,19,0,Direct,2245
+R840,Los Angeles,Tokyo,4800,12,0,Direct,1795
+R841,Hamburg,Los Angeles,8200,23,1,Standard,2245
+R842,Singapore,Hamburg,8400,25,1,Standard,2145
+R843,New York,Los Angeles,4300,14,1,Standard,1595
+R844,Dubai,New York,6100,18,1,Standard,2395
+R845,Shanghai,Los Angeles,5700,15,0,Direct,1945
+R846,Chennai,Dubai,1500,6,1,Recommended,995
+R847,Rotterdam,Sydney,11500,32,0,Direct,3145
+R848,Tokyo,Dubai,4300,14,1,Recommended,1645
+R849,Sydney,Dubai,6500,18,0,Direct,2345
+R850,Los Angeles,Shanghai,5700,16,1,Recommended,2095
+R851,Hamburg,Dubai,4100,12,0,Direct,1495
+R852,Singapore,Chennai,1600,5,0,Direct,845
+R853,New York,Dubai,6100,17,0,Direct,2245
+R854,Dubai,Chennai,1500,5,0,Direct,895
+R855,Shanghai,Hamburg,10800,31,2,Alternative,3095
+R856,Chennai,Tokyo,3500,10,0,Direct,1245
+R857,Rotterdam,New York,3400,10,1,Recommended,1395
+R858,Tokyo,Sydney,4860,13,0,Direct,1545
+R859,Sydney,Chennai,4900,15,1,Recommended,1695
+R860,Los Angeles,Hamburg,8200,24,2,Alternative,2195
+R861,Hamburg,Rotterdam,300,2,0,Direct,845
+R862,Singapore,Tokyo,2900,8,0,Direct,1145
+R863,New York,Singapore,8300,24,1,Standard,2345
+R864,Dubai,Tokyo,4300,13,0,Direct,1545
+R865,Shanghai,Dubai,3500,10,0,Direct,1445
+R866,Chennai,New York,7500,21,1,Standard,1995
+R867,Rotterdam,Los Angeles,7800,22,1,Standard,2145
+R868,Tokyo,New York,8500,24,1,Standard,2345
+R869,Sydney,New York,8700,25,1,Standard,2445
+R870,Los Angeles,Rotterdam,7800,23,2,Alternative,2145
+R871,Hamburg,Shanghai,10800,29,1,Standard,3145
+R872,Singapore,New York,8300,25,2,Alternative,2245
+R873,New York,Chennai,7500,22,2,Alternative,1945
+R874,Dubai,Singapore,3200,11,1,Recommended,1395
+R875,Shanghai,Tokyo,1100,4,0,Direct,745
+R876,Chennai,Shanghai,2800,8,0,Direct,1095
+R877,Rotterdam,Shanghai,10500,29,1,Standard,2995
+R878,Tokyo,Shanghai,1100,5,1,Recommended,795
+R879,Sydney,Hamburg,11400,35,2,Alternative,2945
+R880,Los Angeles,Dubai,8100,24,2,Alternative,2195
+R881,Hamburg,Dubai,4100,12,0,Direct,1495
+R882,Singapore,Shanghai,2100,8,1,Recommended,1045
+R883,New York,Tokyo,8500,25,2,Alternative,2295
+R884,Dubai,Los Angeles,8100,23,1,Standard,2245
+R885,Shanghai,Chennai,2800,9,1,Recommended,1145
+R886,Chennai,Rotterdam,8650,27,2,Alternative,1445
+R887,Rotterdam,Sydney,11500,34,1,Standard,2945
+R888,Tokyo,Hamburg,11200,31,1,Standard,2845
+R889,Sydney,Tokyo,4860,15,1,Recommended,1495
+R890,Los Angeles,Singapore,7600,22,1,Standard,2345
+R891,Hamburg,Chennai,8400,23,0,Direct,1745
+R892,Singapore,Rotterdam,8200,22,0,Direct,2245
+R893,New York,Sydney,8700,26,2,Alternative,2395
+R894,Dubai,Hamburg,4100,13,1,Recommended,1545
+R895,Shanghai,New York,8600,24,1,Standard,2445
+R896,Chennai,Singapore,1600,7,2,Alternative,895
+R897,Rotterdam,Tokyo,11300,31,1,Standard,3145
+R898,Tokyo,Dubai,4300,15,2,Alternative,1595
+R899,Sydney,Los Angeles,6500,20,1,Recommended,2195
+R900,Los Angeles,Chennai,8200,25,2,Alternative,2045
+R901,Hamburg,Rotterdam,300,3,1,Alternative,895
+R902,Singapore,Sydney,3400,11,1,Recommended,1495
+R903,New York,Shanghai,8600,25,2,Alternative,2345
+R904,Dubai,Rotterdam,6400,18,0,Direct,1995
+R905,Shanghai,Dubai,3500,11,1,Recommended,1495
+R906,Chennai,Los Angeles,8200,22,0,Direct,2245
+R907,Rotterdam,Hamburg,300,2,0,Direct,845
+R908,Tokyo,Sydney,4860,16,2,Alternative,1445
+R909,Sydney,Rotterdam,11500,33,0,Direct,2995
+R910,Los Angeles,Shanghai,5700,17,2,Alternative,2045
+R911,Hamburg,New York,3500,12,2,Alternative,1395
+R912,Singapore,Tokyo,2900,10,2,Alternative,1095
+R913,New York,Rotterdam,3400,11,2,Alternative,1245
+R914,Dubai,Sydney,6500,20,2,Alternative,2295
+R915,Shanghai,Singapore,2100,9,2,Alternative,945
+R916,Chennai,Hamburg,8400,26,2,Alternative,1595
+R917,Rotterdam,Singapore,8200,25,2,Alternative,2095
+R918,Tokyo,Los Angeles,4800,13,1,Recommended,1795
+R919,Sydney,Shanghai,4300,15,2,Alternative,1545
+R920,Los Angeles,Sydney,6500,19,1,Recommended,2095
+R921,Hamburg,Tokyo,11200,33,3,Alternative,3045
+R922,Singapore,Dubai,3200,12,2,Alternative,1295
+R923,New York,Los Angeles,4300,15,2,Alternative,1545
+R924,Dubai,Shanghai,5100,16,2,Alternative,1695
+R925,Shanghai,Sydney,4300,12,0,Direct,1645
+R926,Chennai,Sydney,4900,14,0,Direct,1795
+R927,Rotterdam,Chennai,8650,24,0,Direct,2345
+R928,Tokyo,Rotterdam,11300,30,0,Direct,3245
+R929,Sydney,New York,8700,23,0,Direct,2545
+R930,Los Angeles,Hamburg,8200,22,0,Direct,2395
+R931,Hamburg,Singapore,8400,23,0,Direct,2345
+R932,Singapore,New York,8300,23,0,Direct,2445
+R933,New York,Chennai,7500,20,0,Direct,2145
+R934,Dubai,Chennai,1500,7,2,Alternative,845
+R935,Shanghai,Rotterdam,10500,28,0,Direct,3045
+R936,Chennai,Rotterdam,8650,23,0,Direct,2345
+R937,Rotterdam,Tokyo,11300,34,3,Alternative,3345
+R938,Tokyo,Singapore,2900,9,1,Recommended,1195
+R939,Sydney,Dubai,6500,19,1,Standard,2495
+R940,Los Angeles,New York,4300,15,2,Alternative,1645
+R941,Hamburg,Dubai,4100,13,1,Recommended,1545
+R942,Singapore,Hamburg,8400,25,2,Standard,2245
+R943,New York,Los Angeles,4300,13,0,Direct,1545
+R944,Dubai,New York,6100,17,0,Direct,2245
+R945,Shanghai,Los Angeles,5700,16,1,Recommended,2095
+R946,Chennai,Tokyo,3500,11,1,Recommended,1295
+R947,Rotterdam,Sydney,11500,35,2,Alternative,3045
+R948,Tokyo,Dubai,4300,13,0,Direct,1545
+R949,Sydney,Shanghai,4300,14,1,Standard,1595
+R950,Los Angeles,Tokyo,4800,14,2,Alternative,1895
+R951,Hamburg,Shanghai,10800,31,2,Alternative,3245
+R952,Singapore,Chennai,1600,7,2,Alternative,995
+R953,New York,Dubai,6100,19,2,Alternative,2495
+R954,Dubai,Rotterdam,6400,20,2,Standard,2045
+R955,Shanghai,Hamburg,10800,29,1,Standard,3145
+R956,Chennai,New York,7500,22,2,Alternative,2095
+R957,Rotterdam,Los Angeles,7800,23,2,Alternative,2245
+R958,Tokyo,New York,8500,25,2,Alternative,2445
+R959,Sydney,Chennai,4900,16,2,Alternative,1795
+R960,Los Angeles,Rotterdam,7800,22,1,Standard,2145
+R961,Hamburg,Los Angeles,8200,24,2,Alternative,2345
+R962,Singapore,New York,8300,24,1,Standard,2345
+R963,New York,Singapore,8300,25,2,Alternative,2445
+R964,Dubai,Singapore,3200,10,0,Direct,1345
+R965,Shanghai,Dubai,3500,11,1,Recommended,1495
+R966,Chennai,Dubai,1500,5,0,Direct,895
+R967,Rotterdam,Hamburg,300,3,1,Alternative,895
+R968,Tokyo,Shanghai,1100,4,0,Direct,745
+R969,Sydney,New York,8700,26,2,Alternative,2645
+R970,Los Angeles,Dubai,8100,23,1,Standard,2245
+R971,Hamburg,Rotterdam,300,2,0,Direct,845
+R972,Singapore,Shanghai,2100,7,0,Direct,995
+R973,New York,Tokyo,8500,24,1,Standard,2345
+R974,Dubai,Los Angeles,8100,24,2,Alternative,2345
+R975,Shanghai,Tokyo,1100,5,1,Recommended,795
+R976,Chennai,Shanghai,2800,9,1,Recommended,1145
+R977,Rotterdam,New York,3400,9,0,Direct,1295
+R978,Tokyo,Sydney,4860,15,1,Recommended,1495
+R979,Sydney,Hamburg,11400,33,1,Standard,2845
+R980,Los Angeles,Singapore,7600,20,0,Direct,2445
+R981,Hamburg,Dubai,4100,14,2,Alternative,1645
+R982,Singapore,Rotterdam,8200,24,2,Standard,2345
+R983,New York,Sydney,8700,25,1,Standard,2445
+R984,Dubai,Tokyo,4300,14,1,Recommended,1645
+R985,Shanghai,Chennai,2800,8,0,Direct,1095
+R986,Chennai,Rotterdam,8650,25,1,Recommended,1545
+R987,Rotterdam,Tokyo,11300,32,2,Alternative,3245
+R988,Tokyo,Hamburg,11200,33,3,Alternative,3045
+R989,Sydney,Los Angeles,6500,18,0,Direct,2145
+R990,Los Angeles,Chennai,8200,24,1,Standard,2145
+R991,Hamburg,New York,3500,11,1,Recommended,1445
+R992,Singapore,Sydney,3400,10,0,Direct,1445
+R993,New York,Rotterdam,3400,10,1,Recommended,1395
+R994,Dubai,Sydney,6500,18,0,Direct,2345
+R995,Shanghai,New York,8600,25,2,Alternative,2545
+R996,Chennai,Los Angeles,8200,23,1,Standard,2145
+R997,Rotterdam,Singapore,8200,23,1,Standard,2195
+R998,Tokyo,Los Angeles,4800,12,0,Direct,1845
+R999,Sydney,Rotterdam,11500,36,2,Alternative,2845
+R1000,Los Angeles,Shanghai,5700,15,0,Direct,1945
+R1001,Chennai,Rotterdam,8652,24,1,Recommended,1512
+R1002,Tokyo,Sydney,4862,13,0,Direct,1522
+R1003,Sydney,Los Angeles,6502,18,0,Direct,2212
+R1004,Hamburg,New York,3502,10,0,Direct,1312
+R1005,Dubai,Shanghai,5102,15,1,Recommended,1712
+R1006,Singapore,Los Angeles,7602,19,0,Direct,2412
+R1007,Shanghai,Sydney,4302,12,1,Recommended,1512
+R1008,Chennai,Singapore,1602,5,0,Direct,812
+R1009,Hamburg,Tokyo,11202,31,2,Alternative,3112
+R1010,Los Angeles,Rotterdam,7802,22,2,Alternative,2112
+R1011,Rotterdam,Chennai,8653,25,1,Recommended,1523
+R1012,Sydney,Tokyo,4863,14,0,Direct,1533
+R1013,Los Angeles,Sydney,6503,19,0,Direct,2223
+R1014,New York,Hamburg,3503,11,0,Direct,1323
+R1015,Shanghai,Dubai,5103,16,1,Recommended,1723
+R1016,Los Angeles,Singapore,7603,20,0,Direct,2423
+R1017,Sydney,Shanghai,4303,13,1,Recommended,1523
+R1018,Singapore,Chennai,1603,6,0,Direct,823
+R1019,Tokyo,Hamburg,11203,32,2,Alternative,3123
+R1020,Rotterdam,Los Angeles,7803,23,2,Alternative,2123
+R1021,Chennai,New York,7504,20,1,Standard,1914
+R1022,New York,Singapore,8304,23,1,Standard,2314
+R1023,Dubai,Tokyo,4304,13,0,Direct,1514
+R1024,Tokyo,Dubai,4305,14,1,Recommended,1615
+R1025,Sydney,Chennai,4905,15,1,Recommended,1665
+R1026,Chennai,Sydney,4906,16,2,Alternative,1616
+R1027,Hamburg,Los Angeles,8206,22,1,Standard,2216
+R1028,Los Angeles,Hamburg,8207,23,2,Alternative,2167
+R1029,Singapore,Dubai,3207,9,0,Direct,1317
+R1030,Dubai,Singapore,3208,10,1,Recommended,1368
+R1031,Shanghai,Tokyo,1108,4,0,Direct,718
+R1032,Tokyo,Shanghai,1109,5,1,Recommended,769
+R1033,Rotterdam,Sydney,11509,33,1,Standard,2919
+R1034,Sydney,Rotterdam,11510,34,2,Alternative,2860
+R1035,New York,Tokyo,8510,24,1,Standard,2310
+R1036,Tokyo,New York,8511,25,2,Alternative,2461
+R1037,Shanghai,Chennai,2811,8,0,Direct,1061
+R1038,Chennai,Shanghai,2812,9,1,Recommended,1112
+R1039,Rotterdam,New York,3412,9,0,Direct,1262
+R1040,New York,Rotterdam,3413,10,1,Recommended,1313
+R1041,Dubai,Sydney,6513,17,0,Direct,2313
+R1042,Sydney,Dubai,6514,18,0,Direct,2364
+R1043,Shanghai,New York,8614,24,1,Standard,2414
+R1044,New York,Shanghai,8615,25,2,Alternative,2565
+R1045,Chennai,Los Angeles,8215,22,1,Standard,2115
+R1046,Los Angeles,Chennai,8216,23,1,Standard,2166
+R1047,Rotterdam,Singapore,8216,22,1,Standard,2166
+R1048,Singapore,Rotterdam,8217,23,2,Standard,2217
+R1049,Tokyo,Los Angeles,4817,11,0,Direct,1817
+R1050,Los Angeles,Tokyo,4818,12,0,Direct,1768
+R1051,Chennai,Rotterdam,8654,25,1,Recommended,1514
+R1052,Tokyo,Sydney,4864,14,0,Direct,1524
+R1053,Sydney,Los Angeles,6504,19,0,Direct,2214
+R1054,Hamburg,New York,3504,11,0,Direct,1314
+R1055,Dubai,Shanghai,5104,16,1,Recommended,1714
+R1056,Singapore,Los Angeles,7604,20,0,Direct,2414
+R1057,Shanghai,Sydney,4304,13,1,Recommended,1514
+R1058,Chennai,Singapore,1604,6,0,Direct,814
+R1059,Hamburg,Tokyo,11204,32,2,Alternative,3114
+R1060,Los Angeles,Rotterdam,7804,23,2,Alternative,2114
+R1061,Rotterdam,Chennai,8655,26,1,Recommended,1525
+R1062,Sydney,Tokyo,4865,15,0,Direct,1535
+R1063,Los Angeles,Sydney,6505,20,0,Direct,2225
+R1064,New York,Hamburg,3505,12,0,Direct,1325
+R1065,Shanghai,Dubai,5105,17,1,Recommended,1725
+R1066,Los Angeles,Singapore,7605,21,0,Direct,2425
+R1067,Sydney,Shanghai,4305,14,1,Recommended,1525
+R1068,Singapore,Chennai,1605,7,0,Direct,825
+R1069,Tokyo,Hamburg,11205,33,2,Alternative,3125
+R1070,Rotterdam,Los Angeles,7805,24,2,Alternative,2125
+R1071,Chennai,New York,7506,21,1,Standard,1916
+R1072,New York,Singapore,8306,24,1,Standard,2316
+R1073,Dubai,Tokyo,4306,14,0,Direct,1516
+R1074,Tokyo,Dubai,4307,15,1,Recommended,1617
+R1075,Sydney,Chennai,4907,16,1,Recommended,1667
+R1076,Chennai,Sydney,4908,17,2,Alternative,1618
+R1077,Hamburg,Los Angeles,8208,23,1,Standard,2218
+R1078,Los Angeles,Hamburg,8209,24,2,Alternative,2169
+R1079,Singapore,Dubai,3209,10,0,Direct,1319
+R1080,Dubai,Singapore,3210,11,1,Recommended,1370
+R1081,Shanghai,Tokyo,1110,5,0,Direct,720
+R1082,Tokyo,Shanghai,1111,6,1,Recommended,771
+R1083,Rotterdam,Sydney,11511,34,1,Standard,2921
+R1084,Sydney,Rotterdam,11512,35,2,Alternative,2862
+R1085,New York,Tokyo,8512,25,1,Standard,2312
+R1086,Tokyo,New York,8513,26,2,Alternative,2463
+R1087,Shanghai,Chennai,2813,9,0,Direct,1063
+R1088,Chennai,Shanghai,2814,10,1,Recommended,1114
+R1089,Rotterdam,New York,3414,10,0,Direct,1264
+R1090,New York,Rotterdam,3415,11,1,Recommended,1315
+R1091,Dubai,Sydney,6515,18,0,Direct,2315
+R1092,Sydney,Dubai,6516,19,0,Direct,2366
+R1093,Shanghai,New York,8616,25,1,Standard,2416
+R1094,New York,Shanghai,8617,26,2,Alternative,2567
+R1095,Chennai,Los Angeles,8217,23,1,Standard,2117
+R1096,Los Angeles,Chennai,8218,24,1,Standard,2168
+R1097,Rotterdam,Singapore,8218,23,1,Standard,2168
+R1098,Singapore,Rotterdam,8219,24,2,Standard,2219
+R1099,Tokyo,Los Angeles,4819,12,0,Direct,1819
+R1100,Los Angeles,Tokyo,4820,13,0,Direct,1770
+R1101,Chennai,Rotterdam,8656,26,1,Recommended,1516
+R1102,Tokyo,Sydney,4866,15,0,Direct,1526
+R1103,Sydney,Los Angeles,6506,20,0,Direct,2216
+R1104,Hamburg,New York,3506,12,0,Direct,1316
+R1105,Dubai,Shanghai,5106,17,1,Recommended,1716
+R1106,Singapore,Los Angeles,7606,21,0,Direct,2416
+R1107,Shanghai,Sydney,4306,14,1,Recommended,1516
+R1108,Chennai,Singapore,1606,7,0,Direct,816
+R1109,Hamburg,Tokyo,11206,33,2,Alternative,3116
+R1110,Los Angeles,Rotterdam,7806,24,2,Alternative,2116
+R1111,Rotterdam,Chennai,8657,27,1,Recommended,1527
+R1112,Sydney,Tokyo,4867,16,0,Direct,1537
+R1113,Los Angeles,Sydney,6507,21,0,Direct,2227
+R1114,New York,Hamburg,3507,13,0,Direct,1327
+R1115,Shanghai,Dubai,5107,18,1,Recommended,1727
+R1116,Los Angeles,Singapore,7607,22,0,Direct,2427
+R1117,Sydney,Shanghai,4307,15,1,Recommended,1527
+R1118,Singapore,Chennai,1607,8,0,Direct,827
+R1119,Tokyo,Hamburg,11207,34,2,Alternative,3127
+R1120,Rotterdam,Los Angeles,7807,25,2,Alternative,2127
+R1121,Chennai,New York,7508,22,1,Standard,1918
+R1122,New York,Singapore,8308,25,1,Standard,2318
+R1123,Dubai,Tokyo,4308,15,0,Direct,1518
+R1124,Tokyo,Dubai,4309,16,1,Recommended,1619
+R1125,Sydney,Chennai,4909,17,1,Recommended,1669
+R1126,Chennai,Sydney,4910,18,2,Alternative,1620
+R1127,Hamburg,Los Angeles,8210,24,1,Standard,2220
+R1128,Los Angeles,Hamburg,8211,25,2,Alternative,2171
+R1129,Singapore,Dubai,3211,11,0,Direct,1321
+R1130,Dubai,Singapore,3212,12,1,Recommended,1372
+R1131,Shanghai,Tokyo,1112,6,0,Direct,722
+R1132,Tokyo,Shanghai,1113,7,1,Recommended,773
+R1133,Rotterdam,Sydney,11513,35,1,Standard,2923
+R1134,Sydney,Rotterdam,11514,36,2,Alternative,2864
+R1135,New York,Tokyo,8514,26,1,Standard,2314
+R1136,Tokyo,New York,8515,27,2,Alternative,2465
+R1137,Shanghai,Chennai,2815,10,0,Direct,1065
+R1138,Chennai,Shanghai,2816,11,1,Recommended,1116
+R1139,Rotterdam,New York,3416,11,0,Direct,1266
+R1140,New York,Rotterdam,3417,12,1,Recommended,1317
+R1141,Dubai,Sydney,6517,19,0,Direct,2317
+R1142,Sydney,Dubai,6518,20,0,Direct,2368
+R1143,Shanghai,New York,8618,26,1,Standard,2418
+R1144,New York,Shanghai,8619,27,2,Alternative,2569
+R1145,Chennai,Los Angeles,8219,24,1,Standard,2119
+R1146,Los Angeles,Chennai,8220,25,1,Standard,2170
+R1147,Rotterdam,Singapore,8220,24,1,Standard,2170
+R1148,Singapore,Rotterdam,8221,25,2,Standard,2221
+R1149,Tokyo,Los Angeles,4821,13,0,Direct,1821
+R1150,Los Angeles,Tokyo,4822,14,0,Direct,1772
+R1151,Chennai,Rotterdam,8658,27,1,Recommended,1518
+R1152,Tokyo,Sydney,4868,16,0,Direct,1528
+R1153,Sydney,Los Angeles,6508,21,0,Direct,2218
+R1154,Hamburg,New York,3508,13,0,Direct,1318
+R1155,Dubai,Shanghai,5108,18,1,Recommended,1718
+R1156,Singapore,Los Angeles,7608,22,0,Direct,2418
+R1157,Shanghai,Sydney,4308,15,1,Recommended,1518
+R1158,Chennai,Singapore,1608,8,0,Direct,818
+R1159,Hamburg,Tokyo,11208,34,2,Alternative,3118
+R1160,Los Angeles,Rotterdam,7808,25,2,Alternative,2118
+R1161,Rotterdam,Chennai,8659,28,1,Recommended,1529
+R1162,Sydney,Tokyo,4869,17,0,Direct,1539
+R1163,Los Angeles,Sydney,6509,22,0,Direct,2229
+R1164,New York,Hamburg,3509,14,0,Direct,1329
+R1165,Shanghai,Dubai,5109,19,1,Recommended,1729
+R1166,Los Angeles,Singapore,7609,23,0,Direct,2429
+R1167,Sydney,Shanghai,4309,16,1,Recommended,1529
+R1168,Singapore,Chennai,1609,9,0,Direct,829
+R1169,Tokyo,Hamburg,11209,35,2,Alternative,3129
+R1170,Rotterdam,Los Angeles,7809,26,2,Alternative,2129
+R1171,Chennai,New York,7510,23,1,Standard,1920
+R1172,New York,Singapore,8310,26,1,Standard,2320
+R1173,Dubai,Tokyo,4310,16,0,Direct,1520
+R1174,Tokyo,Dubai,4311,17,1,Recommended,1621
+R1175,Sydney,Chennai,4911,18,1,Recommended,1671
+R1176,Chennai,Sydney,4912,19,2,Alternative,1622
+R1177,Hamburg,Los Angeles,8212,25,1,Standard,2222
+R1178,Los Angeles,Hamburg,8213,26,2,Alternative,2173
+R1179,Singapore,Dubai,3213,12,0,Direct,1323
+R1180,Dubai,Singapore,3214,13,1,Recommended,1374
+R1181,Shanghai,Tokyo,1114,7,0,Direct,724
+R1182,Tokyo,Shanghai,1115,8,1,Recommended,775
+R1183,Rotterdam,Sydney,11515,36,1,Standard,2925
+R1184,Sydney,Rotterdam,11516,37,2,Alternative,2866
+R1185,New York,Tokyo,8516,27,1,Standard,2316
+R1186,Tokyo,New York,8517,28,2,Alternative,2467
+R1187,Shanghai,Chennai,2817,11,0,Direct,1067
+R1188,Chennai,Shanghai,2818,12,1,Recommended,1118
+R1189,Rotterdam,New York,3418,12,0,Direct,1268
+R1190,New York,Rotterdam,3419,13,1,Recommended,1319
+R1191,Dubai,Sydney,6519,20,0,Direct,2319
+R1192,Sydney,Dubai,6520,21,0,Direct,2370
+R1193,Shanghai,New York,8620,27,1,Standard,2420
+R1194,New York,Shanghai,8621,28,2,Alternative,2571
+R1195,Chennai,Los Angeles,8221,25,1,Standard,2121
+R1196,Los Angeles,Chennai,8222,26,1,Standard,2172
+R1197,Rotterdam,Singapore,8222,25,1,Standard,2172
+R1198,Singapore,Rotterdam,8223,26,2,Standard,2223
+R1199,Tokyo,Los Angeles,4823,14,0,Direct,1823
+R1200,Los Angeles,Tokyo,4824,15,0,Direct,1774
+R1201,Chennai,Rotterdam,8660,28,1,Recommended,1520
+R1202,Tokyo,Sydney,4870,17,0,Direct,1530
+R1203,Sydney,Los Angeles,6510,22,0,Direct,2220
+R1204,Hamburg,New York,3510,14,0,Direct,1320
+R1205,Dubai,Shanghai,5110,19,1,Recommended,1720
+R1206,Singapore,Los Angeles,7610,23,0,Direct,2420
+R1207,Shanghai,Sydney,4310,16,1,Recommended,1520
+R1208,Chennai,Singapore,1610,9,0,Direct,820
+R1209,Hamburg,Tokyo,11210,35,2,Alternative,3120
+R1210,Los Angeles,Rotterdam,7810,26,2,Alternative,2120
+R1211,Rotterdam,Chennai,8661,29,1,Recommended,1531
+R1212,Sydney,Tokyo,4871,18,0,Direct,1541
+R1213,Los Angeles,Sydney,6511,23,0,Direct,2231
+R1214,New York,Hamburg,3511,15,0,Direct,1331
+R1215,Shanghai,Dubai,5111,20,1,Recommended,1731
+R1216,Los Angeles,Singapore,7611,24,0,Direct,2431
+R1217,Sydney,Shanghai,4311,17,1,Recommended,1531
+R1218,Singapore,Chennai,1611,10,0,Direct,831
+R1219,Tokyo,Hamburg,11211,36,2,Alternative,3131
+R1220,Rotterdam,Los Angeles,7811,27,2,Alternative,2131
+R1221,Chennai,New York,7512,24,1,Standard,1922
+R1222,New York,Singapore,8312,27,1,Standard,2322
+R1223,Dubai,Tokyo,4312,17,0,Direct,1522
+R1224,Tokyo,Dubai,4313,18,1,Recommended,1623
+R1225,Sydney,Chennai,4913,19,1,Recommended,1673
+R1226,Chennai,Sydney,4914,20,2,Alternative,1624
+R1227,Hamburg,Los Angeles,8214,26,1,Standard,2224
+R1228,Los Angeles,Hamburg,8215,27,2,Alternative,2175
+R1229,Singapore,Dubai,3215,13,0,Direct,1325
+R1230,Dubai,Singapore,3216,14,1,Recommended,1376
+R1231,Shanghai,Tokyo,1116,8,0,Direct,726
+R1232,Tokyo,Shanghai,1117,9,1,Recommended,777
+R1233,Rotterdam,Sydney,11517,37,1,Standard,2927
+R1234,Sydney,Rotterdam,11518,38,2,Alternative,2868
+R1235,New York,Tokyo,8518,28,1,Standard,2318
+R1236,Tokyo,New York,8519,29,2,Alternative,2469
+R1237,Shanghai,Chennai,2819,12,0,Direct,1069
+R1238,Chennai,Shanghai,2820,13,1,Recommended,1120
+R1239,Rotterdam,New York,3420,13,0,Direct,1270
+R1240,New York,Rotterdam,3421,14,1,Recommended,1321
+R1241,Dubai,Sydney,6521,21,0,Direct,2321
+R1242,Sydney,Dubai,6522,22,0,Direct,2372
+R1243,Shanghai,New York,8622,28,1,Standard,2422
+R1244,New York,Shanghai,8623,29,2,Alternative,2573
+R1245,Chennai,Los Angeles,8223,26,1,Standard,2123
+R1246,Los Angeles,Chennai,8224,27,1,Standard,2174
+R1247,Rotterdam,Singapore,8224,26,1,Standard,2174
+R1248,Singapore,Rotterdam,8225,27,2,Standard,2225
+R1249,Tokyo,Los Angeles,4825,15,0,Direct,1825
+R1250,Los Angeles,Tokyo,4826,16,0,Direct,1776
+R1251,Chennai,Rotterdam,8662,29,1,Recommended,1522
+R1252,Tokyo,Sydney,4872,18,0,Direct,1532
+R1253,Sydney,Los Angeles,6512,23,0,Direct,2222
+R1254,Hamburg,New York,3512,15,0,Direct,1322
+R1255,Dubai,Shanghai,5112,20,1,Recommended,1722
+R1256,Singapore,Los Angeles,7612,24,0,Direct,2422
+R1257,Shanghai,Sydney,4312,17,1,Recommended,1522
+R1258,Chennai,Singapore,1612,10,0,Direct,822
+R1259,Hamburg,Tokyo,11212,36,2,Alternative,3122
+R1260,Los Angeles,Rotterdam,7812,27,2,Alternative,2122
+R1261,Rotterdam,Chennai,8663,30,1,Recommended,1533
+R1262,Sydney,Tokyo,4873,19,0,Direct,1543
+R1263,Los Angeles,Sydney,6513,24,0,Direct,2233
+R1264,New York,Hamburg,3513,16,0,Direct,1333
+R1265,Shanghai,Dubai,5113,21,1,Recommended,1733
+R1266,Los Angeles,Singapore,7613,25,0,Direct,2433
+R1267,Sydney,Shanghai,4313,18,1,Recommended,1533
+R1268,Singapore,Chennai,1613,11,0,Direct,833
+R1269,Tokyo,Hamburg,11213,37,2,Alternative,3133
+R1270,Rotterdam,Los Angeles,7813,28,2,Alternative,2133
+R1271,Chennai,New York,7514,25,1,Standard,1924
+R1272,New York,Singapore,8314,28,1,Standard,2324
+R1273,Dubai,Tokyo,4314,18,0,Direct,1524
+R1274,Tokyo,Dubai,4315,19,1,Recommended,1625
+R1275,Sydney,Chennai,4915,20,1,Recommended,1675
+R1276,Chennai,Sydney,4916,21,2,Alternative,1626
+R1277,Hamburg,Los Angeles,8216,27,1,Standard,2226
+R1278,Los Angeles,Hamburg,8217,28,2,Alternative,2177
+R1279,Singapore,Dubai,3217,14,0,Direct,1327
+R1280,Dubai,Singapore,3218,15,1,Recommended,1378
+R1281,Shanghai,Tokyo,1118,9,0,Direct,728
+R1282,Tokyo,Shanghai,1119,10,1,Recommended,779
+R1283,Rotterdam,Sydney,11519,38,1,Standard,2929
+R1284,Sydney,Rotterdam,11520,39,2,Alternative,2868
+R1285,New York,Tokyo,8520,29,1,Standard,2320
+R1286,Tokyo,New York,8521,30,2,Alternative,2471
+R1287,Shanghai,Chennai,2821,13,0,Direct,1071
+R1288,Chennai,Shanghai,2822,14,1,Recommended,1122
+R1289,Rotterdam,New York,3422,14,0,Direct,1272
+R1290,New York,Rotterdam,3423,15,1,Recommended,1323
+R1291,Dubai,Sydney,6523,22,0,Direct,2323
+R1292,Sydney,Dubai,6524,23,0,Direct,2374
+R1293,Shanghai,New York,8624,29,1,Standard,2424
+R1294,New York,Shanghai,8625,30,2,Alternative,2575
+R1295,Chennai,Los Angeles,8225,27,1,Standard,2125
+R1296,Los Angeles,Chennai,8226,28,1,Standard,2176
+R1297,Rotterdam,Singapore,8226,27,1,Standard,2176
+R1298,Singapore,Rotterdam,8227,28,2,Standard,2227
+R1299,Tokyo,Los Angeles,4827,16,0,Direct,1827
+R1300,Los Angeles,Tokyo,4828,17,0,Direct,1778
+R1301,Chennai,Rotterdam,8664,30,1,Recommended,1524
+R1302,Tokyo,Sydney,4874,19,0,Direct,1534
+R1303,Sydney,Los Angeles,6514,24,0,Direct,2224
+R1304,Hamburg,New York,3514,16,0,Direct,1324
+R1305,Dubai,Shanghai,5114,21,1,Recommended,1724
+R1306,Singapore,Los Angeles,7614,25,0,Direct,2424
+R1307,Shanghai,Sydney,4314,18,1,Recommended,1524
+R1308,Chennai,Singapore,1614,11,0,Direct,824
+R1309,Hamburg,Tokyo,11214,37,2,Alternative,3124
+R1310,Los Angeles,Rotterdam,7814,28,2,Alternative,2124
+R1311,Rotterdam,Chennai,8665,31,1,Recommended,1535
+R1312,Sydney,Tokyo,4875,20,0,Direct,1545
+R1313,Los Angeles,Sydney,6515,25,0,Direct,2235
+R1314,New York,Hamburg,3515,17,0,Direct,1335
+R1315,Shanghai,Dubai,5115,22,1,Recommended,1735
+R1316,Los Angeles,Singapore,7615,26,0,Direct,2435
+R1317,Sydney,Shanghai,4315,19,1,Recommended,1535
+R1318,Singapore,Chennai,1615,12,0,Direct,835
+R1319,Tokyo,Hamburg,11215,38,2,Alternative,3135
+R1320,Rotterdam,Los Angeles,7815,29,2,Alternative,2135
+R1321,Chennai,New York,7516,26,1,Standard,1926
+R1322,New York,Singapore,8316,29,1,Standard,2326
+R1323,Dubai,Tokyo,4316,19,0,Direct,1526
+R1324,Tokyo,Dubai,4317,20,1,Recommended,1627
+R1325,Sydney,Chennai,4917,21,1,Recommended,1677
+R1326,Chennai,Sydney,4918,22,2,Alternative,1628
+R1327,Hamburg,Los Angeles,8218,28,1,Standard,2228
+R1328,Los Angeles,Hamburg,8219,29,2,Alternative,2179
+R1329,Singapore,Dubai,3219,15,0,Direct,1329
+R1330,Dubai,Singapore,3220,16,1,Recommended,1380
+R1331,Shanghai,Tokyo,1120,10,0,Direct,730
+R1332,Tokyo,Shanghai,1121,11,1,Recommended,781
+R1333,Rotterdam,Sydney,11521,39,1,Standard,2931
+R1334,Sydney,Rotterdam,11522,40,2,Alternative,2870
+R1335,New York,Tokyo,8522,30,1,Standard,2322
+R1336,Tokyo,New York,8523,31,2,Alternative,2473
+R1337,Shanghai,Chennai,2823,14,0,Direct,1073
+R1338,Chennai,Shanghai,2824,15,1,Recommended,1124
+R1339,Rotterdam,New York,3424,15,0,Direct,1274
+R1340,New York,Rotterdam,3425,16,1,Recommended,1325
+R1341,Dubai,Sydney,6525,23,0,Direct,2325
+R1342,Sydney,Dubai,6526,24,0,Direct,2376
+R1343,Shanghai,New York,8626,30,1,Standard,2426
+R1344,New York,Shanghai,8627,31,2,Alternative,2577
+R1345,Chennai,Los Angeles,8227,28,1,Standard,2127
+R1346,Los Angeles,Chennai,8228,29,1,Standard,2178
+R1347,Rotterdam,Singapore,8228,28,1,Standard,2178
+R1348,Singapore,Rotterdam,8229,29,2,Standard,2229
+R1349,Tokyo,Los Angeles,4829,17,0,Direct,1829
+R1350,Los Angeles,Tokyo,4830,18,0,Direct,1780
+R1351,Chennai,Rotterdam,8666,31,1,Recommended,1526
+R1352,Tokyo,Sydney,4876,20,0,Direct,1536
+R1353,Sydney,Los Angeles,6516,25,0,Direct,2226
+R1354,Hamburg,New York,3516,17,0,Direct,1326
+R1355,Dubai,Shanghai,5116,22,1,Recommended,1726
+R1356,Singapore,Los Angeles,7616,26,0,Direct,2426
+R1357,Shanghai,Sydney,4316,19,1,Recommended,1526
+R1358,Chennai,Singapore,1616,12,0,Direct,826
+R1359,Hamburg,Tokyo,11216,38,2,Alternative,3126
+R1360,Los Angeles,Rotterdam,7816,29,2,Alternative,2126
+R1361,Rotterdam,Chennai,8667,32,1,Recommended,1537
+R1362,Sydney,Tokyo,4877,21,0,Direct,1547
+R1363,Los Angeles,Sydney,6517,26,0,Direct,2237
+R1364,New York,Hamburg,3517,18,0,Direct,1337
+R1365,Shanghai,Dubai,5117,23,1,Recommended,1737
+R1366,Los Angeles,Singapore,7617,27,0,Direct,2437
+R1367,Sydney,Shanghai,4317,20,1,Recommended,1537
+R1368,Singapore,Chennai,1617,13,0,Direct,837
+R1369,Tokyo,Hamburg,11217,39,2,Alternative,3137
+R1370,Rotterdam,Los Angeles,7817,30,2,Alternative,2137
+R1371,Chennai,New York,7518,27,1,Standard,1928
+R1372,New York,Singapore,8318,30,1,Standard,2328
+R1373,Dubai,Tokyo,4318,20,0,Direct,1528
+R1374,Tokyo,Dubai,4319,21,1,Recommended,1629
+R1375,Sydney,Chennai,4919,22,1,Recommended,1679
+R1376,Chennai,Sydney,4920,23,2,Alternative,1630
+R1377,Hamburg,Los Angeles,8220,29,1,Standard,2230
+R1378,Los Angeles,Hamburg,8221,30,2,Alternative,2181
+R1379,Singapore,Dubai,3221,16,0,Direct,1331
+R1380,Dubai,Singapore,3222,17,1,Recommended,1382
+R1381,Shanghai,Tokyo,1122,11,0,Direct,732
+R1382,Tokyo,Shanghai,1123,12,1,Recommended,783
+R1383,Rotterdam,Sydney,11523,40,1,Standard,2933
+R1384,Sydney,Rotterdam,11524,41,2,Alternative,2872
+R1385,New York,Tokyo,8524,31,1,Standard,2324
+R1386,Tokyo,New York,8525,32,2,Alternative,2475
+R1387,Shanghai,Chennai,2825,15,0,Direct,1075
+R1388,Chennai,Shanghai,2826,16,1,Recommended,1126
+R1389,Rotterdam,New York,3426,16,0,Direct,1276
+R1390,New York,Rotterdam,3427,17,1,Recommended,1327
+R1391,Dubai,Sydney,6527,24,0,Direct,2327
+R1392,Sydney,Dubai,6528,25,0,Direct,2378
+R1393,Shanghai,New York,8628,31,1,Standard,2428
+R1394,New York,Shanghai,8629,32,2,Alternative,2579
+R1395,Chennai,Los Angeles,8229,29,1,Standard,2129
+R1396,Los Angeles,Chennai,8230,30,1,Standard,2180
+R1397,Rotterdam,Singapore,8230,29,1,Standard,2180
+R1398,Singapore,Rotterdam,8231,30,2,Standard,2231
+R1399,Tokyo,Los Angeles,4831,18,0,Direct,1831
+R1400,Los Angeles,Tokyo,4832,19,0,Direct,1782
+R1401,Chennai,Rotterdam,8668,32,1,Recommended,1528
+R1402,Tokyo,Sydney,4878,21,0,Direct,1538
+R1403,Sydney,Los Angeles,6518,26,0,Direct,2228
+R1404,Hamburg,New York,3518,18,0,Direct,1328
+R1405,Dubai,Shanghai,5118,23,1,Recommended,1728
+R1406,Singapore,Los Angeles,7618,27,0,Direct,2428
+R1407,Shanghai,Sydney,4318,20,1,Recommended,1528
+R1408,Chennai,Singapore,1618,13,0,Direct,828
+R1409,Hamburg,Tokyo,11218,39,2,Alternative,3128
+R1410,Los Angeles,Rotterdam,7818,30,2,Alternative,2128
+R1411,Rotterdam,Chennai,8669,33,1,Recommended,1539
+R1412,Sydney,Tokyo,4879,22,0,Direct,1549
+R1413,Los Angeles,Sydney,6519,27,0,Direct,2239
+R1414,New York,Hamburg,3519,19,0,Direct,1339
+R1415,Shanghai,Dubai,5119,24,1,Recommended,1739
+R1416,Los Angeles,Singapore,7619,28,0,Direct,2439
+R1417,Sydney,Shanghai,4319,21,1,Recommended,1539
+R1418,Singapore,Chennai,1619,14,0,Direct,839
+R1419,Tokyo,Hamburg,11219,40,2,Alternative,3139
+R1420,Rotterdam,Los Angeles,7819,31,2,Alternative,2139
+R1421,Chennai,New York,7520,28,1,Standard,1930
+R1422,New York,Singapore,8320,31,1,Standard,2330
+R1423,Dubai,Tokyo,4320,21,0,Direct,1530
+R1424,Tokyo,Dubai,4321,22,1,Recommended,1631
+R1425,Sydney,Chennai,4921,23,1,Recommended,1681
+R1426,Chennai,Sydney,4922,24,2,Alternative,1632
+R1427,Hamburg,Los Angeles,8222,30,1,Standard,2232
+R1428,Los Angeles,Hamburg,8223,31,2,Alternative,2183
+R1429,Singapore,Dubai,3223,17,0,Direct,1333
+R1430,Dubai,Singapore,3224,18,1,Recommended,1384
+R1431,Shanghai,Tokyo,1124,12,0,Direct,734
+R1432,Tokyo,Shanghai,1125,13,1,Recommended,785
+R1433,Rotterdam,Sydney,11525,41,1,Standard,2935
+R1434,Sydney,Rotterdam,11526,42,2,Alternative,2874
+R1435,New York,Tokyo,8526,32,1,Standard,2326
+R1436,Tokyo,New York,8527,33,2,Alternative,2477
+R1437,Shanghai,Chennai,2827,16,0,Direct,1077
+R1438,Chennai,Shanghai,2828,17,1,Recommended,1128
+R1439,Rotterdam,New York,3428,17,0,Direct,1278
+R1440,New York,Rotterdam,3429,18,1,Recommended,1329
+R1441,Dubai,Sydney,6529,25,0,Direct,2329
+R1442,Sydney,Dubai,6530,26,0,Direct,2380
+R1443,Shanghai,New York,8630,32,1,Standard,2430
+R1444,New York,Shanghai,8631,33,2,Alternative,2581
+R1445,Chennai,Los Angeles,8231,30,1,Standard,2131
+R1446,Los Angeles,Chennai,8232,31,1,Standard,2182
+R1447,Rotterdam,Singapore,8232,30,1,Standard,2182
+R1448,Singapore,Rotterdam,8233,31,2,Standard,2233
+R1449,Tokyo,Los Angeles,4833,19,0,Direct,1833
+R1450,Los Angeles,Tokyo,4834,20,0,Direct,1784
+R1451,Chennai,Rotterdam,8670,33,1,Recommended,1530
+R1452,Tokyo,Sydney,4880,22,0,Direct,1540
+R1453,Sydney,Los Angeles,6520,27,0,Direct,2230
+R1454,Hamburg,New York,3520,19,0,Direct,1330
+R1455,Dubai,Shanghai,5120,24,1,Recommended,1730
+R1456,Singapore,Los Angeles,7620,28,0,Direct,2430
+R1457,Shanghai,Sydney,4320,21,1,Recommended,1530
+R1458,Chennai,Singapore,1620,14,0,Direct,830
+R1459,Hamburg,Tokyo,11220,40,2,Alternative,3130
+R1460,Los Angeles,Rotterdam,7820,31,2,Alternative,2130
+R1461,Rotterdam,Chennai,8671,34,1,Recommended,1541
+R1462,Sydney,Tokyo,4881,23,0,Direct,1551
+R1463,Los Angeles,Sydney,6521,28,0,Direct,2241
+R1464,New York,Hamburg,3521,20,0,Direct,1341
+R1465,Shanghai,Dubai,5121,25,1,Recommended,1741
+R1466,Los Angeles,Singapore,7621,29,0,Direct,2441
+R1467,Sydney,Shanghai,4321,22,1,Recommended,1541
+R1468,Singapore,Chennai,1621,15,0,Direct,841
+R1469,Tokyo,Hamburg,11221,41,2,Alternative,3141
+R1470,Rotterdam,Los Angeles,7821,32,2,Alternative,2141
+R1471,Chennai,New York,7522,29,1,Standard,1932
+R1472,New York,Singapore,8322,32,1,Standard,2332
+R1473,Dubai,Tokyo,4322,22,0,Direct,1532
+R1474,Tokyo,Dubai,4323,23,1,Recommended,1633
+R1475,Sydney,Chennai,4923,24,1,Recommended,1683
+R1476,Chennai,Sydney,4924,25,2,Alternative,1634
+R1477,Hamburg,Los Angeles,8224,31,1,Standard,2234
+R1478,Los Angeles,Hamburg,8225,32,2,Alternative,2185
+R1479,Singapore,Dubai,3225,18,0,Direct,1335
+R1480,Dubai,Singapore,3226,19,1,Recommended,1386
+R1481,Shanghai,Tokyo,1126,13,0,Direct,736
+R1482,Tokyo,Shanghai,1127,14,1,Recommended,787
+R1483,Rotterdam,Sydney,11527,42,1,Standard,2937
+R1484,Sydney,Rotterdam,11528,43,2,Alternative,2876
+R1485,New York,Tokyo,8528,33,1,Standard,2328
+R1486,Tokyo,New York,8529,34,2,Alternative,2479
+R1487,Shanghai,Chennai,2829,17,0,Direct,1079
+R1488,Chennai,Shanghai,2830,18,1,Recommended,1130
+R1489,Rotterdam,New York,3430,18,0,Direct,1280
+R1490,New York,Rotterdam,3431,19,1,Recommended,1331
+R1491,Dubai,Sydney,6531,26,0,Direct,2331
+R1492,Sydney,Dubai,6532,27,0,Direct,2382
+R1493,Shanghai,New York,8632,33,1,Standard,2432
+R1494,New York,Shanghai,8633,34,2,Alternative,2583
+R1495,Chennai,Los Angeles,8233,31,1,Standard,2133
+R1496,Los Angeles,Chennai,8234,32,1,Standard,2184
+R1497,Rotterdam,Singapore,8234,31,1,Standard,2184
+R1498,Singapore,Rotterdam,8235,32,2,Standard,2235
+R1499,Tokyo,Los Angeles,4835,20,0,Direct,1835
+R1500,Los Angeles,Tokyo,4836,21,0,Direct,1786
+R1501,Chennai,Rotterdam,8672,25,1,Recommended,1532
+R1502,Tokyo,Sydney,4882,14,0,Direct,1542
+R1503,Sydney,Los Angeles,6522,19,0,Direct,2242
+R1504,Hamburg,New York,3522,11,0,Direct,1342
+R1505,Dubai,Shanghai,5122,16,1,Recommended,1742
+R1506,Singapore,Los Angeles,7622,20,0,Direct,2442
+R1507,Shanghai,Sydney,4322,13,1,Recommended,1542
+R1508,Chennai,Singapore,1622,6,0,Direct,842
+R1509,Hamburg,Tokyo,11222,32,2,Alternative,3142
+R1510,Los Angeles,Rotterdam,7822,23,2,Alternative,2142
+R1511,Rotterdam,Chennai,8673,26,1,Recommended,1543
+R1512,Sydney,Tokyo,4883,15,0,Direct,1553
+R1513,Los Angeles,Sydney,6523,20,0,Direct,2253
+R1514,New York,Hamburg,3523,12,0,Direct,1353
+R1515,Shanghai,Dubai,5123,17,1,Recommended,1753
+R1516,Los Angeles,Singapore,7623,21,0,Direct,2453
+R1517,Sydney,Shanghai,4323,14,1,Recommended,1553
+R1518,Singapore,Chennai,1623,7,0,Direct,853
+R1519,Tokyo,Hamburg,11223,33,2,Alternative,3153
+R1520,Rotterdam,Los Angeles,7823,24,2,Alternative,2153
+R1521,Chennai,New York,7524,21,1,Standard,1944
+R1522,New York,Singapore,8324,24,1,Standard,2344
+R1523,Dubai,Tokyo,4324,14,0,Direct,1544
+R1524,Tokyo,Dubai,4325,15,1,Recommended,1645
+R1525,Sydney,Chennai,4925,16,1,Recommended,1695
+R1526,Chennai,Sydney,4926,17,2,Alternative,1646
+R1527,Hamburg,Los Angeles,8226,23,1,Standard,2246
+R1528,Los Angeles,Hamburg,8227,24,2,Alternative,2197
+R1529,Singapore,Dubai,3227,10,0,Direct,1347
+R1530,Dubai,Singapore,3228,11,1,Recommended,1398
+R1531,Shanghai,Tokyo,1128,5,0,Direct,748
+R1532,Tokyo,Shanghai,1129,6,1,Recommended,799
+R1533,Rotterdam,Sydney,11529,34,1,Standard,2949
+R1534,Sydney,Rotterdam,11530,35,2,Alternative,2890
+R1535,New York,Tokyo,8530,25,1,Standard,2340
+R1536,Tokyo,New York,8531,26,2,Alternative,2491
+R1537,Shanghai,Chennai,2831,9,0,Direct,1091
+R1538,Chennai,Shanghai,2832,10,1,Recommended,1142
+R1539,Rotterdam,New York,3432,10,0,Direct,1292
+R1540,New York,Rotterdam,3433,11,1,Recommended,1343
+R1541,Dubai,Sydney,6533,18,0,Direct,2343
+R1542,Sydney,Dubai,6534,19,0,Direct,2394
+R1543,Shanghai,New York,8634,25,1,Standard,2444
+R1544,New York,Shanghai,8635,26,2,Alternative,2595
+R1545,Chennai,Los Angeles,8235,23,1,Standard,2145
+R1546,Los Angeles,Chennai,8236,24,1,Standard,2196
+R1547,Rotterdam,Singapore,8236,23,1,Standard,2196
+R1548,Singapore,Rotterdam,8237,24,2,Standard,2247
+R1549,Tokyo,Los Angeles,4837,12,0,Direct,1847
+R1550,Los Angeles,Tokyo,4838,13,0,Direct,1798
+R1551,Chennai,Rotterdam,8674,26,1,Recommended,1544
+R1552,Tokyo,Sydney,4884,15,0,Direct,1554
+R1553,Sydney,Los Angeles,6524,20,0,Direct,2244
+R1554,Hamburg,New York,3524,12,0,Direct,1344
+R1555,Dubai,Shanghai,5124,17,1,Recommended,1744
+R1556,Singapore,Los Angeles,7624,21,0,Direct,2444
+R1557,Shanghai,Sydney,4324,14,1,Recommended,1544
+R1558,Chennai,Singapore,1624,7,0,Direct,844
+R1559,Hamburg,Tokyo,11224,33,2,Alternative,3144
+R1560,Los Angeles,Rotterdam,7824,24,2,Alternative,2144
+R1561,Rotterdam,Chennai,8675,27,1,Recommended,1555
+R1562,Sydney,Tokyo,4885,16,0,Direct,1565
+R1563,Los Angeles,Sydney,6525,21,0,Direct,2255
+R1564,New York,Hamburg,3525,13,0,Direct,1355
+R1565,Shanghai,Dubai,5125,18,1,Recommended,1755
+R1566,Los Angeles,Singapore,7625,22,0,Direct,2455
+R1567,Sydney,Shanghai,4325,15,1,Recommended,1555
+R1568,Singapore,Chennai,1625,8,0,Direct,855
+R1569,Tokyo,Hamburg,11225,34,2,Alternative,3155
+R1570,Rotterdam,Los Angeles,7825,25,2,Alternative,2155
+R1571,Chennai,New York,7526,22,1,Standard,1946
+R1572,New York,Singapore,8326,25,1,Standard,2346
+R1573,Dubai,Tokyo,4326,15,0,Direct,1546
+R1574,Tokyo,Dubai,4327,16,1,Recommended,1647
+R1575,Sydney,Chennai,4927,17,1,Recommended,1697
+R1576,Chennai,Sydney,4928,18,2,Alternative,1648
+R1577,Hamburg,Los Angeles,8228,24,1,Standard,2248
+R1578,Los Angeles,Hamburg,8229,25,2,Alternative,2199
+R1579,Singapore,Dubai,3229,11,0,Direct,1349
+R1580,Dubai,Singapore,3230,12,1,Recommended,1400
+R1581,Shanghai,Tokyo,1130,6,0,Direct,750
+R1582,Tokyo,Shanghai,1131,7,1,Recommended,801
+R1583,Rotterdam,Sydney,11531,35,1,Standard,2951
+R1584,Sydney,Rotterdam,11532,36,2,Alternative,2892
+R1585,New York,Tokyo,8532,26,1,Standard,2342
+R1586,Tokyo,New York,8533,27,2,Alternative,2493
+R1587,Shanghai,Chennai,2833,10,0,Direct,1093
+R1588,Chennai,Shanghai,2834,11,1,Recommended,1144
+R1589,Rotterdam,New York,3434,11,0,Direct,1294
+R1590,New York,Rotterdam,3435,12,1,Recommended,1345
+R1591,Dubai,Sydney,6535,19,0,Direct,2345
+R1592,Sydney,Dubai,6536,20,0,Direct,2396
+R1593,Shanghai,New York,8636,26,1,Standard,2446
+R1594,New York,Shanghai,8637,27,2,Alternative,2597
+R1595,Chennai,Los Angeles,8237,24,1,Standard,2147
+R1596,Los Angeles,Chennai,8238,25,1,Standard,2198
+R1597,Rotterdam,Singapore,8238,24,1,Standard,2198
+R1598,Singapore,Rotterdam,8239,25,2,Standard,2249
+R1599,Tokyo,Los Angeles,4839,13,0,Direct,1849
+R1600,Los Angeles,Tokyo,4840,14,0,Direct,1800
+R1601,Chennai,Rotterdam,8676,27,1,Recommended,1546
+R1602,Tokyo,Sydney,4886,16,0,Direct,1556
+R1603,Sydney,Los Angeles,6526,21,0,Direct,2246
+R1604,Hamburg,New York,3526,13,0,Direct,1346
+R1605,Dubai,Shanghai,5126,18,1,Recommended,1746
+R1606,Singapore,Los Angeles,7626,22,0,Direct,2446
+R1607,Shanghai,Sydney,4326,15,1,Recommended,1546
+R1608,Chennai,Singapore,1626,8,0,Direct,846
+R1609,Hamburg,Tokyo,11226,34,2,Alternative,3146
+R1610,Los Angeles,Rotterdam,7826,25,2,Alternative,2146
+R1611,Rotterdam,Chennai,8677,28,1,Recommended,1557
+R1612,Sydney,Tokyo,4887,17,0,Direct,1567
+R1613,Los Angeles,Sydney,6527,22,0,Direct,2257
+R1614,New York,Hamburg,3527,14,0,Direct,1357
+R1615,Shanghai,Dubai,5127,19,1,Recommended,1757
+R1616,Los Angeles,Singapore,7627,23,0,Direct,2457
+R1617,Sydney,Shanghai,4327,16,1,Recommended,1557
+R1618,Singapore,Chennai,1627,9,0,Direct,857
+R1619,Tokyo,Hamburg,11227,35,2,Alternative,3157
+R1620,Rotterdam,Los Angeles,7827,26,2,Alternative,2157
+R1621,Chennai,New York,7528,23,1,Standard,1948
+R1622,New York,Singapore,8328,26,1,Standard,2348
+R1623,Dubai,Tokyo,4328,16,0,Direct,1548
+R1624,Tokyo,Dubai,4329,17,1,Recommended,1649
+R1625,Sydney,Chennai,4929,18,1,Recommended,1699
+R1626,Chennai,Sydney,4930,19,2,Alternative,1650
+R1627,Hamburg,Los Angeles,8230,25,1,Standard,2250
+R1628,Los Angeles,Hamburg,8231,26,2,Alternative,2201
+R1629,Singapore,Dubai,3231,12,0,Direct,1351
+R1630,Dubai,Singapore,3232,13,1,Recommended,1402
+R1631,Shanghai,Tokyo,1132,7,0,Direct,752
+R1632,Tokyo,Shanghai,1133,8,1,Recommended,803
+R1633,Rotterdam,Sydney,11533,36,1,Standard,2953
+R1634,Sydney,Rotterdam,11534,37,2,Alternative,2894
+R1635,New York,Tokyo,8534,27,1,Standard,2344
+R1636,Tokyo,New York,8535,28,2,Alternative,2495
+R1637,Shanghai,Chennai,2835,11,0,Direct,1095
+R1638,Chennai,Shanghai,2836,12,1,Recommended,1146
+R1639,Rotterdam,New York,3436,12,0,Direct,1296
+R1640,New York,Rotterdam,3437,13,1,Recommended,1347
+R1641,Dubai,Sydney,6537,20,0,Direct,2347
+R1642,Sydney,Dubai,6538,21,0,Direct,2398
+R1643,Shanghai,New York,8638,27,1,Standard,2448
+R1644,New York,Shanghai,8639,28,2,Alternative,2599
+R1645,Chennai,Los Angeles,8239,25,1,Standard,2149
+R1646,Los Angeles,Chennai,8240,26,1,Standard,2200
+R1647,Rotterdam,Singapore,8240,25,1,Standard,2200
+R1648,Singapore,Rotterdam,8241,26,2,Standard,2251
+R1649,Tokyo,Los Angeles,4841,14,0,Direct,1851
+R1650,Los Angeles,Tokyo,4842,15,0,Direct,1802
+R1651,Chennai,Rotterdam,8678,28,1,Recommended,1548
+R1652,Tokyo,Sydney,4888,17,0,Direct,1558
+R1653,Sydney,Los Angeles,6528,22,0,Direct,2248
+R1654,Hamburg,New York,3528,14,0,Direct,1348
+R1655,Dubai,Shanghai,5128,19,1,Recommended,1748
+R1656,Singapore,Los Angeles,7628,23,0,Direct,2448
+R1657,Shanghai,Sydney,4328,16,1,Recommended,1548
+R1658,Chennai,Singapore,1628,9,0,Direct,848
+R1659,Hamburg,Tokyo,11228,35,2,Alternative,3148
+R1660,Los Angeles,Rotterdam,7828,26,2,Alternative,2148
+R1661,Rotterdam,Chennai,8679,29,1,Recommended,1559
+R1662,Sydney,Tokyo,4889,18,0,Direct,1569
+R1663,Los Angeles,Sydney,6529,23,0,Direct,2259
+R1664,New York,Hamburg,3529,15,0,Direct,1359
+R1665,Shanghai,Dubai,5129,20,1,Recommended,1759
+R1666,Los Angeles,Singapore,7629,24,0,Direct,2459
+R1667,Sydney,Shanghai,4329,17,1,Recommended,1559
+R1668,Singapore,Chennai,1629,10,0,Direct,859
+R1669,Tokyo,Hamburg,11229,36,2,Alternative,3159
+R1670,Rotterdam,Los Angeles,7829,27,2,Alternative,2159
+R1671,Chennai,New York,7530,24,1,Standard,1950
+R1672,New York,Singapore,8330,27,1,Standard,2350
+R1673,Dubai,Tokyo,4330,17,0,Direct,1550
+R1674,Tokyo,Dubai,4331,18,1,Recommended,1651
+R1675,Sydney,Chennai,4931,19,1,Recommended,1701
+R1676,Chennai,Sydney,4932,20,2,Alternative,1652
+R1677,Hamburg,Los Angeles,8232,26,1,Standard,2252
+R1678,Los Angeles,Hamburg,8233,27,2,Alternative,2203
+R1679,Singapore,Dubai,3233,13,0,Direct,1353
+R1680,Dubai,Singapore,3234,14,1,Recommended,1404
+R1681,Shanghai,Tokyo,1134,8,0,Direct,754
+R1682,Tokyo,Shanghai,1135,9,1,Recommended,805
+R1683,Rotterdam,Sydney,11535,37,1,Standard,2955
+R1684,Sydney,Rotterdam,11536,38,2,Alternative,2896
+R1685,New York,Tokyo,8536,28,1,Standard,2346
+R1686,Tokyo,New York,8537,29,2,Alternative,2497
+R1687,Shanghai,Chennai,2837,12,0,Direct,1097
+R1688,Chennai,Shanghai,2838,13,1,Recommended,1148
+R1689,Rotterdam,New York,3438,13,0,Direct,1298
+R1690,New York,Rotterdam,3439,14,1,Recommended,1349
+R1691,Dubai,Sydney,6539,21,0,Direct,2349
+R1692,Sydney,Dubai,6540,22,0,Direct,2400
+R1693,Shanghai,New York,8640,28,1,Standard,2450
+R1694,New York,Shanghai,8641,29,2,Alternative,2601
+R1695,Chennai,Los Angeles,8241,26,1,Standard,2151
+R1696,Los Angeles,Chennai,8242,27,1,Standard,2202
+R1697,Rotterdam,Singapore,8242,26,1,Standard,2202
+R1698,Singapore,Rotterdam,8243,27,2,Standard,2253
+R1699,Tokyo,Los Angeles,4843,15,0,Direct,1853
+R1700,Los Angeles,Tokyo,4844,16,0,Direct,1804
+R1701,Chennai,Rotterdam,8680,29,1,Recommended,1550
+R1702,Tokyo,Sydney,4890,18,0,Direct,1560
+R1703,Sydney,Los Angeles,6530,23,0,Direct,2250
+R1704,Hamburg,New York,3530,15,0,Direct,1350
+R1705,Dubai,Shanghai,5130,20,1,Recommended,1750
+R1706,Singapore,Los Angeles,7630,24,0,Direct,2450
+R1707,Shanghai,Sydney,4330,17,1,Recommended,1550
+R1708,Chennai,Singapore,1630,10,0,Direct,850
+R1709,Hamburg,Tokyo,11230,36,2,Alternative,3150
+R1710,Los Angeles,Rotterdam,7830,27,2,Alternative,2150
+R1711,Rotterdam,Chennai,8681,30,1,Recommended,1561
+R1712,Sydney,Tokyo,4891,19,0,Direct,1571
+R1713,Los Angeles,Sydney,6531,24,0,Direct,2261
+R1714,New York,Hamburg,3531,16,0,Direct,1361
+R1715,Shanghai,Dubai,5131,21,1,Recommended,1761
+R1716,Los Angeles,Singapore,7631,25,0,Direct,2461
+R1717,Sydney,Shanghai,4331,18,1,Recommended,1561
+R1718,Singapore,Chennai,1631,11,0,Direct,861
+R1719,Tokyo,Hamburg,11231,37,2,Alternative,3161
+R1720,Rotterdam,Los Angeles,7831,28,2,Alternative,2161
+R1721,Chennai,New York,7532,25,1,Standard,1952
+R1722,New York,Singapore,8332,28,1,Standard,2352
+R1723,Dubai,Tokyo,4332,18,0,Direct,1552
+R1724,Tokyo,Dubai,4333,19,1,Recommended,1653
+R1725,Sydney,Chennai,4933,20,1,Recommended,1703
+R1726,Chennai,Sydney,4934,21,2,Alternative,1654
+R1727,Hamburg,Los Angeles,8234,27,1,Standard,2254
+R1728,Los Angeles,Hamburg,8235,28,2,Alternative,2205
+R1729,Singapore,Dubai,3235,14,0,Direct,1355
+R1730,Dubai,Singapore,3236,15,1,Recommended,1406
+R1731,Shanghai,Tokyo,1136,9,0,Direct,756
+R1732,Tokyo,Shanghai,1137,10,1,Recommended,807
+R1733,Rotterdam,Sydney,11537,38,1,Standard,2957
+R1734,Sydney,Rotterdam,11538,39,2,Alternative,2898
+R1735,New York,Tokyo,8538,29,1,Standard,2348
+R1736,Tokyo,New York,8539,30,2,Alternative,2499
+R1737,Shanghai,Chennai,2839,13,0,Direct,1099
+R1738,Chennai,Shanghai,2840,14,1,Recommended,1150
+R1739,Rotterdam,New York,3440,14,0,Direct,1300
+R1740,New York,Rotterdam,3441,15,1,Recommended,1351
+R1741,Dubai,Sydney,6541,22,0,Direct,2351
+R1742,Sydney,Dubai,6542,23,0,Direct,2402
+R1743,Shanghai,New York,8642,29,1,Standard,2452
+R1744,New York,Shanghai,8643,30,2,Alternative,2603
+R1745,Chennai,Los Angeles,8243,27,1,Standard,2153
+R1746,Los Angeles,Chennai,8244,28,1,Standard,2204
+R1747,Rotterdam,Singapore,8244,27,1,Standard,2204
+R1748,Singapore,Rotterdam,8245,28,2,Standard,2255
+R1749,Tokyo,Los Angeles,4845,16,0,Direct,1855
+R1750,Los Angeles,Tokyo,4846,17,0,Direct,1806
+R1751,Chennai,Rotterdam,8682,30,1,Recommended,1552
+R1752,Tokyo,Sydney,4892,19,0,Direct,1562
+R1753,Sydney,Los Angeles,6532,24,0,Direct,2252
+R1754,Hamburg,New York,3532,16,0,Direct,1352
+R1755,Dubai,Shanghai,5132,21,1,Recommended,1752
+R1756,Singapore,Los Angeles,7632,25,0,Direct,2452
+R1757,Shanghai,Sydney,4332,18,1,Recommended,1552
+R1758,Chennai,Singapore,1632,11,0,Direct,852
+R1759,Hamburg,Tokyo,11232,37,2,Alternative,3152
+R1760,Los Angeles,Rotterdam,7832,28,2,Alternative,2152
+R1761,Rotterdam,Chennai,8683,31,1,Recommended,1563
+R1762,Sydney,Tokyo,4893,20,0,Direct,1573
+R1763,Los Angeles,Sydney,6533,25,0,Direct,2263
+R1764,New York,Hamburg,3533,17,0,Direct,1363
+R1765,Shanghai,Dubai,5133,22,1,Recommended,1763
+R1766,Los Angeles,Singapore,7633,26,0,Direct,2463
+R1767,Sydney,Shanghai,4333,19,1,Recommended,1563
+R1768,Singapore,Chennai,1633,12,0,Direct,863
+R1769,Tokyo,Hamburg,11233,38,2,Alternative,3163
+R1770,Rotterdam,Los Angeles,7833,29,2,Alternative,2163
+R1771,Chennai,New York,7534,26,1,Standard,1954
+R1772,New York,Singapore,8334,29,1,Standard,2354
+R1773,Dubai,Tokyo,4334,19,0,Direct,1554
+R1774,Tokyo,Dubai,4335,20,1,Recommended,1655
+R1775,Sydney,Chennai,4935,21,1,Recommended,1705
+R1776,Chennai,Sydney,4936,22,2,Alternative,1656
+R1777,Hamburg,Los Angeles,8236,28,1,Standard,2256
+R1778,Los Angeles,Hamburg,8237,29,2,Alternative,2207
+R1779,Singapore,Dubai,3237,15,0,Direct,1357
+R1780,Dubai,Singapore,3238,16,1,Recommended,1408
+R1781,Shanghai,Tokyo,1138,10,0,Direct,758
+R1782,Tokyo,Shanghai,1139,11,1,Recommended,809
+R1783,Rotterdam,Sydney,11539,39,1,Standard,2959
+R1784,Sydney,Rotterdam,11540,40,2,Alternative,2900
+R1785,New York,Tokyo,8540,30,1,Standard,2350
+R1786,Tokyo,New York,8541,31,2,Alternative,2501
+R1787,Shanghai,Chennai,2841,14,0,Direct,1101
+R1788,Chennai,Shanghai,2842,15,1,Recommended,1152
+R1789,Rotterdam,New York,3442,15,0,Direct,1302
+R1790,New York,Rotterdam,3443,16,1,Recommended,1353
+R1791,Dubai,Sydney,6543,23,0,Direct,2353
+R1792,Sydney,Dubai,6544,24,0,Direct,2404
+R1793,Shanghai,New York,8644,30,1,Standard,2454
+R1794,New York,Shanghai,8645,31,2,Alternative,2605
+R1795,Chennai,Los Angeles,8245,28,1,Standard,2155
+R1796,Los Angeles,Chennai,8246,29,1,Standard,2206
+R1797,Rotterdam,Singapore,8246,28,1,Standard,2206
+R1798,Singapore,Rotterdam,8247,29,2,Standard,2257
+R1799,Tokyo,Los Angeles,4847,17,0,Direct,1857
+R1800,Los Angeles,Tokyo,4848,18,0,Direct,1808
+R1801,Chennai,Rotterdam,8684,31,1,Recommended,1554
+R1802,Tokyo,Sydney,4894,20,0,Direct,1564
+R1803,Sydney,Los Angeles,6534,25,0,Direct,2254
+R1804,Hamburg,New York,3534,17,0,Direct,1354
+R1805,Dubai,Shanghai,5134,22,1,Recommended,1754
+R1806,Singapore,Los Angeles,7634,26,0,Direct,2454
+R1807,Shanghai,Sydney,4334,19,1,Recommended,1554
+R1808,Chennai,Singapore,1634,12,0,Direct,854
+R1809,Hamburg,Tokyo,11234,38,2,Alternative,3154
+R1810,Los Angeles,Rotterdam,7834,29,2,Alternative,2154
+R1811,Rotterdam,Chennai,8685,32,1,Recommended,1565
+R1812,Sydney,Tokyo,4895,21,0,Direct,1575
+R1813,Los Angeles,Sydney,6535,26,0,Direct,2265
+R1814,New York,Hamburg,3535,18,0,Direct,1365
+R1815,Shanghai,Dubai,5135,23,1,Recommended,1765
+R1816,Los Angeles,Singapore,7635,27,0,Direct,2465
+R1817,Sydney,Shanghai,4335,20,1,Recommended,1565
+R1818,Singapore,Chennai,1635,13,0,Direct,865
+R1819,Tokyo,Hamburg,11235,39,2,Alternative,3165
+R1820,Rotterdam,Los Angeles,7835,30,2,Alternative,2165
+R1821,Chennai,New York,7536,27,1,Standard,1956
+R1822,New York,Singapore,8336,30,1,Standard,2356
+R1823,Dubai,Tokyo,4336,20,0,Direct,1556
+R1824,Tokyo,Dubai,4337,21,1,Recommended,1657
+R1825,Sydney,Chennai,4937,22,1,Recommended,1707
+R1826,Chennai,Sydney,4938,23,2,Alternative,1658
+R1827,Hamburg,Los Angeles,8238,29,1,Standard,2258
+R1828,Los Angeles,Hamburg,8239,30,2,Alternative,2209
+R1829,Singapore,Dubai,3239,16,0,Direct,1359
+R1830,Dubai,Singapore,3240,17,1,Recommended,1410
+R1831,Shanghai,Tokyo,1140,11,0,Direct,760
+R1832,Tokyo,Shanghai,1141,12,1,Recommended,811
+R1833,Rotterdam,Sydney,11541,40,1,Standard,2961
+R1834,Sydney,Rotterdam,11542,41,2,Alternative,2902
+R1835,New York,Tokyo,8542,31,1,Standard,2352
+R1836,Tokyo,New York,8543,32,2,Alternative,2503
+R1837,Shanghai,Chennai,2843,15,0,Direct,1103
+R1838,Chennai,Shanghai,2844,16,1,Recommended,1154
+R1839,Rotterdam,New York,3444,16,0,Direct,1304
+R1840,New York,Rotterdam,3445,17,1,Recommended,1355
+R1841,Dubai,Sydney,6545,24,0,Direct,2355
+R1842,Sydney,Dubai,6546,25,0,Direct,2406
+R1843,Shanghai,New York,8646,31,1,Standard,2456
+R1844,New York,Shanghai,8647,32,2,Alternative,2607
+R1845,Chennai,Los Angeles,8247,29,1,Standard,2157
+R1846,Los Angeles,Chennai,8248,30,1,Standard,2208
+R1847,Rotterdam,Singapore,8248,29,1,Standard,2208
+R1848,Singapore,Rotterdam,8249,30,2,Standard,2259
+R1849,Tokyo,Los Angeles,4849,18,0,Direct,1859
+R1850,Los Angeles,Tokyo,4850,19,0,Direct,1810
+R1851,Chennai,Rotterdam,8686,32,1,Recommended,1556
+R1852,Tokyo,Sydney,4896,21,0,Direct,1566
+R1853,Sydney,Los Angeles,6536,26,0,Direct,2256
+R1854,Hamburg,New York,3536,18,0,Direct,1356
+R1855,Dubai,Shanghai,5136,23,1,Recommended,1756
+R1856,Singapore,Los Angeles,7636,27,0,Direct,2456
+R1857,Shanghai,Sydney,4336,20,1,Recommended,1556
+R1858,Chennai,Singapore,1636,13,0,Direct,856
+R1859,Hamburg,Tokyo,11236,39,2,Alternative,3156
+R1860,Los Angeles,Rotterdam,7836,30,2,Alternative,2156
+R1861,Rotterdam,Chennai,8687,33,1,Recommended,1567
+R1862,Sydney,Tokyo,4897,22,0,Direct,1577
+R1863,Los Angeles,Sydney,6537,27,0,Direct,2267
+R1864,New York,Hamburg,3537,19,0,Direct,1367
+R1865,Shanghai,Dubai,5137,24,1,Recommended,1767
+R1866,Los Angeles,Singapore,7637,28,0,Direct,2467
+R1867,Sydney,Shanghai,4337,21,1,Recommended,1567
+R1868,Singapore,Chennai,1637,14,0,Direct,867
+R1869,Tokyo,Hamburg,11237,40,2,Alternative,3167
+R1870,Rotterdam,Los Angeles,7837,31,2,Alternative,2167
+R1871,Chennai,New York,7538,28,1,Standard,1958
+R1872,New York,Singapore,8338,31,1,Standard,2358
+R1873,Dubai,Tokyo,4338,21,0,Direct,1558
+R1874,Tokyo,Dubai,4339,22,1,Recommended,1659
+R1875,Sydney,Chennai,4939,23,1,Recommended,1709
+R1876,Chennai,Sydney,4940,24,2,Alternative,1660
+R1877,Hamburg,Los Angeles,8240,30,1,Standard,2260
+R1878,Los Angeles,Hamburg,8241,31,2,Alternative,2211
+R1879,Singapore,Dubai,3241,17,0,Direct,1361
+R1880,Dubai,Singapore,3242,18,1,Recommended,1412
+R1881,Shanghai,Tokyo,1142,12,0,Direct,762
+R1882,Tokyo,Shanghai,1143,13,1,Recommended,813
+R1883,Rotterdam,Sydney,11543,41,1,Standard,2963
+R1884,Sydney,Rotterdam,11544,42,2,Alternative,2904
+R1885,New York,Tokyo,8544,32,1,Standard,2354
+R1886,Tokyo,New York,8545,33,2,Alternative,2505
+R1887,Shanghai,Chennai,2845,16,0,Direct,1105
+R1888,Chennai,Shanghai,2846,17,1,Recommended,1156
+R1889,Rotterdam,New York,3446,17,0,Direct,1306
+R1890,New York,Rotterdam,3447,18,1,Recommended,1357
+R1891,Dubai,Sydney,6547,25,0,Direct,2357
+R1892,Sydney,Dubai,6548,26,0,Direct,2408
+R1893,Shanghai,New York,8648,32,1,Standard,2458
+R1894,New York,Shanghai,8649,33,2,Alternative,2609
+R1895,Chennai,Los Angeles,8249,30,1,Standard,2159
+R1896,Los Angeles,Chennai,8250,31,1,Standard,2210
+R1897,Rotterdam,Singapore,8250,30,1,Standard,2210
+R1898,Singapore,Rotterdam,8251,31,2,Standard,2261
+R1899,Tokyo,Los Angeles,4851,19,0,Direct,1861
+R1900,Los Angeles,Tokyo,4852,20,0,Direct,1812
+R1901,Chennai,Rotterdam,8688,33,1,Recommended,1558
+R1902,Tokyo,Sydney,4898,22,0,Direct,1568
+R1903,Sydney,Los Angeles,6538,27,0,Direct,2258
+R1904,Hamburg,New York,3538,19,0,Direct,1358
+R1905,Dubai,Shanghai,5138,24,1,Recommended,1758
+R1906,Singapore,Los Angeles,7638,28,0,Direct,2458
+R1907,Shanghai,Sydney,4338,21,1,Recommended,1558
+R1908,Chennai,Singapore,1638,14,0,Direct,858
+R1909,Hamburg,Tokyo,11238,40,2,Alternative,3158
+R1910,Los Angeles,Rotterdam,7838,31,2,Alternative,2158
+R1911,Rotterdam,Chennai,8689,34,1,Recommended,1569
+R1912,Sydney,Tokyo,4899,23,0,Direct,1579
+R1913,Los Angeles,Sydney,6539,28,0,Direct,2269
+R1914,New York,Hamburg,3539,20,0,Direct,1369
+R1915,Shanghai,Dubai,5139,25,1,Recommended,1769
+R1916,Los Angeles,Singapore,7639,29,0,Direct,2469
+R1917,Sydney,Shanghai,4339,22,1,Recommended,1569
+R1918,Singapore,Chennai,1639,15,0,Direct,869
+R1919,Tokyo,Hamburg,11239,41,2,Alternative,3169
+R1920,Rotterdam,Los Angeles,7839,32,2,Alternative,2169
+R1921,Chennai,New York,7540,29,1,Standard,1960
+R1922,New York,Singapore,8340,32,1,Standard,2360
+R1923,Dubai,Tokyo,4340,22,0,Direct,1560
+R1924,Tokyo,Dubai,4341,23,1,Recommended,1661
+R1925,Sydney,Chennai,4941,24,1,Recommended,1711
+R1926,Chennai,Sydney,4942,25,2,Alternative,1662
+R1927,Hamburg,Los Angeles,8242,31,1,Standard,2262
+R1928,Los Angeles,Hamburg,8243,32,2,Alternative,2213
+R1929,Singapore,Dubai,3243,18,0,Direct,1363
+R1930,Dubai,Singapore,3244,19,1,Recommended,1414
+R1931,Shanghai,Tokyo,1144,13,0,Direct,764
+R1932,Tokyo,Shanghai,1145,14,1,Recommended,815
+R1933,Rotterdam,Sydney,11545,42,1,Standard,2965
+R1934,Sydney,Rotterdam,11546,43,2,Alternative,2906
+R1935,New York,Tokyo,8546,33,1,Standard,2356
+R1936,Tokyo,New York,8547,34,2,Alternative,2507
+R1937,Shanghai,Chennai,2847,17,0,Direct,1107
+R1938,Chennai,Shanghai,2848,18,1,Recommended,1158
+R1939,Rotterdam,New York,3448,18,0,Direct,1308
+R1940,New York,Rotterdam,3449,19,1,Recommended,1359
+R1941,Dubai,Sydney,6549,26,0,Direct,2359
+R1942,Sydney,Dubai,6550,27,0,Direct,2410
+R1943,Shanghai,New York,8650,33,1,Standard,2460
+R1944,New York,Shanghai,8651,34,2,Alternative,2611
+R1945,Chennai,Los Angeles,8251,31,1,Standard,2161
+R1946,Los Angeles,Chennai,8252,32,1,Standard,2212
+R1947,Rotterdam,Singapore,8252,31,1,Standard,2212
+R1948,Singapore,Rotterdam,8253,32,2,Standard,2263
+R1949,Tokyo,Los Angeles,4853,20,0,Direct,1863
+R1950,Los Angeles,Tokyo,4854,21,0,Direct,1814
+R1951,Chennai,Rotterdam,8690,34,1,Recommended,1560
+R1952,Tokyo,Sydney,4900,23,0,Direct,1570
+R1953,Sydney,Los Angeles,6540,28,0,Direct,2260
+R1954,Hamburg,New York,3540,20,0,Direct,1360
+R1955,Dubai,Shanghai,5140,25,1,Recommended,1760
+R1956,Singapore,Los Angeles,7640,29,0,Direct,2460
+R1957,Shanghai,Sydney,4340,22,1,Recommended,1560
+R1958,Chennai,Singapore,1640,15,0,Direct,860
+R1959,Hamburg,Tokyo,11240,41,2,Alternative,3160
+R1960,Los Angeles,Rotterdam,7840,32,2,Alternative,2160
+R1961,Rotterdam,Chennai,8691,35,1,Recommended,1571
+R1962,Sydney,Tokyo,4901,24,0,Direct,1581
+R1963,Los Angeles,Sydney,6541,29,0,Direct,2271
+R1964,New York,Hamburg,3541,21,0,Direct,1371
+R1965,Shanghai,Dubai,5141,26,1,Recommended,1771
+R1966,Los Angeles,Singapore,7641,30,0,Direct,2471
+R1967,Sydney,Shanghai,4341,23,1,Recommended,1571
+R1968,Singapore,Chennai,1641,16,0,Direct,871
+R1969,Tokyo,Hamburg,11241,42,2,Alternative,3171
+R1970,Rotterdam,Los Angeles,7841,33,2,Alternative,2171
+R1971,Chennai,New York,7542,30,1,Standard,1962
+R1972,New York,Singapore,8342,33,1,Standard,2362
+R1973,Dubai,Tokyo,4342,23,0,Direct,1562
+R1974,Tokyo,Dubai,4343,24,1,Recommended,1663
+R1975,Sydney,Chennai,4943,25,1,Recommended,1713
+R1976,Chennai,Sydney,4944,26,2,Alternative,1664
+R1977,Hamburg,Los Angeles,8244,32,1,Standard,2264
+R1978,Los Angeles,Hamburg,8245,33,2,Alternative,2215
+R1979,Singapore,Dubai,3245,19,0,Direct,1365
+R1980,Dubai,Singapore,3246,20,1,Recommended,1416
+R1981,Shanghai,Tokyo,1146,14,0,Direct,766
+R1982,Tokyo,Shanghai,1147,15,1,Recommended,817
+R1983,Rotterdam,Sydney,11547,43,1,Standard,2967
+R1984,Sydney,Rotterdam,11548,44,2,Alternative,2908
+R1985,New York,Tokyo,8548,34,1,Standard,2368
+R1986,Tokyo,New York,8549,35,2,Alternative,2519
+R1987,Shanghai,Chennai,2849,18,0,Direct,1119
+R1988,Chennai,Shanghai,2850,19,1,Recommended,1170
+R1989,Rotterdam,New York,3450,19,0,Direct,1320
+R1990,New York,Rotterdam,3451,20,1,Recommended,1371
+R1991,Dubai,Sydney,6551,27,0,Direct,2371
+R1992,Sydney,Dubai,6552,28,0,Direct,2422
+R1993,Shanghai,New York,8652,34,1,Standard,2472
+R1994,New York,Shanghai,8653,35,2,Alternative,2623
+R1995,Chennai,Los Angeles,8253,32,1,Standard,2173
+R1996,Los Angeles,Chennai,8254,33,1,Standard,2224
+R1997,Rotterdam,Singapore,8254,32,1,Standard,2224
+R1998,Singapore,Rotterdam,8255,33,2,Standard,2275
+R1999,Tokyo,Los Angeles,4855,21,0,Direct,1875
+R2000,Los Angeles,Tokyo,4856,22,0,Direct,1826
