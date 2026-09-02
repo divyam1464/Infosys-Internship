@@ -24,7 +24,189 @@ const QUOTATION_TEMPLATES = [
   { id: 3, name: 'Middle East Textiles', icon: '🧶', data: { origin: 'Dubai', destination: 'Sydney', cargo_type: 'Textiles', containers: 25 } }
 ];
 
-// 2. Futuristic Dark Dropdown Component
+// 2. Premium Split-Screen Auth Page
+const AuthPage = ({ onAuthSuccess }) => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    
+    const endpoint = isLogin ? '/api/login' : '/api/signup';
+    const payload = isLogin 
+      ? { email: formData.email, password: formData.password }
+      : { name: formData.name, email: formData.email, password: formData.password };
+
+    try {
+      const response = await fetch(`http://127.0.0.1:8000${endpoint}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        onAuthSuccess(data.name || formData.email.split('@')[0]);
+      } else {
+        setError(data.detail || "Authentication failed.");
+      }
+    } catch (err) {
+      setError("Failed to connect to the backend server.");
+    }
+    setLoading(false);
+  };
+
+  return (
+    <div className="flex h-screen w-full bg-[#020617] font-sans text-slate-200 overflow-hidden">
+      
+      {/* Left Panel - Visual Branding (Hidden on small screens) */}
+      <div className="hidden lg:flex w-1/2 relative flex-col justify-between p-12 overflow-hidden shadow-2xl">
+        {/* Dynamic Maritime Image Background */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center scale-105 animate-pulse" 
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=80')",
+            animationDuration: '20s'
+          }}
+        ></div>
+        
+        {/* Deep Gradient Overlays for Readability */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-indigo-900/90 via-[#020617]/80 to-[#020617] backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-transparent to-[#020617]"></div>
+
+        {/* Brand Header */}
+        <div className="relative z-20 flex items-center gap-3.5">
+          <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.4)] border border-indigo-400/30">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+          </div>
+          <div>
+            <h1 className="text-xl font-black tracking-wide text-white drop-shadow-md">Maritime</h1>
+            <p className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mt-0.5 drop-shadow-[0_0_5px_rgba(99,102,241,0.5)]">Brokerage AI</p>
+          </div>
+        </div>
+
+        {/* Floating AI Status Card */}
+        <div className="relative z-20 mb-10">
+          <h2 className="text-5xl font-black text-white leading-tight mb-6 drop-shadow-xl">
+            Intelligent freight <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">routing engine.</span>
+          </h2>
+          <p className="text-lg text-slate-300 font-medium max-w-md leading-relaxed mb-8">
+            Deploy autonomous agents to instantly compare transit times, score maritime pathways, and generate optimized pricing structures.
+          </p>
+          
+          <div className="flex gap-4">
+             <div className="bg-slate-900/60 backdrop-blur-md border border-slate-700/50 p-4 rounded-2xl shadow-xl flex items-center gap-4">
+               <div className="w-10 h-10 bg-emerald-500/20 rounded-full flex items-center justify-center border border-emerald-500/30">
+                 <span className="text-emerald-400 text-lg">⚡</span>
+               </div>
+               <div>
+                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Dataset Active</p>
+                 <p className="font-black text-white text-sm">2,000+ Port Nodes</p>
+               </div>
+             </div>
+             
+             <div className="bg-slate-900/60 backdrop-blur-md border border-slate-700/50 p-4 rounded-2xl shadow-xl flex items-center gap-4">
+               <div className="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-500/30">
+                 <span className="text-blue-400 text-lg">⚓</span>
+               </div>
+               <div>
+                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Agent Status</p>
+                 <p className="font-black text-white text-sm">Online & Scoring</p>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Panel - Auth Form */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 relative">
+        
+        {/* Ambient background glow for right side */}
+        <div className="absolute top-[10%] right-[20%] w-[300px] h-[300px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div className="w-full max-w-[420px] relative z-10 animate-fade-in-up">
+          
+          {/* Mobile Logo Fallback */}
+          <div className="lg:hidden flex items-center justify-center gap-3 mb-10">
+            <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.4)] border border-indigo-400/30">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+            </div>
+            <div>
+              <h1 className="text-xl font-black tracking-wide text-white">Maritime AI</h1>
+            </div>
+          </div>
+
+          <div className="mb-10 text-center lg:text-left">
+            <h2 className="text-3xl font-black tracking-tight text-white mb-2">
+              {isLogin ? 'Welcome back' : 'Initialize workspace'}
+            </h2>
+            <p className="text-[14px] text-slate-400 font-medium">
+              {isLogin ? 'Enter your credentials to access the Route Agent.' : 'Set up your broker profile to begin optimization.'}
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {!isLogin && (
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <svg className="w-5 h-5 text-slate-500 group-focus-within:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </div>
+                <input type="text" required className="w-full bg-slate-900/50 border border-slate-700/60 text-slate-200 text-sm font-semibold rounded-2xl focus:bg-slate-800 focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500/50 block pl-11 p-4 transition-all outline-none shadow-sm" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} placeholder="Full Name" />
+              </div>
+            )}
+            
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg className="w-5 h-5 text-slate-500 group-focus-within:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <input type="email" required className="w-full bg-slate-900/50 border border-slate-700/60 text-slate-200 text-sm font-semibold rounded-2xl focus:bg-slate-800 focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500/50 block pl-11 p-4 transition-all outline-none shadow-sm" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} placeholder="Email Address" />
+            </div>
+
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg className="w-5 h-5 text-slate-500 group-focus-within:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              </div>
+              <input type="password" required minLength="6" className="w-full bg-slate-900/50 border border-slate-700/60 text-slate-200 text-sm font-semibold rounded-2xl focus:bg-slate-800 focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500/50 block pl-11 p-4 transition-all outline-none shadow-sm" value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} placeholder="Password" />
+            </div>
+
+            {error && (
+              <div className="p-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 rounded-xl text-xs font-semibold flex items-center gap-3 animate-fade-in shadow-sm">
+                <span className="bg-rose-500/20 rounded-full w-6 h-6 flex items-center justify-center border border-rose-500/30 shrink-0">⚠️</span> 
+                {error}
+              </div>
+            )}
+
+            <button type="submit" disabled={loading} className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold text-sm hover:bg-indigo-500 hover:shadow-[0_0_30px_rgba(79,70,229,0.4)] active:scale-[0.98] transition-all flex justify-center items-center gap-2 mt-4 disabled:opacity-50 border border-indigo-400/50">
+              {loading ? (
+                <>
+                  <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                  Authenticating...
+                </>
+              ) : (isLogin ? 'Sign In →' : 'Create Access Key →')}
+            </button>
+          </form>
+
+          <div className="mt-8 text-center lg:text-left">
+            <p className="text-[13px] font-medium text-slate-400">
+              {isLogin ? "Don't have an account?" : "Already an agent?"}
+              <button type="button" onClick={() => { setIsLogin(!isLogin); setError(null); }} className="ml-2 text-indigo-400 font-bold hover:text-indigo-300 hover:underline transition-all">
+                {isLogin ? 'Deploy Workspace' : 'Sign in'}
+              </button>
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 3. Futuristic Dark Dropdown Component
 const ModernDropdown = ({ label, value, options, onChange, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -96,7 +278,7 @@ const ModernDropdown = ({ label, value, options, onChange, icon }) => {
   );
 };
 
-// 3. Functional Templates Action
+// 4. Functional Templates Action
 const TemplatesDropdown = ({ onSelectTemplate }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -144,8 +326,8 @@ const TemplatesDropdown = ({ onSelectTemplate }) => {
   );
 };
 
-// 4. Functional Profile Dropdown
-const ProfileDropdown = () => {
+// 5. Functional Profile Dropdown
+const ProfileDropdown = ({ userName, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -163,20 +345,20 @@ const ProfileDropdown = () => {
     <div className="relative z-50" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-sm outline-none focus:ring-4 focus:ring-indigo-500/20 backdrop-blur-md ${
+        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-sm outline-none focus:ring-4 focus:ring-indigo-500/20 backdrop-blur-md uppercase ${
           isOpen 
             ? 'bg-indigo-600 text-white shadow-[0_0_15px_rgba(99,102,241,0.4)] border border-indigo-400 scale-105' 
             : 'bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white hover:border-slate-500 active:scale-95'
         }`}
       >
-        KV
+        {userName.substring(0, 2)}
       </button>
 
       {isOpen && (
         <div className="absolute right-0 mt-3 w-64 bg-slate-900/95 backdrop-blur-3xl border border-slate-700/80 rounded-2xl shadow-[0_20px_70px_rgba(0,0,0,0.6)] animate-fade-in p-2 z-50 origin-top-right">
           <div className="px-3 py-3 border-b border-slate-800 mb-1">
-            <p className="text-sm font-extrabold text-white tracking-tight">Karan Verma</p>
-            <p className="text-[11px] font-semibold text-slate-400 mt-0.5 tracking-wide">karan.verma@example.com</p>
+            <p className="text-sm font-extrabold text-white tracking-tight capitalize">{userName}</p>
+            <p className="text-[11px] font-semibold text-slate-400 mt-0.5 tracking-wide">Broker Workspace</p>
           </div>
           <div className="flex flex-col gap-1">
             <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors group">
@@ -188,7 +370,7 @@ const ProfileDropdown = () => {
               Workspace Settings
             </button>
             <div className="h-px bg-slate-800 my-1"></div>
-            <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-rose-400 hover:bg-rose-500/10 hover:text-rose-300 transition-colors">
+            <button onClick={onLogout} className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-rose-400 hover:bg-rose-500/10 hover:text-rose-300 transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
               Log out
             </button>
@@ -199,10 +381,13 @@ const ProfileDropdown = () => {
   );
 };
 
-// 5. Main App
+// 6. Main App Component
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState('');
+  
   const [activeTab, setActiveTab] = useState('new_quotation');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // New state for sidebar toggle
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [formData, setFormData] = useState(DEFAULT_FORM_STATE);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -210,6 +395,14 @@ export default function App() {
 
   const [isExporting, setIsExporting] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
+
+  // Intercept unauthenticated users
+  if (!isAuthenticated) {
+    return <AuthPage onAuthSuccess={(name) => {
+      setCurrentUser(name);
+      setIsAuthenticated(true);
+    }} />;
+  }
 
   const handleReset = () => {
     setFormData(DEFAULT_FORM_STATE);
@@ -380,7 +573,9 @@ export default function App() {
                 className="bg-slate-900/60 backdrop-blur-md border border-slate-700/60 rounded-full pl-11 pr-5 py-2.5 text-sm w-48 sm:w-72 focus:bg-slate-800 focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500/50 transition-all duration-300 outline-none font-medium text-slate-200 placeholder:text-slate-500" 
               />
             </div>
-            <ProfileDropdown />
+            
+            <ProfileDropdown userName={currentUser} onLogout={() => setIsAuthenticated(false)} />
+            
           </div>
         </header>
 
