@@ -14,6 +14,7 @@ class RouteDetail(BaseModel):
     distance_nm: int
     transshipments: int
     route_score: float
+    via_ports: List[str] = []  # Added this to show the different stops
 
 class RouteResponse(BaseModel):
     status: str
