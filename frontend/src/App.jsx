@@ -717,12 +717,759 @@ const MOCK_ROUTES = [
   },
 ];
 
+const DashboardTab = ({ onNavigate }) => {
+  // 1. KPI & Agent State
+  const kpis = [
+    {
+      label: "Active Agents",
+      value: "3",
+      subtext: "Route, Pricing, Margin",
+      icon: "🤖",
+      color: "text-indigo-400",
+      bg: "bg-indigo-500/10",
+      border: "border-indigo-500/20",
+    },
+    {
+      label: "Routes Scored",
+      value: "1,452",
+      subtext: "Weighted Analysis",
+      icon: "🗺️",
+      color: "text-blue-400",
+      bg: "bg-blue-500/10",
+      border: "border-blue-500/20",
+    },
+    {
+      label: "Avg Target Margin",
+      value: "15.2%",
+      subtext: "0.2% above target",
+      icon: "📈",
+      color: "text-emerald-400",
+      bg: "bg-emerald-500/10",
+      border: "border-emerald-500/20",
+    },
+    {
+      label: "Market Demand",
+      value: "1.05x",
+      subtext: "Global Demand Factor",
+      icon: "📊",
+      color: "text-purple-400",
+      bg: "bg-purple-500/10",
+      border: "border-purple-500/20",
+    },
+  ];
 
+  const initialAgentSwarm = [
+    {
+      name: "Route Agent",
+      status: "Online",
+      tasks: "Transit, Distance, Transshipment",
+      load: 45,
+      color: "emerald",
+    },
+    {
+      name: "Pricing Agent",
+      status: "Online",
+      tasks: "Fuel, Port, Risk Surcharges",
+      load: 32,
+      color: "emerald",
+    },
+    {
+      name: "Margin Agent",
+      status: "Online",
+      tasks: "Profit Optimization",
+      load: 28,
+      color: "emerald",
+    },
+    {
+      name: "Weather Agent",
+      status: "Pending Deploy",
+      tasks: "Meteorological Risk",
+      load: 0,
+      color: "slate",
+    },
+    {
+      name: "Customs Agent",
+      status: "Pending Deploy",
+      tasks: "Clearance Prediction",
+      load: 0,
+      color: "slate",
+    },
+  ];
 
+  // 2. Enhanced Quotation Data
+  const initialQuotes = [
+    {
+      id: "Q-1042",
+      origin: "Shanghai",
+      destination: "Rotterdam",
+      cargo: "Electronics",
+      containers: 12,
+      status: "Optimized",
+      base: 1850,
+      margin: "15%",
+      date: "10 mins ago",
+      details:
+        "Direct route selected via Suez Canal. High demand factor applied due to peak season volume.",
+    },
+    {
+      id: "Q-1041",
+      origin: "Mumbai",
+      destination: "Hamburg",
+      cargo: "Auto Parts",
+      containers: 4,
+      status: "Pending",
+      base: 1800,
+      margin: "-",
+      date: "5 hrs ago",
+      details:
+        "Awaiting Pricing Agent confirmation on current bunker surcharges in the Red Sea corridor.",
+    },
+    {
+      id: "Q-1040",
+      origin: "Chennai",
+      destination: "Rotterdam",
+      cargo: "Machinery",
+      containers: 8,
+      status: "Booked",
+      base: 1720,
+      margin: "15.5%",
+      date: "1 day ago",
+      details:
+        "Customer accepted optimized margin. Transshipment at Colombo added 2 days transit but saved $400/TEU.",
+    },
+    {
+      id: "Q-1039",
+      origin: "Singapore",
+      destination: "Hamburg",
+      cargo: "Textiles",
+      containers: 25,
+      status: "Optimized",
+      base: 1650,
+      margin: "14.8%",
+      date: "2 days ago",
+      details:
+        "Eco-steaming pathway selected. Margin slightly below target due to increased port handling fees.",
+    },
+    {
+      id: "Q-1038",
+      origin: "Dubai",
+      destination: "New York",
+      cargo: "Chemicals",
+      containers: 15,
+      status: "Booked",
+      base: 2100,
+      margin: "16.2%",
+      date: "3 days ago",
+      details:
+        "Hazardous cargo premium applied. Fast-track customs clearance pre-approved.",
+    },
+  ];
 
+  // 3. State Management
+  const [agents, setAgents] = useState(initialAgentSwarm);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedQuote, setSelectedQuote] = useState(null);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [quotes] = useState(initialQuotes);
+
+  // 4. Live Telemetry Simulation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAgents((currentAgents) =>
+        currentAgents.map((agent) => {
+          if (agent.status !== "Online") return agent;
+          const fluctuation = Math.floor(Math.random() * 11) - 5;
+          const newLoad = Math.max(10, Math.min(95, agent.load + fluctuation));
+          return { ...agent, load: newLoad };
+        }),
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // 5. Feed Refresh Simulation
+  const handleRefreshFeed = () => {
+    setIsRefreshing(true);
+    setTimeout(() => setIsRefreshing(false), 800);
+  };
+
+  // 6. Dynamic Filtering Logic
+  const filteredQuotes = initialQuotes.filter((q) => {
+    const matchesFilter =
+      activeFilter === "All" ||
+      q.status.toUpperCase() === activeFilter.toUpperCase();
+    const searchString =
+      `${q.id} ${q.origin} ${q.destination} ${q.cargo}`.toLowerCase();
+    const matchesSearch = searchString.includes(searchQuery.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
+
+  return (
+    <div className="max-w-7xl mx-auto animate-fade-in space-y-8 relative z-20 pb-10">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[10px] font-black tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(99,102,241,0.15)] backdrop-blur-md">
+            <span className="animate-pulse drop-shadow-[0_0_5px_rgba(99,102,241,0.8)]">
+              ✦
+            </span>
+            Agentic Platform: Milestone 2 Active
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-2 drop-shadow-md">
+            Executive Dashboard
+          </h2>
+          <p className="text-slate-400 font-medium text-lg">
+            Platform overview tracking operating costs, demand factors, and
+            margin optimization.
+          </p>
+        </div>
+        <button
+          onClick={() => onNavigate("new_quotation")}
+          className="px-6 py-3 rounded-2xl font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-[0_0_20px_rgba(79,70,229,0.4)] active:scale-95 transition-all flex items-center justify-center gap-2 border border-indigo-400/50"
+        >
+          + New Quotation
+        </button>
+      </div>
+
+      {/* KPI Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {kpis.map((kpi, idx) => (
+          <div
+            key={idx}
+            className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 shadow-lg hover:bg-slate-800/60 transition-all duration-300"
+          >
+            <div className="flex justify-between items-start mb-4">
+              <div
+                className={`w-12 h-12 rounded-[1.25rem] flex items-center justify-center text-2xl ${kpi.bg} ${kpi.border} border shadow-inner`}
+              >
+                {kpi.icon}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-3xl font-black text-white mb-1 tracking-tight">
+                {kpi.value}
+              </h3>
+              <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                {kpi.label}
+              </p>
+              <p className={`text-xs font-semibold ${kpi.color}`}>
+                {kpi.subtext}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 h-[600px]">
+        {/* Dynamic Agent Swarm Health Monitor */}
+        <div className="xl:col-span-2 bg-slate-900/50 backdrop-blur-xl rounded-[2.5rem] border border-slate-700/50 p-6 sm:p-8 flex flex-col shadow-lg h-full">
+          <div className="flex items-center justify-between mb-8 px-2 shrink-0">
+            <h3 className="text-xl font-black text-white tracking-tight flex items-center gap-3">
+              <span className="text-indigo-400 bg-indigo-500/10 p-2 rounded-xl border border-indigo-500/20">
+                🧠
+              </span>
+              Agent Swarm Health
+            </h3>
+            <span className="text-xs font-bold text-emerald-500 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/20 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+              Live Telemetry
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3.5 overflow-y-auto pr-2 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {agents.map((agent, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between bg-slate-800/40 p-5 rounded-[1.5rem] border border-slate-700/50 transition-all duration-500 hover:bg-slate-800/80 hover:border-indigo-500/30"
+              >
+                <div className="flex items-center gap-5">
+                  <div
+                    className={`w-2.5 h-2.5 rounded-full bg-${agent.color}-400 shadow-[0_0_8px_currentColor] ${agent.status === "Online" ? "animate-pulse" : "opacity-50"}`}
+                  ></div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-200">
+                      {agent.name}
+                    </h4>
+                    <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mt-0.5">
+                      {agent.tasks}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 w-40">
+                  <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                    <div
+                      className={`h-full bg-${agent.color}-500 rounded-full transition-all duration-1000 ease-in-out`}
+                      style={{ width: `${agent.load}%` }}
+                    ></div>
+                  </div>
+                  <span className="text-xs font-bold text-slate-400 w-10 text-right font-mono transition-all duration-500">
+                    {agent.load}%
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fully Interactive Recent Activity Feed */}
+        <div className="bg-slate-900/50 backdrop-blur-xl rounded-[2.5rem] border border-slate-700/50 flex flex-col shadow-lg overflow-hidden h-full relative">
+          {/* Feed Header & Controls */}
+          <div className="p-6 sm:p-8 pb-4 border-b border-slate-800/80 bg-slate-900/80 shrink-0">
+            <div className="flex items-center justify-between mb-5">
+              <h3 className="text-xl font-black text-white tracking-tight">
+                Recent Activity
+              </h3>
+              <button
+                onClick={handleRefreshFeed}
+                className="text-slate-400 hover:text-indigo-400 transition-colors bg-slate-800/50 p-2 rounded-xl border border-slate-700/50"
+              >
+                <svg
+                  className={`w-4 h-4 ${isRefreshing ? "animate-spin text-indigo-400" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            {/* Search Bar */}
+            <div className="relative mb-5">
+              <svg
+                className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                ></path>
+              </svg>
+              <input
+                type="text"
+                placeholder="Search ID, cargo, or port..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-slate-950/50 border border-slate-700/60 rounded-2xl pl-11 pr-4 py-3 text-xs font-medium text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500/50 focus:ring-2 focus:ring-indigo-500/20 transition-all"
+              />
+            </div>
+
+            {/* Filter Pills - Scrollbar Removed, Flex Wrap Added */}
+            <div className="flex flex-wrap gap-2.5 pb-2">
+              {["All", "Optimized", "Pending", "Booked"].map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-wider transition-all shrink-0 ${
+                    activeFilter === filter
+                      ? "bg-indigo-600 text-white shadow-[0_0_15px_rgba(79,70,229,0.4)] border border-indigo-400/50"
+                      : "bg-slate-800/60 text-slate-400 border border-slate-700/80 hover:bg-slate-700 hover:text-slate-200"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Edged Feed Cards */}
+          <div
+            className={`flex-1 overflow-y-auto p-5 flex flex-col gap-4 transition-opacity duration-300 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${isRefreshing ? "opacity-30" : "opacity-100"}`}
+          >
+            {filteredQuotes.length > 0 ? (
+              filteredQuotes.map((quote) => (
+                <div
+                  key={quote.id}
+                  onClick={() => setSelectedQuote(quote)}
+                  className="bg-slate-800/30 backdrop-blur-md border border-slate-700/50 rounded-[1.5rem] p-5 hover:bg-slate-800/80 hover:border-indigo-500/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group cursor-pointer relative"
+                >
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest bg-indigo-500/10 px-2.5 py-1 rounded-lg border border-indigo-500/20">
+                      {quote.id}
+                    </span>
+                    <span
+                      className={`text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider border ${
+                        quote.status === "Optimized"
+                          ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                          : quote.status === "Booked"
+                            ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+                            : "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                      }`}
+                    >
+                      {quote.status}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-sm font-black text-slate-200 group-hover:text-white transition-colors truncate">
+                      {quote.origin}
+                    </span>
+                    <svg
+                      className="w-4 h-4 text-slate-500 shrink-0 group-hover:text-indigo-400 transition-colors"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2.5"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      ></path>
+                    </svg>
+                    <span className="text-sm font-black text-slate-200 group-hover:text-white transition-colors truncate">
+                      {quote.destination}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-700/50">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] font-medium text-slate-300 flex items-center gap-1.5">
+                        <span className="text-slate-500">📦</span> {quote.cargo}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-slate-600"></span>
+                      <span className="text-[10px] font-medium text-slate-300 flex items-center gap-1.5">
+                        <span className="text-slate-500">🏗️</span>{" "}
+                        {quote.containers} TEU
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full text-slate-500">
+                <span className="text-4xl mb-4 opacity-50">📭</span>
+                <p className="text-sm font-medium text-slate-400">
+                  No shipments found.
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setActiveFilter("All");
+                  }}
+                  className="mt-3 text-xs font-bold text-indigo-400 hover:underline"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Centered, Soft-Edged Glass Modal */}
+      {selectedQuote && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          {/* Blurred Backdrop */}
+          <div
+            className="absolute inset-0 bg-[#020617]/80 backdrop-blur-md transition-opacity animate-fade-in"
+            onClick={() => setSelectedQuote(null)}
+          ></div>
+
+          {/* Modal Card - Soft Edges & Centered */}
+          <div className="relative w-full max-w-xl bg-slate-900/90 backdrop-blur-2xl border border-slate-700/60 rounded-[2.5rem] shadow-[0_20px_70px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden animate-fade-in-up transform transition-all">
+            {/* Soft Glowing Top Border */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 opacity-70"></div>
+
+            {/* Modal Header */}
+            <div className="px-8 pt-8 pb-6 flex items-center justify-between relative z-10">
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-black text-indigo-400 uppercase tracking-widest bg-indigo-500/10 px-3.5 py-1.5 rounded-xl border border-indigo-500/20 shadow-inner">
+                  {selectedQuote.id}
+                </span>
+                <span
+                  className={`text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider border ${
+                    selectedQuote.status === "Optimized"
+                      ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+                      : selectedQuote.status === "Booked"
+                        ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+                        : "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                  }`}
+                >
+                  {selectedQuote.status}
+                </span>
+              </div>
+              <button
+                onClick={() => setSelectedQuote(null)}
+                className="w-10 h-10 flex items-center justify-center rounded-2xl bg-slate-800/50 text-slate-400 hover:bg-slate-700 hover:text-white transition-all border border-slate-700/50 shadow-sm hover:shadow-md"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="px-8 pb-8 space-y-8 relative z-10">
+              {/* Centered Route Visualization */}
+              <div className="flex items-center justify-center gap-4 mb-2">
+                <h3 className="text-2xl sm:text-3xl font-black text-white truncate max-w-[140px] sm:max-w-[180px] text-right">
+                  {selectedQuote.origin}
+                </h3>
+                <div className="flex-1 flex items-center max-w-[100px]">
+                  <div className="h-[2px] bg-gradient-to-r from-indigo-500/50 to-emerald-500/50 flex-1 rounded-full"></div>
+                  <div className="w-10 h-10 rounded-full border-2 border-slate-700 bg-slate-800 flex items-center justify-center text-lg shadow-[0_0_15px_rgba(99,102,241,0.2)] mx-2 shrink-0">
+                    🚢
+                  </div>
+                  <div className="h-[2px] bg-gradient-to-r from-emerald-500/50 to-indigo-500/50 flex-1 rounded-full"></div>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black text-white truncate max-w-[140px] sm:max-w-[180px] text-left">
+                  {selectedQuote.destination}
+                </h3>
+              </div>
+
+              {/* Specs Grid */}
+              <div className="grid grid-cols-2 gap-5">
+                <div className="bg-slate-800/40 p-5 rounded-3xl border border-slate-700/50 flex flex-col items-center text-center justify-center shadow-inner">
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                    Cargo Profile
+                  </p>
+                  <p className="text-base font-bold text-slate-200 flex items-center gap-2">
+                    <span className="text-slate-400">📦</span>{" "}
+                    {selectedQuote.cargo}
+                  </p>
+                </div>
+                <div className="bg-slate-800/40 p-5 rounded-3xl border border-slate-700/50 flex flex-col items-center text-center justify-center shadow-inner">
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5">
+                    Volume
+                  </p>
+                  <p className="text-base font-bold text-slate-200 flex items-center gap-2">
+                    <span className="text-slate-400">🏗️</span>{" "}
+                    {selectedQuote.containers} TEUs
+                  </p>
+                </div>
+              </div>
+
+              {/* Financial Breakdown */}
+              <div className="bg-slate-800/40 rounded-3xl border border-slate-700/50 p-6 shadow-inner">
+                <h4 className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-5 flex items-center gap-2">
+                  <span className="text-emerald-400 text-lg drop-shadow-md">
+                    💵
+                  </span>{" "}
+                  Financial Breakdown
+                </h4>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-slate-400 font-medium">
+                      Base Freight Rate
+                    </span>
+                    <span className="text-sm font-bold text-slate-200">
+                      ${selectedQuote.base.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-slate-400 font-medium">
+                      Container Count
+                    </span>
+                    <span className="text-sm font-bold text-slate-200">
+                      × {selectedQuote.containers}
+                    </span>
+                  </div>
+                  <div className="h-px bg-slate-700/60 rounded-full"></div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-slate-300 font-bold">
+                      Total Operating Cost
+                    </span>
+                    <span className="text-base font-black text-white">
+                      $
+                      {(
+                        selectedQuote.base * selectedQuote.containers
+                      ).toLocaleString()}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center bg-gradient-to-r from-emerald-500/10 to-transparent p-4 rounded-2xl border border-emerald-500/20 mt-2 shadow-sm">
+                    <div>
+                      <span className="text-sm text-emerald-400 font-bold block mb-0.5">
+                        Optimized Margin
+                      </span>
+                      <span className="text-[9px] text-emerald-500/70 font-black uppercase tracking-widest">
+                        Brokerage Profit
+                      </span>
+                    </div>
+                    <span className="text-lg font-black text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-xl border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                      {selectedQuote.margin}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Agent Log */}
+              <div className="bg-indigo-500/10 p-6 rounded-3xl border border-indigo-500/20 shadow-inner">
+                <h4 className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.8)]"></span>
+                  Agent Reasoning Log
+                </h4>
+                <p className="text-sm text-slate-300 leading-relaxed font-medium">
+                  {selectedQuote.details}
+                </p>
+              </div>
+
+              {/* Footer Button */}
+              <button
+                onClick={() => setSelectedQuote(null)}
+                className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.4)] active:scale-[0.98] border border-indigo-400/50 mt-4"
+              >
+                Close Details
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// 7. Quotations Ledger Tab Component
+const QuotationsTab = ({ quotes, onRefresh, onNavigate }) => {
+  return (
+    <div className="max-w-6xl mx-auto animate-fade-in relative z-20 pb-10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[10px] font-black tracking-widest uppercase mb-5 shadow-[0_0_15px_rgba(99,102,241,0.15)] backdrop-blur-md">
+            <span className="animate-pulse">✦</span> Quotation Ledger
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mb-2 drop-shadow-md">
+            Saved Quotations
+          </h2>
+          <p className="text-slate-400 font-medium text-lg">
+            Manage and review your optimized maritime bookings.
+          </p>
+        </div>
+        <button
+          onClick={() => onNavigate("new_quotation")}
+          className="px-6 py-3 rounded-2xl font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-[0_0_20px_rgba(79,70,229,0.4)] active:scale-95 transition-all flex items-center justify-center gap-2 border border-indigo-400/50"
+        >
+          + New Quotation
+        </button>
+      </div>
+
+      <div className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-[2.5rem] shadow-lg overflow-hidden">
+        <div className="p-6 sm:p-8 border-b border-slate-800/80 bg-slate-900/80 flex justify-between items-center">
+          <h3 className="text-xl font-black text-white tracking-tight">
+            Booking History
+          </h3>
+          <button
+            onClick={onRefresh}
+            className="text-slate-400 hover:text-indigo-400 transition-colors p-2 rounded-xl border border-slate-700/50 bg-slate-800/50"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2.5"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div className="p-0">
+          {quotes.length > 0 ? (
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse whitespace-nowrap">
+                <thead>
+                  <tr className="bg-slate-800/40 border-b border-slate-700/50 text-[10px] uppercase tracking-widest text-slate-400 font-bold">
+                    <th className="p-6">Quote ID</th>
+                    <th className="p-6">Route</th>
+                    <th className="p-6">Cargo Specs</th>
+                    <th className="p-6">Efficiency</th>
+                    <th className="p-6">Total Cost</th>
+                    <th className="p-6">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm font-medium text-slate-300">
+                  {quotes.map((q) => (
+                    <tr
+                      key={q.quote_id}
+                      className="border-b border-slate-700/30 hover:bg-slate-800/40 transition-colors"
+                    >
+                      <td className="p-6 font-black text-indigo-400">
+                        {q.quote_id}
+                      </td>
+                      <td className="p-6">
+                        <div className="flex flex-col">
+                          <span className="text-white font-bold">
+                            {q.origin} → {q.destination}
+                          </span>
+                          <span className="text-xs text-slate-500 font-semibold">
+                            {q.route_name} ({q.transit_days} days)
+                          </span>
+                        </div>
+                      </td>
+                      <td className="p-6">
+                        <div className="flex flex-col">
+                          <span className="font-bold">{q.cargo_type}</span>
+                          <span className="text-xs text-slate-500 font-semibold">
+                            {q.containers} TEUs
+                          </span>
+                        </div>
+                      </td>
+                      <td className="p-6">
+                        <span className="text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+                          {q.route_score} / 10
+                        </span>
+                      </td>
+                      <td className="p-6 font-black text-white text-base">
+                        ${q.total_cost_usd.toLocaleString()}
+                      </td>
+                      <td className="p-6">
+                        <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                          {q.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="p-12 flex flex-col items-center justify-center text-slate-500">
+              <span className="text-5xl mb-4 opacity-50">📭</span>
+              <p className="text-sm font-bold text-slate-400">
+                No saved quotations yet.
+              </p>
+              <p className="text-xs text-slate-500 mt-1">
+                Head to New Quotation to generate one.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // 6. Main App Component
 export default function App() {
+  const [savedQuotes, setSavedQuotes] = useState([]);
+  const [notification, setNotification] = useState(null); // Sleek toast notification
+
   const [routes, setRoutes] = useState(MOCK_ROUTES);
   const [selectedRoute, setSelectedRoute] = useState(MOCK_ROUTES[0]);
 
@@ -734,13 +1481,21 @@ export default function App() {
   const [formData, setFormData] = useState(DEFAULT_FORM_STATE);
   const [result, setResult] = useState(null);
 
-  const [pricing, setPricing] = useState(null); // <--- Add this line
+  const [pricing, setPricing] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const [isExporting, setIsExporting] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
+
+
+  // Fetch when the tab becomes active
+  useEffect(() => {
+    if (activeTab === "quotations" && currentUser) {
+      fetchQuotations();
+    }
+  }, [activeTab, currentUser]);
 
   // Intercept unauthenticated users
   if (!isAuthenticated) {
@@ -775,19 +1530,19 @@ export default function App() {
     setLoading(true);
     setError(null);
     setResult(null);
-    setPricing(null); // Reset pricing on new search
-    
+    setPricing(null);
+
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/routes/analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      const response = await fetch("http://127.0.0.1:8000/api/routes/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
       const data = await response.json();
-      
-      if (data.status === 'success') {
+
+      if (data.status === "success") {
         setResult(data);
-        
+
         // --- DYNAMIC PRICING GENERATOR ---
         const rec = data.recommended_route;
         const basePricing = data.pricing.breakdown;
@@ -795,59 +1550,113 @@ export default function App() {
 
         // Route 1: Optimal Direct Pathway
         const bestRoute = {
-          id: "route-1", rank: 1, is_recommended: true, 
-          transit_days: rec.transit_days, distance_nm: rec.distance_nm, 
-          transshipments: rec.transshipments, route_score: rec.route_score, 
+          id: "route-1",
+          rank: 1,
+          is_recommended: true,
+          transit_days: rec.transit_days,
+          distance_nm: rec.distance_nm,
+          transshipments: rec.transshipments,
+          route_score: rec.route_score,
           name: "Optimal Direct Pathway",
-          stops: [{ port: rec.origin, type: "origin" }, { port: "Ocean Transit", type: "waypoint" }, { port: rec.destination, type: "destination" }],
+          stops: [
+            { port: rec.origin, type: "origin" },
+            { port: "Ocean Transit", type: "waypoint" },
+            { port: rec.destination, type: "destination" },
+          ],
           pricing: {
-            breakdown: { base_freight: basePricing.base_freight, bunker_adjustment: basePricing.bunker_adjustment, origin_handling: basePricing.origin_handling, destination_handling: basePricing.destination_handling, transshipment_fee: 0 },
-            total_cost_usd: data.pricing.total_cost_usd
-          }
+            breakdown: {
+              base_freight: basePricing.base_freight,
+              bunker_adjustment: basePricing.bunker_adjustment,
+              origin_handling: basePricing.origin_handling,
+              destination_handling: basePricing.destination_handling,
+              transshipment_fee: 0,
+            },
+            total_cost_usd: data.pricing.total_cost_usd,
+          },
         };
 
         // Route 2: Transshipment (Discounted freight, higher bunker, added transfer fees)
         const r2_freight = Math.round(basePricing.base_freight * 0.88);
         const r2_bunker = Math.round(basePricing.bunker_adjustment * 1.05);
         const r2_ts_fee = 150 * containers;
-        
+
         const altRoute1 = {
-          id: "route-2", rank: 2, is_recommended: false, 
-          transit_days: Math.round(rec.transit_days * 1.2), distance_nm: Math.round(rec.distance_nm * 1.05), 
-          transshipments: rec.transshipments + 1, route_score: (rec.route_score - 0.6).toFixed(1), 
+          id: "route-2",
+          rank: 2,
+          is_recommended: false,
+          transit_days: Math.round(rec.transit_days * 1.2),
+          distance_nm: Math.round(rec.distance_nm * 1.05),
+          transshipments: rec.transshipments + 1,
+          route_score: (rec.route_score - 0.6).toFixed(1),
           name: "Regional Hub Transshipment",
-          stops: [{ port: rec.origin, type: "origin" }, { port: "Major Hub (TS)", type: "transshipment" }, { port: rec.destination, type: "destination" }],
+          stops: [
+            { port: rec.origin, type: "origin" },
+            { port: "Major Hub (TS)", type: "transshipment" },
+            { port: rec.destination, type: "destination" },
+          ],
           pricing: {
-            breakdown: { base_freight: r2_freight, bunker_adjustment: r2_bunker, origin_handling: basePricing.origin_handling, destination_handling: basePricing.destination_handling, transshipment_fee: r2_ts_fee },
-            total_cost_usd: r2_freight + r2_bunker + basePricing.origin_handling + basePricing.destination_handling + r2_ts_fee
-          }
+            breakdown: {
+              base_freight: r2_freight,
+              bunker_adjustment: r2_bunker,
+              origin_handling: basePricing.origin_handling,
+              destination_handling: basePricing.destination_handling,
+              transshipment_fee: r2_ts_fee,
+            },
+            total_cost_usd:
+              r2_freight +
+              r2_bunker +
+              basePricing.origin_handling +
+              basePricing.destination_handling +
+              r2_ts_fee,
+          },
         };
 
         // Route 3: Eco-Steaming Multi-Port (Slower, lowest freight, cheapest bunker, higher feeder fees)
         const r3_freight = Math.round(basePricing.base_freight * 0.75);
         const r3_bunker = Math.round(basePricing.bunker_adjustment * 0.85);
         const r3_ts_fee = 220 * containers;
-        
+
         const altRoute2 = {
-          id: "route-3", rank: 3, is_recommended: false, 
-          transit_days: Math.round(rec.transit_days * 1.45), distance_nm: Math.round(rec.distance_nm * 1.15), 
-          transshipments: rec.transshipments + 2, route_score: (rec.route_score - 1.5).toFixed(1), 
+          id: "route-3",
+          rank: 3,
+          is_recommended: false,
+          transit_days: Math.round(rec.transit_days * 1.45),
+          distance_nm: Math.round(rec.distance_nm * 1.15),
+          transshipments: rec.transshipments + 2,
+          route_score: (rec.route_score - 1.5).toFixed(1),
           name: "Eco-Steaming Multi-Port",
-          stops: [{ port: rec.origin, type: "origin" }, { port: "Feeder Port A", type: "waypoint" }, { port: "Feeder Port B", type: "waypoint" }, { port: rec.destination, type: "destination" }],
+          stops: [
+            { port: rec.origin, type: "origin" },
+            { port: "Feeder Port A", type: "waypoint" },
+            { port: "Feeder Port B", type: "waypoint" },
+            { port: rec.destination, type: "destination" },
+          ],
           pricing: {
-            breakdown: { base_freight: r3_freight, bunker_adjustment: r3_bunker, origin_handling: basePricing.origin_handling, destination_handling: basePricing.destination_handling, transshipment_fee: r3_ts_fee },
-            total_cost_usd: r3_freight + r3_bunker + basePricing.origin_handling + basePricing.destination_handling + r3_ts_fee
-          }
+            breakdown: {
+              base_freight: r3_freight,
+              bunker_adjustment: r3_bunker,
+              origin_handling: basePricing.origin_handling,
+              destination_handling: basePricing.destination_handling,
+              transshipment_fee: r3_ts_fee,
+            },
+            total_cost_usd:
+              r3_freight +
+              r3_bunker +
+              basePricing.origin_handling +
+              basePricing.destination_handling +
+              r3_ts_fee,
+          },
         };
 
         setRoutes([bestRoute, altRoute1, altRoute2]);
         setSelectedRoute(bestRoute);
-
       } else {
-        setError(data.message || "No optimal route found for these parameters.");
+        setError(data.detail || data.message || "No optimal route found for these parameters.");
       }
     } catch (err) {
-      setError("Failed to connect to the Route Agent. Is the FastAPI server running?");
+      setError(
+        "Failed to connect to the Route Agent. Is the FastAPI server running?",
+      );
     }
     setLoading(false);
   };
@@ -860,14 +1669,55 @@ export default function App() {
     }, 800);
   };
 
-  const handleProceedToBooking = () => {
-    setIsBooking(true);
-    setTimeout(() => {
-      setIsBooking(false);
-      alert(
-        `Booking initiated for ${result.recommended_route.origin} to ${result.recommended_route.destination}.`,
+  const fetchQuotations = async () => {
+    try {
+      const res = await fetch(
+        `http://127.0.0.1:8000/api/quotations/list?user_name=${currentUser}`,
       );
-    }, 1200);
+      const data = await res.json();
+      if (data.status === "success") {
+        setSavedQuotes(data.data);
+      }
+    } catch (error) {
+      console.error("Failed to fetch quotes:", error);
+    }
+  };
+
+  
+
+  const handleProceedToBooking = async () => {
+    setIsBooking(true);
+    try {
+      const payload = {
+        user_name: currentUser,
+        origin: formData.origin,
+        destination: formData.destination,
+        cargo_type: formData.cargo_type,
+        containers: formData.containers,
+        route_name: selectedRoute.name,
+        route_score: selectedRoute.route_score,
+        transit_days: selectedRoute.transit_days,
+        total_cost_usd: selectedRoute.pricing.total_cost_usd,
+      };
+
+      const res = await fetch("http://127.0.0.1:8000/api/quotations/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (data.status === "success") {
+        setNotification(`Quote ${data.quote_id} saved successfully!`);
+        setTimeout(() => setNotification(null), 4000);
+
+        // Auto-navigate to the quotations ledger to see it instantly
+        setActiveTab("quotations");
+      }
+    } catch (error) {
+      console.error("Failed to save quote:", error);
+    }
+    setIsBooking(false);
   };
 
   return (
@@ -1055,28 +1905,11 @@ export default function App() {
 
         {/* Dynamic Workspace */}
         <div className="flex-1 overflow-y-auto p-6 md:p-10 scroll-smooth relative z-10 custom-scrollbar">
-          {activeTab !== "new_quotation" ? (
-            <div className="flex items-center justify-center h-full text-slate-400 flex-col gap-6 animate-fade-in">
-              <div className="w-24 h-24 bg-slate-900/60 backdrop-blur-xl rounded-[2rem] flex items-center justify-center text-4xl shadow-xl border border-slate-800">
-                🏗️
-              </div>
-              <div className="text-center">
-                <h2 className="text-2xl font-black text-slate-200 mb-2">
-                  Module under construction
-                </h2>
-                <p className="text-sm font-medium text-slate-500">
-                  Navigate to{" "}
-                  <span
-                    className="text-indigo-400 font-bold cursor-pointer hover:underline"
-                    onClick={() => setActiveTab("new_quotation")}
-                  >
-                    New Quotation
-                  </span>{" "}
-                  to use the Route Agent.
-                </p>
-              </div>
-            </div>
-          ) : (
+          {/* Dashboard Tab Render */}
+          {activeTab === "dashboard" ? (
+            <DashboardTab onNavigate={(tab) => setActiveTab(tab)} />
+          ) : activeTab === "new_quotation" ? (
+            /* New Quotation Render */
             <div className="max-w-6xl mx-auto animate-fade-in">
               {/* Header Section */}
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 relative z-30">
@@ -1361,27 +2194,44 @@ export default function App() {
                   </div>
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
-                    
                     {/* Route Breakdown Card */}
                     <div className="bg-slate-800/40 rounded-3xl p-6 md:p-8 border border-slate-700/50 shadow-inner h-full">
                       <h4 className="font-bold text-slate-200 mb-5 flex items-center gap-3 text-[11px] uppercase tracking-widest">
-                        <span className="text-indigo-400 bg-indigo-500/10 p-1.5 rounded-lg border border-indigo-500/20 shadow-[0_0_10px_rgba(99,102,241,0.2)]">✦</span> Route Intelligence Breakdown
+                        <span className="text-indigo-400 bg-indigo-500/10 p-1.5 rounded-lg border border-indigo-500/20 shadow-[0_0_10px_rgba(99,102,241,0.2)]">
+                          ✦
+                        </span>{" "}
+                        Route Intelligence Breakdown
                       </h4>
                       <div className="flex flex-col gap-4">
                         {[
                           `Evaluated ${routes.length} distinct maritime pathways from ${formData.origin} to ${formData.destination}.`,
-                          selectedRoute.is_recommended 
+                          selectedRoute.is_recommended
                             ? `Top recommendation selected due to highest efficiency score of ${selectedRoute.route_score}/10.`
                             : `Alternative pathway selected with a lower efficiency score of ${selectedRoute.route_score}/10.`,
-                          selectedRoute.transshipments === 0 
+                          selectedRoute.transshipments === 0
                             ? "Direct path eliminates excess port dwell time and transfer risks."
                             : `Includes ${selectedRoute.transshipments} transshipment(s), extending transit by approx ${Math.round(selectedRoute.transit_days * 0.2)} days.`,
-                          `Total nautical miles computed accurately to ${selectedRoute.distance_nm.toLocaleString()} NM.`
+                          `Total nautical miles computed accurately to ${selectedRoute.distance_nm.toLocaleString()} NM.`,
                         ].map((exp, index) => (
-                          <div key={index} className="flex items-center gap-3 text-sm font-bold text-slate-300 bg-slate-900/80 px-4 py-3.5 rounded-xl border border-slate-700 hover:border-slate-600 transition-colors">
+                          <div
+                            key={index}
+                            className="flex items-center gap-3 text-sm font-bold text-slate-300 bg-slate-900/80 px-4 py-3.5 rounded-xl border border-slate-700 hover:border-slate-600 transition-colors"
+                          >
                             <span className="text-emerald-400 bg-emerald-500/10 p-0.5 rounded-full flex items-center justify-center border border-emerald-500/20 shrink-0">
-                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
-                            </span> 
+                              <svg
+                                className="w-3.5 h-3.5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="3"
+                                  d="M5 13l4 4L19 7"
+                                ></path>
+                              </svg>
+                            </span>
                             {exp}
                           </div>
                         ))}
@@ -1394,35 +2244,66 @@ export default function App() {
                         <div>
                           <div className="flex items-center justify-between mb-5">
                             <h4 className="font-bold text-slate-200 flex items-center gap-3 text-[11px] uppercase tracking-widest">
-                              <span className="text-emerald-400 bg-emerald-500/10 p-1.5 rounded-lg border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.2)]">💵</span> Financial Breakdown
+                              <span className="text-emerald-400 bg-emerald-500/10 p-1.5 rounded-lg border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                                💵
+                              </span>{" "}
+                              Financial Breakdown
                             </h4>
-                            <span className="text-[10px] font-bold bg-slate-900 px-2 py-1 rounded text-slate-400 border border-slate-700">{formData.containers} Containers</span>
+                            <span className="text-[10px] font-bold bg-slate-900 px-2 py-1 rounded text-slate-400 border border-slate-700">
+                              {formData.containers} Containers
+                            </span>
                           </div>
 
                           <div className="space-y-3 mb-6">
                             <div className="flex justify-between items-center text-sm">
-                              <span className="text-slate-400 font-medium">Ocean Freight</span>
-                              <span className="text-slate-200 font-bold">${selectedRoute.pricing.breakdown.base_freight.toLocaleString()}</span>
+                              <span className="text-slate-400 font-medium">
+                                Ocean Freight
+                              </span>
+                              <span className="text-slate-200 font-bold">
+                                $
+                                {selectedRoute.pricing.breakdown.base_freight.toLocaleString()}
+                              </span>
                             </div>
                             <div className="flex justify-between items-center text-sm">
-                              <span className="text-slate-400 font-medium">Bunker Surcharge (BAF)</span>
-                              <span className="text-slate-200 font-bold">${selectedRoute.pricing.breakdown.bunker_adjustment.toLocaleString()}</span>
+                              <span className="text-slate-400 font-medium">
+                                Bunker Surcharge (BAF)
+                              </span>
+                              <span className="text-slate-200 font-bold">
+                                $
+                                {selectedRoute.pricing.breakdown.bunker_adjustment.toLocaleString()}
+                              </span>
                             </div>
-                            
-                            {selectedRoute.pricing.breakdown.transshipment_fee > 0 && (
+
+                            {selectedRoute.pricing.breakdown.transshipment_fee >
+                              0 && (
                               <div className="flex justify-between items-center text-sm">
-                                <span className="text-amber-400 font-medium">Transshipment Fees</span>
-                                <span className="text-amber-400 font-bold">+ ${selectedRoute.pricing.breakdown.transshipment_fee.toLocaleString()}</span>
+                                <span className="text-amber-400 font-medium">
+                                  Transshipment Fees
+                                </span>
+                                <span className="text-amber-400 font-bold">
+                                  + $
+                                  {selectedRoute.pricing.breakdown.transshipment_fee.toLocaleString()}
+                                </span>
                               </div>
                             )}
 
                             <div className="flex justify-between items-center text-sm">
-                              <span className="text-slate-400 font-medium">Origin Port Handling</span>
-                              <span className="text-slate-200 font-bold">${selectedRoute.pricing.breakdown.origin_handling.toLocaleString()}</span>
+                              <span className="text-slate-400 font-medium">
+                                Origin Port Handling
+                              </span>
+                              <span className="text-slate-200 font-bold">
+                                $
+                                {selectedRoute.pricing.breakdown.origin_handling.toLocaleString()}
+                              </span>
                             </div>
                             <div className="flex justify-between items-center text-sm">
-                              <span className="text-slate-400 font-medium">Dest. Port Handling</span>
-                              <span className="text-slate-200 font-bold">${selectedRoute.pricing.breakdown.destination_handling.toLocaleString()}</span>
+                              <span className="text-slate-400 font-medium">
+                                Dest. Port Handling
+                              </span>
+                              <span className="text-slate-200 font-bold">
+                                $
+                                {selectedRoute.pricing.breakdown.destination_handling.toLocaleString()}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1430,11 +2311,16 @@ export default function App() {
                         <div className="bg-slate-900/80 p-4 rounded-2xl border border-slate-700 mt-auto">
                           <div className="flex justify-between items-end">
                             <div>
-                              <p className="text-[10px] uppercase tracking-widest font-bold text-emerald-400 mb-1">Total Quote (USD)</p>
-                              <p className="text-xs font-medium text-slate-500">Excludes customs & duties</p>
+                              <p className="text-[10px] uppercase tracking-widest font-bold text-emerald-400 mb-1">
+                                Total Quote (USD)
+                              </p>
+                              <p className="text-xs font-medium text-slate-500">
+                                Excludes customs & duties
+                              </p>
                             </div>
                             <div className="text-3xl font-black text-emerald-400 tracking-tight drop-shadow-[0_0_8px_rgba(16,185,129,0.3)]">
-                              ${selectedRoute.pricing.total_cost_usd.toLocaleString()}
+                              $
+                              {selectedRoute.pricing.total_cost_usd.toLocaleString()}
                             </div>
                           </div>
                         </div>
@@ -1531,9 +2417,51 @@ export default function App() {
                 </div>
               )}
             </div>
+          ) : activeTab === "quotations" ? (
+            <QuotationsTab
+              quotes={savedQuotes}
+              onRefresh={fetchQuotations}
+              onNavigate={setActiveTab}
+            />
+          ) : (
+            /* Under Construction Render (Route Intel, Quotations) */
+            <div className="flex items-center justify-center h-full text-slate-400 flex-col gap-6 animate-fade-in">
+              <div className="w-24 h-24 bg-slate-900/60 backdrop-blur-xl rounded-[2rem] flex items-center justify-center text-4xl shadow-xl border border-slate-800">
+                🏗️
+              </div>
+              <div className="text-center">
+                <h2 className="text-2xl font-black text-slate-200 mb-2">
+                  Module under construction
+                </h2>
+                <p className="text-sm font-medium text-slate-500">
+                  Navigate to{" "}
+                  <span
+                    className="text-indigo-400 font-bold cursor-pointer hover:underline"
+                    onClick={() => setActiveTab("new_quotation")}
+                  >
+                    New Quotation
+                  </span>{" "}
+                  to use the Route Agent.
+                </p>
+              </div>
+            </div>
           )}
         </div>
       </div>
+      {/* Sleek Floating Success Notification */}
+      {notification && (
+        <div className="fixed bottom-10 right-10 z-[200] bg-emerald-500/10 backdrop-blur-2xl border border-emerald-500/30 text-emerald-400 p-5 rounded-2xl shadow-[0_20px_50px_rgba(16,185,129,0.3)] animate-fade-in-up flex items-center gap-4">
+          <div className="bg-emerald-500/20 w-10 h-10 rounded-xl border border-emerald-500/30 flex items-center justify-center text-lg">
+            ✅
+          </div>
+          <div>
+            <p className="font-black text-sm text-white tracking-wide">
+              Booking Confirmed
+            </p>
+            <p className="text-xs font-bold mt-0.5">{notification}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,0 +1,11 @@
+port_name,handling_fee_usd,congestion_factor,regional_risk_premium
+Shanghai,180,1.10,0
+Singapore,200,1.05,0
+Rotterdam,280,1.15,0
+Hamburg,250,1.10,0
+Dubai,150,1.00,30
+Los Angeles,350,1.25,0
+Chennai,120,1.00,0
+New York,380,1.20,0
+Sydney,250,1.05,0
+Tokyo,220,1.00,0
