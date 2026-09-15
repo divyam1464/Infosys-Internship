@@ -1,17 +1,24 @@
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 import sqlite3
-import hashlib
-from app.models import RouteRequest, RouteResponse, QuotationCreate
+import bcrypt
+import json
+from contextlib import asynccontextmanager
+
+from app.models import (
+    RouteRequest, RouteResponse, UserCreate, UserLogin, 
+    TokenResponse, QuotationCreate, QuotationStatusUpdate
+)
 from app.agents.route_agent import RouteAgent
 from app.agents.pricing_agent import PricingAgent
+from database import init_db
 
-app = FastAPI(
-    title="Agentic Maritime Brokerage Platform",
-    description="AI-powered maritime freight quotation and routing engine",
-    version="1.0.0"
-)
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,125 +30,6 @@ app.add_middleware(
 
 route_agent = RouteAgent()
 pricing_agent = PricingAgent()
-
-def init_db():
-    conn = sqlite3.connect("users.db")
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            email TEXT UNIQUE NOT NULL,
-            password_hash TEXT NOT NULL
-        )
-    ''')
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS quotations (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            quote_id TEXT UNIQUE NOT NULL,
-            user_name TEXT NOT NULL,
-            origin TEXT NOT NULL,
-            destination TEXT NOT NULL,
-            cargo_type TEXT NOT NULL,
-            containers INTEGER NOT NULL,
-            route_name TEXT NOT NULL,
-            route_score REAL NOT NULL,
-            transit_days INTEGER NOT NULL,
-            total_cost_usd REAL NOT NULL,
-            status TEXT DEFAULT 'Booked',
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )
-    ''')
-    conn.commit()
-    conn.close()
-
-init_db()
-
-def hash_password(password: str) -> str:
-    return hashlib.sha256(password.encode()).hexdigest()
-
-class SignupRequest(BaseModel):
-    name: str
-    email: str
-    password: str
-
-class LoginRequest(BaseModel):
-    email: str
-    password: str
-
-@app.post("/api/signup", tags=["Auth"])
-def signup(user: SignupRequest):
-    conn = sqlite3.connect("users.db")
-    cursor = conn.cursor()
-    try:
-        cursor.execute(
-            "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)",
-            (user.name, user.email, hash_password(user.password))
-        )
-        conn.commit()
-    except sqlite3.IntegrityError:
-        conn.close()
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST, 
-            detail="This email is already registered. Please log in."
-        )
-    finally:
-        conn.close()
-    return {"status": "success", "name": user.name}
-
-@app.post("/api/login", tags=["Auth"])
-def login(user: LoginRequest):
-    conn = sqlite3.connect("users.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT name, password_hash FROM users WHERE email = ?", (user.email,))
-    db_user = cursor.fetchone()
-    conn.close()
-    if not db_user or db_user[1] != hash_password(user.password):
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, 
-            detail="Invalid email or password. Access denied."
-        )
-    return {"status": "success", "name": db_user[0]}
-
-@app.post("/api/quotations/save", tags=["Quotations"])
-def save_quotation(quote: QuotationCreate):
-    conn = sqlite3.connect("users.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(*) FROM quotations")
-    count = cursor.fetchone()[0]
-    quote_id = f"Q-{1000 + count + 1}"
-    try:
-        cursor.execute('''
-            INSERT INTO quotations (
-                quote_id, user_name, origin, destination, cargo_type, 
-                containers, route_name, route_score, transit_days, total_cost_usd
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (
-            quote_id, quote.user_name, quote.origin, quote.destination, quote.cargo_type,
-            quote.containers, quote.route_name, quote.route_score, quote.transit_days, quote.total_cost_usd
-        ))
-        conn.commit()
-        return {"status": "success", "quote_id": quote_id}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    finally:
-        conn.close()
-
-@app.get("/api/quotations/list", tags=["Quotations"])
-def list_quotations(user_name: str):
-    conn = sqlite3.connect("users.db")
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute('''
-        SELECT quote_id, origin, destination, cargo_type, containers, 
-               route_name, route_score, transit_days, total_cost_usd, status, timestamp
-        FROM quotations 
-        WHERE user_name = ?
-        ORDER BY timestamp DESC
-    ''', (user_name,))
-    rows = cursor.fetchall()
-    conn.close()
-    return {"status": "success", "data": [dict(row) for row in rows]}
 
 @app.get("/", tags=["Health Check"])
 def health_check():
@@ -207,3 +95,131 @@ def analyze_route(payload: RouteRequest):
         }
     except Exception as e:
         return {"status": "error", "detail": str(e)}
+
+@app.post("/api/signup")
+def signup(user: UserCreate):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    try:
+        hashed_pw = bcrypt.hashpw(user.password.encode('utf-8'), bcrypt.gensalt())
+        cursor.execute(
+            "INSERT INTO users (email, password, role) VALUES (?, ?, ?)",
+            (user.email, hashed_pw.decode('utf-8'), 'customer')
+        )
+        conn.commit()
+        user_id = cursor.lastrowid
+        return {"message": "User created", "user_id": user_id, "role": "customer"}
+    except sqlite3.IntegrityError:
+        conn.close()
+        raise HTTPException(status_code=400, detail="Email already registered")
+    finally:
+        conn.close()
+
+@app.post("/api/login", response_model=TokenResponse)
+def login(user: UserLogin):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, password, role FROM users WHERE email=?", (user.email,))
+    db_user = cursor.fetchone()
+    conn.close()
+    if not db_user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    user_id, hashed_pw, role = db_user
+    if not bcrypt.checkpw(user.password.encode('utf-8'), hashed_pw.encode('utf-8')):
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    return {
+        "access_token": "temp_jwt_token_placeholder",
+        "token_type": "bearer",
+        "role": role,
+        "user_id": user_id
+    }
+
+@app.post("/api/quotations/save")
+def save_quotation(quote: QuotationCreate):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    route_data_str = json.dumps(quote.route_data)
+    try:
+        cursor.execute(
+            """
+            INSERT INTO quotations (user_id, route_data, base_freight, margin, total_price, status)
+            VALUES (?, ?, ?, ?, ?, 'pending')
+            """,
+            (quote.user_id, route_data_str, quote.base_freight, quote.margin, quote.total_price)
+        )
+        conn.commit()
+        return {"message": "Saved successfully", "status": "pending"}
+    except Exception:
+        conn.close()
+        raise HTTPException(status_code=500, detail="Failed to save quotation")
+    finally:
+        conn.close()
+
+@app.get("/api/quotations/customer/{user_id}")
+def get_customer_quotations(user_id: int):
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        SELECT id, route_data, base_freight, total_price, status, created_at 
+        FROM quotations WHERE user_id = ? ORDER BY created_at DESC
+        """, 
+        (user_id,)
+    )
+    rows = cursor.fetchall()
+    conn.close()
+    quotations = []
+    for row in rows:
+        quotations.append({
+            "id": row[0],
+            "route_data": json.loads(row[1]),
+            "base_freight": row[2],
+            "total_price": row[3],
+            "status": row[4],
+            "created_at": row[5]
+        })
+    return {"quotations": quotations}
+
+@app.get("/api/quotations/admin")
+def get_all_quotations():
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        SELECT id, user_id, route_data, base_freight, margin, total_price, status, created_at 
+        FROM quotations ORDER BY created_at DESC
+        """
+    )
+    rows = cursor.fetchall()
+    conn.close()
+    quotations = []
+    for row in rows:
+        quotations.append({
+            "id": row[0],
+            "user_id": row[1],
+            "route_data": json.loads(row[2]),
+            "base_freight": row[3],
+            "margin": row[4],
+            "total_price": row[5],
+            "status": row[6],
+            "created_at": row[7]
+        })
+    return {"quotations": quotations}
+
+@app.put("/api/quotations/admin/status/{quotation_id}")
+def update_quotation_status(quotation_id: int, status_update: QuotationStatusUpdate):
+    if status_update.status not in ["approved", "rejected"]:
+        raise HTTPException(status_code=400, detail="Invalid status")
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT id FROM quotations WHERE id = ?", (quotation_id,))
+    if not cursor.fetchone():
+        conn.close()
+        raise HTTPException(status_code=404, detail="Quotation not found")
+    cursor.execute(
+        "UPDATE quotations SET status = ? WHERE id = ?",
+        (status_update.status, quotation_id)
+    )
+    conn.commit()
+    conn.close()
+    return {"message": "Status updated"}

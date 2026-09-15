@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict, Any
+from typing import List, Dict, Any
 
 class RouteRequest(BaseModel):
     origin: str = Field(..., example="Chennai", description="Origin port name")
@@ -23,13 +23,26 @@ class RouteResponse(BaseModel):
     explanation: List[str]
     pricing: Dict[str, Any]
 
+class UserCreate(BaseModel):
+    email: str
+    password: str
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
+    role: str
+    user_id: int
+
 class QuotationCreate(BaseModel):
-    user_name: str
-    origin: str
-    destination: str
-    cargo_type: str
-    containers: int
-    route_name: str
-    route_score: float
-    transit_days: int
-    total_cost_usd: float
+    user_id: int
+    route_data: Dict[str, Any]
+    base_freight: float
+    margin: float
+    total_price: float
+
+class QuotationStatusUpdate(BaseModel):
+    status: str
