@@ -1473,8 +1473,12 @@ export default function App() {
   const [routes, setRoutes] = useState(MOCK_ROUTES);
   const [selectedRoute, setSelectedRoute] = useState(MOCK_ROUTES[0]);
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [currentUser, setCurrentUser] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return localStorage.getItem("isAuthenticated") === "true";
+  });
+  const [currentUser, setCurrentUser] = useState(() => {
+    return localStorage.getItem("currentUser") || "";
+  });
 
   const [activeTab, setActiveTab] = useState("new_quotation");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -1488,7 +1492,6 @@ export default function App() {
 
   const [isExporting, setIsExporting] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
-
 
   // Fetch when the tab becomes active
   useEffect(() => {
@@ -1504,6 +1507,8 @@ export default function App() {
         onAuthSuccess={(name) => {
           setCurrentUser(name);
           setIsAuthenticated(true);
+          localStorage.setItem("isAuthenticated", "true");
+          localStorage.setItem("currentUser", name);
         }}
       />
     );
@@ -1526,7 +1531,6 @@ export default function App() {
       setError("Origin and destination ports cannot be the same.");
       return;
     }
-
     setLoading(true);
     setError(null);
     setResult(null);
@@ -1538,30 +1542,50 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
+      if (!response.ok) {
+        let errText = "Network or Server Error";
+        try {
+          const errData = await response.json();
+          errText = errData.detail || "Server returned a configuration error.";
+        } catch (e) {}
+        throw new Error(errText);
+      }
+
       const data = await response.json();
 
       if (data.status === "success") {
         setResult(data);
 
-        // --- DYNAMIC PRICING GENERATOR ---
-        const rec = data.recommended_route;
-        const basePricing = data.pricing.breakdown;
+        const rec = data.recommended_route || {};
+        const safePricing = data.pricing || {};
+        const basePricing = safePricing.breakdown || {
+          base_freight: 1500,
+          bunker_adjustment: 300,
+          origin_handling: 150,
+          destination_handling: 150,
+          transshipment_fee: 0,
+        };
+        const totalCost = safePricing.total_cost_usd || 2100;
+
         const containers = formData.containers;
 
-        // Route 1: Optimal Direct Pathway
         const bestRoute = {
           id: "route-1",
           rank: 1,
           is_recommended: true,
-          transit_days: rec.transit_days,
-          distance_nm: rec.distance_nm,
-          transshipments: rec.transshipments,
-          route_score: rec.route_score,
+          transit_days: rec.transit_days || 20,
+          distance_nm: rec.distance_nm || 8000,
+          transshipments: rec.transshipments || 0,
+          route_score: rec.route_score || 8.5,
           name: "Optimal Direct Pathway",
           stops: [
-            { port: rec.origin, type: "origin" },
+            { port: rec.origin || formData.origin, type: "origin" },
             { port: "Ocean Transit", type: "waypoint" },
-            { port: rec.destination, type: "destination" },
+            {
+              port: rec.destination || formData.destination,
+              type: "destination",
+            },
           ],
           pricing: {
             breakdown: {
@@ -1571,11 +1595,10 @@ export default function App() {
               destination_handling: basePricing.destination_handling,
               transshipment_fee: 0,
             },
-            total_cost_usd: data.pricing.total_cost_usd,
+            total_cost_usd: totalCost,
           },
         };
 
-        // Route 2: Transshipment (Discounted freight, higher bunker, added transfer fees)
         const r2_freight = Math.round(basePricing.base_freight * 0.88);
         const r2_bunker = Math.round(basePricing.bunker_adjustment * 1.05);
         const r2_ts_fee = 150 * containers;
@@ -1584,15 +1607,18 @@ export default function App() {
           id: "route-2",
           rank: 2,
           is_recommended: false,
-          transit_days: Math.round(rec.transit_days * 1.2),
-          distance_nm: Math.round(rec.distance_nm * 1.05),
-          transshipments: rec.transshipments + 1,
-          route_score: (rec.route_score - 0.6).toFixed(1),
+          transit_days: Math.round((rec.transit_days || 20) * 1.2),
+          distance_nm: Math.round((rec.distance_nm || 8000) * 1.05),
+          transshipments: (rec.transshipments || 0) + 1,
+          route_score: ((rec.route_score || 8.5) - 0.6).toFixed(1),
           name: "Regional Hub Transshipment",
           stops: [
-            { port: rec.origin, type: "origin" },
+            { port: rec.origin || formData.origin, type: "origin" },
             { port: "Major Hub (TS)", type: "transshipment" },
-            { port: rec.destination, type: "destination" },
+            {
+              port: rec.destination || formData.destination,
+              type: "destination",
+            },
           ],
           pricing: {
             breakdown: {
@@ -1611,7 +1637,6 @@ export default function App() {
           },
         };
 
-        // Route 3: Eco-Steaming Multi-Port (Slower, lowest freight, cheapest bunker, higher feeder fees)
         const r3_freight = Math.round(basePricing.base_freight * 0.75);
         const r3_bunker = Math.round(basePricing.bunker_adjustment * 0.85);
         const r3_ts_fee = 220 * containers;
@@ -1620,16 +1645,19 @@ export default function App() {
           id: "route-3",
           rank: 3,
           is_recommended: false,
-          transit_days: Math.round(rec.transit_days * 1.45),
-          distance_nm: Math.round(rec.distance_nm * 1.15),
-          transshipments: rec.transshipments + 2,
-          route_score: (rec.route_score - 1.5).toFixed(1),
+          transit_days: Math.round((rec.transit_days || 20) * 1.45),
+          distance_nm: Math.round((rec.distance_nm || 8000) * 1.15),
+          transshipments: (rec.transshipments || 0) + 2,
+          route_score: ((rec.route_score || 8.5) - 1.5).toFixed(1),
           name: "Eco-Steaming Multi-Port",
           stops: [
-            { port: rec.origin, type: "origin" },
+            { port: rec.origin || formData.origin, type: "origin" },
             { port: "Feeder Port A", type: "waypoint" },
             { port: "Feeder Port B", type: "waypoint" },
-            { port: rec.destination, type: "destination" },
+            {
+              port: rec.destination || formData.destination,
+              type: "destination",
+            },
           ],
           pricing: {
             breakdown: {
@@ -1651,12 +1679,14 @@ export default function App() {
         setRoutes([bestRoute, altRoute1, altRoute2]);
         setSelectedRoute(bestRoute);
       } else {
-        setError(data.detail || data.message || "No optimal route found for these parameters.");
+        setError(
+          data.detail ||
+            data.message ||
+            "No optimal route found for these parameters.",
+        );
       }
     } catch (err) {
-      setError(
-        "Failed to connect to the Route Agent. Is the FastAPI server running?",
-      );
+      setError(`UI Error: ${err.message}`);
     }
     setLoading(false);
   };
@@ -1682,8 +1712,6 @@ export default function App() {
       console.error("Failed to fetch quotes:", error);
     }
   };
-
-  
 
   const handleProceedToBooking = async () => {
     setIsBooking(true);
@@ -1898,7 +1926,12 @@ export default function App() {
 
             <ProfileDropdown
               userName={currentUser}
-              onLogout={() => setIsAuthenticated(false)}
+              onLogout={() => {
+                setIsAuthenticated(false);
+                setCurrentUser("");
+                localStorage.removeItem("isAuthenticated");
+                localStorage.removeItem("currentUser");
+              }}
             />
           </div>
         </header>
