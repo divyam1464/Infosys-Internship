@@ -1439,7 +1439,13 @@ const QuotationsTab = ({ quotes, onRefresh, onNavigate }) => {
                         ${q.total_cost_usd.toLocaleString()}
                       </td>
                       <td className="p-6">
-                        <span className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                        <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest ${
+                          q.status.toLowerCase() === 'approved' 
+                            ? 'bg-emerald-500 text-white shadow-[0_0_15px_rgba(16,185,129,0.6)] border border-emerald-400' :
+                          q.status.toLowerCase() === 'rejected' 
+                            ? 'bg-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.6)] border border-rose-400' :
+                            'bg-amber-500 text-white shadow-[0_0_15px_rgba(245,158,11,0.6)] border border-amber-400'
+                        }`}>
                           {q.status}
                         </span>
                       </td>
@@ -1495,10 +1501,10 @@ export default function CustomerDashboard() {
 
   // Fetch when the tab becomes active
   useEffect(() => {
-    if (activeTab === "quotations" && currentUser) {
+    if (activeTab === "quotations") {
       fetchQuotations();
     }
-  }, [activeTab, currentUser]);
+  }, [activeTab]);
 
   // Intercept unauthenticated users
 //   if (!isAuthenticated) {
@@ -1947,8 +1953,9 @@ export default function CustomerDashboard() {
             <ProfileDropdown
               userName="Client" 
               onLogout={() => {
-                localStorage.clear();
-                window.location.href = '/';
+                localStorage.removeItem('role');
+                localStorage.removeItem('user_id');
+                window.location.replace('/');
               }}
             />
           </div>

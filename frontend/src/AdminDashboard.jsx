@@ -148,9 +148,10 @@ const AdminDashboard = () => {
     };
 
     const handleLogout = () => {
-        localStorage.clear();
-        window.location.href = '/';
-    };
+      localStorage.removeItem('role');
+      localStorage.removeItem('user_id');
+      window.location.replace('/');
+  };
 
     // --- CSV EXPORT ---
     const handleExportCSV = () => {
